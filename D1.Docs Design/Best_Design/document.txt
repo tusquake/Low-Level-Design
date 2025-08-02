@@ -1,0 +1,4 @@
+TEXT: This is the first line.
+IMAGE: /images/photo1.jpg
+TEXT: This is the second line.
+IMAGE: /images/photo2.jpg

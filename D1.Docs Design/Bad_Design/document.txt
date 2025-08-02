@@ -1,0 +1,4 @@
+TEXT:Hello, this is a test document.
+IMAGE:/images/sample.png
+TEXT:This is the second paragraph.
+IMAGE:/images/diagram.jpg

@@ -1,0 +1,2 @@
+TEXT: Hello World!
+IMAGE: /img/cat.png
