@@ -40,4 +40,19 @@ public class ParkingLot {
             System.out.println("Invalid operation! Either the spot is already vacant or the vehicle does not match");
         }
     }
+
+    public ParkingSpot getSpotByNumber(int spotNumber){
+        for(ParkingFloor floor: floors){
+            for(ParkingSpot spot: floor.getParkingSpots()){
+                if(spot.getSpotNumber() == spotNumber){
+                    return spot;
+                }
+            }
+        }
+        return null;
+    }
+
+    public List<ParkingFloor> getFloors(){
+        return floors;
+    }
 }
