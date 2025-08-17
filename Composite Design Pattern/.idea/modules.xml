@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Composite Design Pattern.iml" filepath="$PROJECT_DIR$/.idea/Composite Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/File Management System/File Management System.iml" filepath="$PROJECT_DIR$/File Management System/File Management System.iml" />
+    </modules>
+  </component>
+</project>
