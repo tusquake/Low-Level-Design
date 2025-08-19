@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Image Loader/Image Loader.iml" filepath="$PROJECT_DIR$/Image Loader/Image Loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Virtual Proxy.iml" filepath="$PROJECT_DIR$/.idea/Virtual Proxy.iml" />
+    </modules>
+  </component>
+</project>
