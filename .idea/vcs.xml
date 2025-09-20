@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Command Design Pattern" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Composite Design Pattern" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/D2.Parking Lot Design" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Adapter Design Pattern/Adapter Design Pattern.iml" filepath="$PROJECT_DIR$/Adapter Design Pattern/Adapter Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bridge Design Pattern/Bridge Design Pattern.iml" filepath="$PROJECT_DIR$/Bridge Design Pattern/Bridge Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chain of Responsibility Pattern/Chain of Responsibility Pattern.iml" filepath="$PROJECT_DIR$/Chain of Responsibility Pattern/Chain of Responsibility Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Command Design Pattern/Command Design Pattern.iml" filepath="$PROJECT_DIR$/Command Design Pattern/Command Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Composite Design Pattern/Composite Design Pattern.iml" filepath="$PROJECT_DIR$/Composite Design Pattern/Composite Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/D2.Parking Lot Design/D2.Parking Lot Design.iml" filepath="$PROJECT_DIR$/D2.Parking Lot Design/D2.Parking Lot Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/D4.Notification Design/D4.Notification Design.iml" filepath="$PROJECT_DIR$/D4.Notification Design/D4.Notification Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/D5.Payment Gateway System Design/D5.Payment Gateway System Design.iml" filepath="$PROJECT_DIR$/D5.Payment Gateway System Design/D5.Payment Gateway System Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Decorator Design Pattern/Decorator Design Pattern.iml" filepath="$PROJECT_DIR$/Decorator Design Pattern/Decorator Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Facade Design Pattern/Facade Design Pattern.iml" filepath="$PROJECT_DIR$/Facade Design Pattern/Facade Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flywieght Design Pattern/Flywieght Design Pattern.iml" filepath="$PROJECT_DIR$/Flywieght Design Pattern/Flywieght Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Iterator Design Pattern/Iterator Design Pattern.iml" filepath="$PROJECT_DIR$/Iterator Design Pattern/Iterator Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Low level design.iml" filepath="$PROJECT_DIR$/Low level design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Memento Design Pattern/Memento Design Pattern.iml" filepath="$PROJECT_DIR$/Memento Design Pattern/Memento Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Observer Design Pattern/Observer Design Pattern.iml" filepath="$PROJECT_DIR$/Observer Design Pattern/Observer Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy Design Pattern/Protection Proxy/Protection Proxy.iml" filepath="$PROJECT_DIR$/Proxy Design Pattern/Protection Proxy/Protection Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prototype Design Pattern/Prototype Design Pattern.iml" filepath="$PROJECT_DIR$/Prototype Design Pattern/Prototype Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy Design Pattern/Remote Proxy/Remote Proxy.iml" filepath="$PROJECT_DIR$/Proxy Design Pattern/Remote Proxy/Remote Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/State Design Pattern/State Design Pattern.iml" filepath="$PROJECT_DIR$/State Design Pattern/State Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Template Design Pattern/Template Design Pattern.iml" filepath="$PROJECT_DIR$/Template Design Pattern/Template Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy Design Pattern/Virtual Proxy/Virtual Proxy.iml" filepath="$PROJECT_DIR$/Proxy Design Pattern/Virtual Proxy/Virtual Proxy.iml" />
+    </modules>
+  </component>
+</project>
