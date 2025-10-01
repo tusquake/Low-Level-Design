@@ -1,35 +1,85 @@
 import java.util.*;
 
-// ----------------------- Rate Limiter Mini Project -----------------------
+// ----------------------- Rate Limiter with Subscription Model -----------------------
 public class RateLimiterDemo {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("===== Fixed Window Rate Limiter =====");
-        FixedWindowRateLimiter fixedLimiter = new FixedWindowRateLimiter(3, 10); // 3 requests per 10 seconds
-        testLimiter(fixedLimiter);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n===== Sliding Window Rate Limiter =====");
-        SlidingWindowRateLimiter slidingLimiter = new SlidingWindowRateLimiter(3, 10); // 3 requests per 10 seconds
-        testLimiter(slidingLimiter);
+        System.out.println("Choose Rate Limiter Strategy: ");
+        System.out.println("1. Fixed Window");
+        System.out.println("2. Sliding Window");
+        System.out.println("3. Token Bucket");
+        int choice = sc.nextInt();
 
-        System.out.println("\n===== Token Bucket Rate Limiter =====");
-        TokenBucketRateLimiter tokenBucketLimiter = new TokenBucketRateLimiter(3, 10); // 3 tokens per 10 seconds
-        testLimiter(tokenBucketLimiter);
-    }
+        // Two users with different subscription plans
+        User freeUser = new User("user1", SubscriptionPlan.FREE,
+                RateLimiterFactory.createRateLimiter(SubscriptionPlan.FREE, choice));
 
-    // Helper method to test limiter
-    private static void testLimiter(RateLimiter limiter) throws InterruptedException {
-        String userId = "user1";
-        for (int i = 1; i <= 5; i++) {
-            boolean allowed = limiter.isAllowed(userId);
-            System.out.println("Request " + i + ": " + (allowed ? "Allowed" : "Blocked"));
-            Thread.sleep(2000); // wait 2 seconds between requests
+        User proUser = new User("user2", SubscriptionPlan.PRO,
+                RateLimiterFactory.createRateLimiter(SubscriptionPlan.PRO, choice));
+
+        System.out.println("\n===== Testing Rate Limiter with Subscription Plans =====");
+        for (int i = 1; i <= 6; i++) {
+            System.out.println("[FREE PLAN] Request " + i + ": " +
+                    (freeUser.rateLimiter.isAllowed(freeUser.userId) ? "Allowed" : "Blocked"));
+
+            System.out.println("[PRO PLAN] Request " + i + ": " +
+                    (proUser.rateLimiter.isAllowed(proUser.userId) ? "Allowed" : "Blocked"));
+
+            Thread.sleep(1000); // simulate 1s gap
         }
+
+        sc.close();
     }
 
     // ----------------------- RateLimiter Interface -----------------------
     interface RateLimiter {
         boolean isAllowed(String userId);
+    }
+
+    // ----------------------- Subscription Plans -----------------------
+    enum SubscriptionPlan {
+        FREE(3, 10),        // 3 requests per 10s
+        PRO(5, 10),         // 5 requests per 10s
+        ENTERPRISE(10, 10); // 10 requests per 10s
+
+        final int maxRequests;
+        final long windowSizeSeconds;
+
+        SubscriptionPlan(int maxRequests, long windowSizeSeconds) {
+            this.maxRequests = maxRequests;
+            this.windowSizeSeconds = windowSizeSeconds;
+        }
+    }
+
+    // ----------------------- User Class -----------------------
+    static class User {
+        String userId;
+        SubscriptionPlan plan;
+        RateLimiter rateLimiter;
+
+        public User(String userId, SubscriptionPlan plan, RateLimiter rateLimiter) {
+            this.userId = userId;
+            this.plan = plan;
+            this.rateLimiter = rateLimiter;
+        }
+    }
+
+    // ----------------------- RateLimiter Factory -----------------------
+    static class RateLimiterFactory {
+        public static RateLimiter createRateLimiter(SubscriptionPlan plan, int strategyChoice) {
+            switch (strategyChoice) {
+                case 1:
+                    return new FixedWindowRateLimiter(plan.maxRequests, plan.windowSizeSeconds);
+                case 2:
+                    return new SlidingWindowRateLimiter(plan.maxRequests, plan.windowSizeSeconds);
+                case 3:
+                    return new TokenBucketRateLimiter(plan.maxRequests, plan.windowSizeSeconds);
+                default:
+                    throw new IllegalArgumentException("Invalid strategy choice");
+            }
+        }
     }
 
     // ----------------------- Fixed Window -----------------------
@@ -127,7 +177,6 @@ public class RateLimiterDemo {
             buckets.putIfAbsent(userId, new Bucket(maxTokens, currentTime));
             Bucket bucket = buckets.get(userId);
 
-            // Refill tokens
             long elapsed = currentTime - bucket.lastRefillTime;
             int refill = (int) (elapsed / refillIntervalMillis) * maxTokens;
             if (refill > 0) {
