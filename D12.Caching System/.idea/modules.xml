@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cache Eviction Policy/Cache Eviction Policy.iml" filepath="$PROJECT_DIR$/Cache Eviction Policy/Cache Eviction Policy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/D12.Caching System.iml" filepath="$PROJECT_DIR$/.idea/D12.Caching System.iml" />
+    </modules>
+  </component>
+</project>
