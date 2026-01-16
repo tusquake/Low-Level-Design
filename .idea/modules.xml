@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/Subscription System/Subscription System.iml" filepath="$PROJECT_DIR$/Subscription System/Subscription System.iml" />
       <module fileurl="file://$PROJECT_DIR$/Template Design Pattern/Template Design Pattern.iml" filepath="$PROJECT_DIR$/Template Design Pattern/Template Design Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proxy Design Pattern/Virtual Proxy/Virtual Proxy.iml" filepath="$PROJECT_DIR$/Proxy Design Pattern/Virtual Proxy/Virtual Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Visitor Design Pattern/Visitor Design Pattern.iml" filepath="$PROJECT_DIR$/Visitor Design Pattern/Visitor Design Pattern.iml" />
     </modules>
   </component>
 </project>
