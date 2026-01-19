@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/4.Interface Seggregation Principle/4.Interface Seggregation Principle.iml" filepath="$PROJECT_DIR$/4.Interface Seggregation Principle/4.Interface Seggregation Principle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" filepath="$PROJECT_DIR$/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" />
       <module fileurl="file://$PROJECT_DIR$/Adapter Design Pattern/Adapter Design Pattern.iml" filepath="$PROJECT_DIR$/Adapter Design Pattern/Adapter Design Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bridge Design Pattern/Bridge Design Pattern.iml" filepath="$PROJECT_DIR$/Bridge Design Pattern/Bridge Design Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chain of Responsibility Pattern/Chain of Responsibility Pattern.iml" filepath="$PROJECT_DIR$/Chain of Responsibility Pattern/Chain of Responsibility Pattern.iml" />
