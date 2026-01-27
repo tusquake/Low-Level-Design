@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6046ddf-b3a1-4045-9755-d191d048356a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../1.Single Reponsibility Principle/CartDBStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1.Single Reponsibility Principle/CartInvoicePrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1.Single Reponsibility Principle/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1.Single Reponsibility Principle/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1.Single Reponsibility Principle/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/DBStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/FileStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/MongoStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.Open Closed Principle/Storage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/3.1.1  Method Argument Rule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/AudioFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/MP3Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/MediaFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/MediaPlayerCorrect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/UniversalPlayerCorrect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/3.1.1  Method Argument Rule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/AudioFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/MP3Format.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/MediaFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/MediaPlayerCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.1  Method Argument Rule/out/production/3.1.1  Method Argument Rule/UniversalPlayerCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.2 Return type rule/Document.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.2 Return type rule/DocumentCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.2 Return type rule/PDFCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/3.1 Signature Rules/3.1.2 Return type rule/PDFDocument.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/BankClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/CurrentAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/FixedDepositAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/SavingsAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Liskov Substituion Principle/WithdrawableAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4.Interface Seggregation Principle/4.Interface Seggregation Principle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4.Interface Seggregation Principle/src/PrinterDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5.Dependency Inversion Principle/src/DependencyInversionExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/.idea/Adapter Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Adapter Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Adapter Pattern Guide.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/Music Player.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/AdapterPatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/AdvancedMediaPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/AudioPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/MediaAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/MediaPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/Mp4Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Music Player/src/VlcPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/AdapterPatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/AdvancedMediaPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/AudioPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/MediaAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/MediaPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/Mp4Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Adapter Design Pattern/out/production/Music Player/VlcPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/.idea/Bridge Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Bridge Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/Vehicle Management.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Bridge Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/BridgePatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/DieselEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/ElectricEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Engine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Motorcycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/PetrolEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Truck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/Vehicle Management/src/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/BridgePatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/DieselEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/ElectricEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/Motorcycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/PetrolEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/Truck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bridge Design Pattern/out/production/Vehicle Management/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/.idea/Chain of Responsibility Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Chain of Responsibility Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/Expense Approval System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/CEOHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/Chain of Responsibility Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/DirectorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/ExpenseApprovalSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/ExpenseHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/ManagerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Expense Approval System/src/TeamLeadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/CEOHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/DirectorHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/ExpenseApprovalSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/ExpenseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/ManagerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chain of Responsibility Pattern/out/production/Expense Approval System/TeamLeadHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/.idea/Command Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/Command Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/TV Remote Control System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/CommandPatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/RemoteControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/Television.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/TurnOnCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/TV Remote Control System/src/VolumeUpCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/CommandPatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/RemoteControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/Television.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/TurnOnCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Command Design Pattern/out/production/TV Remote Control System/VolumeUpCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/.idea/Composite Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/Composite Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/File Management System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/src/Composite Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/src/CompositePatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/src/Directory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/src/File.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/File Management System/src/FileSystemComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/out/production/File Management System/CompositePatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/out/production/File Management System/Directory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/out/production/File Management System/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Composite Design Pattern/out/production/File Management System/FileSystemComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Bad_Design/DocumentEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Bad_Design/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Bad_Design/document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/Document.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/DocumentEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/DocumentElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/DocumentRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/ImageElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/Persistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/SaveToDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/SaveToFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/TextElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Best_Design/document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/Document.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/DocumentEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/DocumentElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/ImageElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/Persistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/SaveToFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/TextElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Better_Design/document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D1.Docs Design/Document Editor Design.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/.idea/D10.Online Ticket Booking System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/Booking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/BookingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/BookingStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/CreditCardPayment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/EmailNotifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/NotificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/Observer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/PayPalPayment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/PaymentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/PaymentStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/SMSNotifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/Seat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/SeatStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/Show.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/TicketBookingSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/out/production/ticket booking system/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/ticket booking system/src/TicketBookingSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D10.Online Ticket Booking System/ticket booking system/ticket booking system.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/.idea/D11. News Feed System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/News Feed/News Feed.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/News Feed/src/NewsFeed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/FeedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/FeedStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/NewsFeed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/PullFeedStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D11. News Feed System/out/production/News Feed/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/.idea/D12.Caching System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/Cache Eviction Policy/Cache Eviction Policy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/Cache Eviction Policy/src/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/Cache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/CacheEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/EvictionPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/FIFOPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/LFUPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/LIFOPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/LRUPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/MRUPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/RandomPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/RoundRobinPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D12.Caching System/out/production/Cache Eviction Policy/TwoQueuePolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D13.Meeting Scheduler System/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D14.Rate Limitter System/Rate Limitter System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D14.Rate Limitter System/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D14.Rate Limitter System/src/RateLimiterDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/.idea/D2.Parking Lot Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/Parking Lot.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/BikeParkingSpot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/CarParkingSpot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/ParkingFloor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/ParkingLot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/ParkingSpot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/ParkingLot/Ticket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/CashPayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/CreditCardPayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/PaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/PaymentStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/Payment/UPIPayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/gates/EntranceGate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/gates/ExitGate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/vehicles/BikeVehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/vehicles/CarVehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/vehicles/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/1.Parking Lot/src/vehicles/VehicleFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/2.Parking Lot/Practice/Practice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/2.Parking Lot/src/ParkingLotDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/D2.Parking Lot Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D2.Parking Lot Design/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/.idea/D3.Instagram Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D3.Instagram Design/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/.idea/D4.Notification Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/D4.Notification Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/Notification System/Notification System Design Patterns - Theory Guide.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/Notification System/Notification System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/Notification System/src/NotificationSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/EmailStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/INotification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/INotificationDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/INotificationStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/IObservable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/IObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/NotificationEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/NotificationObservable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/NotificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/NotificationSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/PopUpStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/SMSStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/SignatureDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/SimpleNotification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D4.Notification Design/out/production/Notification System/TimestampDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D5.Payment Gateway System Design/D5.Payment Gateway System Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D5.Payment Gateway System Design/src/PaymentGatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Balance/Balance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Balance/UserExpenseBalanceSheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Controllers/BalanceSheetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Controllers/ExpenseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Controllers/GroupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/D6.Splitwise Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Expense/Expense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Expense/ExpenseSplitType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Group/Group.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Split/ExpenseSplitStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Split/Split.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Split/SplitStrategies/EqualExpenseSplit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Split/SplitStrategies/PercentageExpenseSplit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Split/SplitStrategies/UnequalExpenseSplit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/Splitwise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/User/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/User/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Balance/Balance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Balance/UserExpenseBalanceSheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Controllers/BalanceSheetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Controllers/ExpenseController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Controllers/ExpenseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Controllers/GroupController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/D6.Splitwise Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Expense/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Expense/ExpenseSplitType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Group/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Split/ExpenseSplitStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Split/Split.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Split/SplitStrategies/EqualExpenseSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Split/SplitStrategies/PercentageExpenseSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Split/SplitStrategies/UnequalExpenseSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/Splitwise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/User/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D6.Splitwise Design/out/production/D6.Splitwise Design/org/example/User/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/.idea/D7.Dating App.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/TinderClone/TinderClone.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/TinderClone/src/TinderClone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/BasicLocationStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/BasicMatcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/ChatRoom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/DatingApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Gender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Interest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/InterestsBasedMatcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/LocationBasedMatcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/LocationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/LocationStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Matcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/MatcherFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/MatcherFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/MatcherType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/NotificationObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/NotificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/Preference.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/SwipeAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/TinderClone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/UserNotificationObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/UserProfile$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D7.Dating App/out/production/TinderClone/UserProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/.idea/D8.Rate Limitter Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/Rate limitter/Rate limitter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/Rate limitter/src/RateLimiterDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$FixedWindowRateLimiter$UserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$FixedWindowRateLimiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$RateLimiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$RateLimiterFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$SlidingWindowRateLimiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$SubscriptionPlan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$TokenBucketRateLimiter$Bucket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$TokenBucketRateLimiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo$User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D8.Rate Limitter Design/out/production/Rate limitter/RateLimiterDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/.idea/D9. Url Shortner.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/Url Shortner/Url Shortner.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/Url Shortner/src/URLShortenerDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/out/production/Url Shortner/URLShortenerDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/out/production/Url Shortner/URLShortenerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/out/production/Url Shortner/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D9. Url Shortner/out/production/Url Shortner/UserType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/.idea/Decorator Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/CoffeeShop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/ChocolateDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/Coffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/CoffeeDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/CoffeeShop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/MilkDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/SimpleCoffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/CoffeeShop/src/SugarDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/Decorator Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/Documentation/Decorator Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/ChocolateDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/Coffee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/CoffeeDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/CoffeeShop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/MilkDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/SimpleCoffee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Decorator Design Pattern/out/production/CoffeeShop/SugarDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Factory Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Liskov Substitution Principle (LSP).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/SOL explanation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Strategy Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Email Service Provider/Email Service Provider.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Email Service Provider/src/EmailDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Email Service Provider/src/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/.idea/Facade Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Facade Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/Home Threater.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/DVDPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/Facade Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/FacadePatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/HomeTheaterFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/Lights.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/Projector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/Screen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Home Theatre/src/SoundSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/DVDPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/FacadePatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/HomeTheaterFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/Lights.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/Projector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/Screen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Facade Design Pattern/out/production/Home Threater/SoundSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Factory Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/.idea/Flywieght Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Flywieght Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/Forest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/Flyweight Design Pattern Guide.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/FlyweightDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/Forest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/TreeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/TreeTypeFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Forest/src/TreeTypeFlyweight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/FlyweightDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/Forest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/TreeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/TreeTypeFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Flywieght Design Pattern/out/production/Forest/TreeTypeFlyweight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Food Delivery/Food Delivery.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Food Delivery/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Food Delivery/src/FoodDeliveryApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/.idea/Iterator Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Iterator Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/Music Playlist.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/Aggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/Iterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/MusicPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/Playlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/ReverseIterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Music Playlist/src/Song.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/Aggregate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/Iterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/MusicPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/Playlist$PlaylistIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/Playlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/ReverseIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Iterator Design Pattern/out/production/Music Playlist/Song.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Low level design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Mediator Design Pattern/Mediator Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Mediator Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Mediator Design Pattern/src/SmartHomeDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/.idea/Memento Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/Database Connection/Database Connection.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/Database Connection/src/MementoPattern.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/Memento Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/notes/Memento Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/notes/Standard UML.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/out/production/Database Connection/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/out/production/Database Connection/DatabaseMemento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/out/production/Database Connection/MementoPattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Memento Design Pattern/out/production/Database Connection/TransactionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/.idea/Observer Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/Documentation/Observer Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/NotificationUtility.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/Channel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/IChannel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/ISubscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/NotificationUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/ObserverPatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/NotificationUtility/src/Subscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/Observer Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/Channel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/IChannel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/ISubscriber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/NotificationUtility$NotificationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/NotificationUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/ObserverPatternDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Observer Design Pattern/out/production/NotificationUtility/Subscriber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/.idea/Prototype Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/DB connection.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/src/ConnectionPrototype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/src/DatabaseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/src/DocumentTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/src/Prototype Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/DB connection/src/PrototypeDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/Prototype Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/out/production/DB connection/ConnectionPrototype.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/out/production/DB connection/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/out/production/DB connection/DocumentTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prototype Design Pattern/out/production/DB connection/PrototypeDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/.idea/Protection Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/API Service Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/src/CacheEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/src/DataService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/src/RemoteDataService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/src/RemoteDataServiceProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/API Service Proxy/src/RemoteProxyDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/Protection Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/out/production/API Service Proxy/CacheEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/out/production/API Service Proxy/DataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/out/production/API Service Proxy/RemoteDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/out/production/API Service Proxy/RemoteDataServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Protection Proxy/out/production/API Service Proxy/RemoteProxyDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Proxy Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/.idea/Remote Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/Document Access Controllor.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/src/Document.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/src/ProtectionDocumentProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/src/ProtectionProxyDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/src/RealDocument.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Document Access Controllor/src/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/Remote Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/Document.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/ProtectionDocumentProxy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/ProtectionDocumentProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/ProtectionProxyDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/RealDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Remote Proxy/out/production/Document Access Controllor/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/.idea/Virtual Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Image Loader/Image Loader.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Image Loader/src/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Image Loader/src/RealImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Image Loader/src/VirtualImageProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Image Loader/src/VirtualProxyDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/Virtual Proxy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/out/production/Image Loader/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/out/production/Image Loader/RealImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/out/production/Image Loader/VirtualImageProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Proxy Design Pattern/Virtual Proxy/out/production/Image Loader/VirtualProxyDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Search System/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Search System/Search System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Search System/src/SearchSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Simple Logger/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Simple Logger/Simple Logger.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Simple Logger/src/SimpleLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SimpleLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/.idea/State Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/State Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/Vending Machine.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/CoinInsertedState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/IdleState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/OutOfStockState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/ProductSelectedState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/State Design Pattern Guide.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/VendingMachine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/VendingMachineDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/Vending Machine/src/VendingMachineState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/CoinInsertedState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/IdleState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/OutOfStockState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/ProductSelectedState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/VendingMachine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/VendingMachineDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../State Design Pattern/out/production/Vending Machine/VendingMachineState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Subscription System/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Subscription System/Subscription System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Subscription System/src/SubscriptionSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/.idea/Template Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/Beverage Preparation.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/BeverageTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/Coffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/HotChocolate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/Tea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/Template Method Design Pattern.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Beverage Preparation/src/TemplateMethodDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/Template Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/out/production/Beverage Preparation/BeverageTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/out/production/Beverage Preparation/Coffee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/out/production/Beverage Preparation/HotChocolate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/out/production/Beverage Preparation/Tea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Template Design Pattern/out/production/Beverage Preparation/TemplateMethodDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Visitor Design Pattern/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Visitor Design Pattern/Visitor Design Pattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Visitor Design Pattern/src/VisitorDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/AllinOnePrinter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/BasicPrinter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/Faxable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/Printable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/PrinterDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/4.Interface Seggregation Principle/Scannable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/5.Dependency Inversion Principle/COD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/5.Dependency Inversion Principle/DependencyInversionExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/5.Dependency Inversion Principle/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/5.Dependency Inversion Principle/PaymentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/5.Dependency Inversion Principle/UPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/BankingSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/GatewayFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/GatewayType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentGatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentGatewayProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaymentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaytmBankingSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/PaytmGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/RazorpayBankingSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/D5.Payment Gateway System Design/RazorpayGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/AWSProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/Email$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/Email.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/EmailDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/EmailManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/EmailProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/GmailProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Email Service Provider/SendGridProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/ContactlessDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/FoodDeliveryApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/GiftWrapDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/InsuranceDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/LegacyRestaurantAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/LegacyRestaurantSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/ModernRestaurantOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/OrderDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Food Delivery/PriorityDeliveryDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/AC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/Device.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/HomeHub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/Light.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/MotionSensor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/SmartHomeDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Mediator Design Pattern/SmartHomeHub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/Bus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/HourlyPricing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/LowestFloorStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/Motorcycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/NearestSpotStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingLot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingLotDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingSpot$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingSpot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/ParkingTicket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/PricingStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/SpotStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/SpotType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/Truck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/VehicleType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/VehicleTypePricing$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Practice/VehicleTypePricing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Rate Limitter System/RateLimitStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Rate Limitter System/RateLimiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Rate Limitter System/RateLimiterDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Rate Limitter System/TokenBucketStrategy$Bucket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Rate Limitter System/TokenBucketStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/LocationBasedSearchStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/PriceOptimizedSearchStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/RatingBasedSearchStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/SearchOrchestrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/SearchStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/SearchStrategyFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Search System/SearchSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/Channel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/ChannelCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/EmailSubscriber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/MobileSubscriber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/Subscriber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/SubscriptionSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Subscription System/UploadVideoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/AreaCalculatorVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/PerimeterCalculatorVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/ShapeVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/VisitorDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Visitor Design Pattern/XMLExportVisitor.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="38p3PtQ0maml8XIpMTKBKcERwrH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.InterpreterDemo.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tushar.seth/Desktop/LLD/Low-Level-Design/Behavorial Design Pattern/Interpretor Design Pattern",
+    "onboarding.tips.debug.path": "C:/Users/tushar.seth/Desktop/LLD/Low-Level-Design/Behavorial Design Pattern/Interpretor Design Pattern/Interpretor Pattern/src/Main.java"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="InterpreterDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InterpreterDemo" />
+      <module name="Interpretor Pattern" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.InterpreterDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6046ddf-b3a1-4045-9755-d191d048356a" name="Changes" comment="" />
+      <created>1769482663794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769482663794</updated>
+    </task>
+    <servers />
+  </component>
+</project>
