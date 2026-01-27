@@ -1,6 +1,6 @@
 # Low-Level Design (LLD) Patterns & Principles
 
-A comprehensive repository of **Design Patterns**, **SOLID Principles**, and **System Design implementations** in Java. This collection serves as a practical guide for mastering object-oriented design, preparing for technical interviews, and building scalable applications.
+A comprehensive repository of **Design Patterns**, **Design Principles**, and **System Design implementations** in Java. This collection serves as a practical guide for mastering object-oriented design, preparing for technical interviews, and building scalable applications.
 
 ---
 
@@ -8,12 +8,16 @@ A comprehensive repository of **Design Patterns**, **SOLID Principles**, and **S
 
 - [About](#about)
 - [Repository Structure](#repository-structure)
-- [SOLID Principles](#solid-principles)
+- [Design Principles](#design-principles)
 - [Design Patterns](#design-patterns)
-- [System Design Projects](#system-design-projects)
+   - [Creational Patterns](#creational-patterns)
+   - [Structural Patterns](#structural-patterns)
+   - [Behavioral Patterns](#behavioral-patterns)
+- [Practice Projects](#practice-projects)
+- [Real-World Projects](#real-world-projects)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-- [Resources](#resources)
+- [Contact](#contact)
 
 ---
 
@@ -22,8 +26,8 @@ A comprehensive repository of **Design Patterns**, **SOLID Principles**, and **S
 This repository provides:
 
 - **Practical implementations** of 23 Gang of Four design patterns
-- **SOLID principles** with real-world examples
-- **Complete system designs** (Parking Lot, Splitwise, BookMyShow, etc.)
+- **Design principles** (SOLID, KISS, YAGNI, DRY) with real-world examples
+- **Complete system designs** (TV Remote Control, Coffee Shop, etc.)
 - **Interview-ready code** with detailed documentation
 - **Progressive learning path** from basics to advanced concepts
 
@@ -36,66 +40,69 @@ This repository provides:
 ```
 Low-Level-Design/
 │
-├── SOLID Principles/
-│   ├── 1. Single Responsibility Principle/
-│   ├── 2. Open Closed Principle/
-│   └── 3. Liskov Substitution Principle/
-│
-├── Design Patterns/
-│   ├── Creational/
-│   │   ├── Factory Design Pattern/
-│   │   ├── Prototype Design Pattern/
-│   │   └── ...
+├── 1. Design Principles/
+│   ├── SOLID Principles/
+│   │   ├── 1. Single Responsibility Principle/
+│   │   ├── 2. Open Closed Principle/
+│   │   ├── 3. Liskov Substitution Principle/
+│   │   ├── 4. Interface Segregation Principle/
+│   │   └── 5. Dependency Inversion Principle/
 │   │
-│   ├── Structural/
-│   │   ├── Adapter Design Pattern/
-│   │   ├── Bridge Design Pattern/
-│   │   ├── Decorator Design Pattern/
-│   │   ├── Facade Design Pattern/
-│   │   ├── Flyweight Design Pattern/
-│   │   ├── Proxy Design Pattern/
-│   │   └── Composite Design Pattern/
-│   │
-│   └── Behavioral/
-│       ├── Observer Design Pattern/
-│       ├── Strategy Design Pattern/
-│       ├── Command Design Pattern/
-│       ├── Chain of Responsibility Pattern/
-│       ├── State Design Pattern/
-│       ├── Template Design Pattern/
-│       ├── Iterator Design Pattern/
-│       └── Memento Design Pattern/
+│   └── Other Principles/
+│       ├── KISS (Keep It Simple, Stupid)/
+│       ├── YAGNI (You Aren't Gonna Need It)/
+│       └── DRY (Don't Repeat Yourself)/
 │
-├── System Design Projects/
-│   ├── D1. Docs Design/
-│   ├── D2. Parking Lot Design/
-│   ├── D3. Instagram Design/
-│   ├── D4. Notification Design/
-│   ├── D5. Payment Gateway System/
-│   ├── D6. Splitwise Design/
-│   ├── D7. Dating App/
-│   ├── D8. Rate Limiter Design/
-│   ├── D9. URL Shortener/
-│   ├── D10. Online Ticket Booking System/
-│   ├── D11. News Feed System/
-│   └── D12. Caching System/
+├── 2. Creational Design Pattern/
+│   ├── Factory Design Pattern/
+│   ├── Abstract Factory Design Pattern/
+│   ├── Builder Design Pattern/
+│   ├── Prototype Design Pattern/
+│   └── Singleton Design Pattern/
 │
-├── Real-World Applications/
-│   ├── Food Delivery/
+├── 3. Structural Design Pattern/
+│   ├── Adapter Design Pattern/
+│   ├── Bridge Design Pattern/
+│   ├── Composite Design Pattern/
+│   ├── Decorator Design Pattern/
+│   ├── Facade Design Pattern/
+│   ├── Flyweight Design Pattern/
+│   └── Proxy Design Pattern/
+│
+├── 4. Behavioral Design Pattern/
+│   ├── Chain of Responsibility/
+│   ├── Command Design Pattern/
+│   ├── Interpreter Design Pattern/
+│   ├── Iterator Design Pattern/
+│   ├── Mediator Design Pattern/
+│   ├── Memento Design Pattern/
+│   ├── Observer Design Pattern/
+│   ├── State Design Pattern/
+│   ├── Strategy Design Pattern/
+│   ├── Template Method Design Pattern/
+│   └── Visitor Design Pattern/
+│
+├── 5. Practice Projects/
+│   └── (Mini implementations and exercises)/
+│
+├── 6. Real World Projects/
+│   ├── Food Delivery System/
 │   ├── Search System/
 │   └── Subscription System/
 │
-└── Documentation/
-    └── Concepts in JS/
+└── Concepts in JS/
+    └── (JavaScript implementations of concepts)/
 ```
 
 ---
 
-## SOLID Principles
+## Design Principles
+
+### SOLID Principles
 
 Foundational principles for writing clean, maintainable object-oriented code.
 
-### 1. Single Responsibility Principle (SRP)
+#### 1. Single Responsibility Principle (SRP)
 
 **Definition:** A class should have only one reason to change.
 
@@ -125,7 +132,7 @@ class ReportRepository {
 
 ---
 
-### 2. Open/Closed Principle (OCP)
+#### 2. Open/Closed Principle (OCP)
 
 **Definition:** Software entities should be open for extension but closed for modification.
 
@@ -140,113 +147,55 @@ class CreditCardProcessor implements PaymentProcessor {
     void processPayment(double amount) { }
 }
 
-class UPIProcessor implements PaymentProcessor {
-    void processPayment(double amount) { }
-}
-
 // Add new processor without modifying existing code
 class PayPalProcessor implements PaymentProcessor {
     void processPayment(double amount) { }
 }
 ```
 
-**Benefits:** Reduced risk of breaking existing functionality, easier to add features
-
 ---
 
-### 3. Liskov Substitution Principle (LSP)
+#### 3. Liskov Substitution Principle (LSP)
 
 **Definition:** Objects of a superclass should be replaceable with objects of subclasses without breaking functionality.
 
-**Example:** Proper inheritance hierarchy.
-
-```java
-// Bad - Violates LSP
-class Bird {
-    void fly() { }
-}
-class Penguin extends Bird {
-    void fly() { throw new UnsupportedOperationException(); }
-}
-
-// Good - Follows LSP
-interface Bird {
-    void eat();
-}
-interface FlyingBird extends Bird {
-    void fly();
-}
-class Sparrow implements FlyingBird { }
-class Penguin implements Bird { }
-```
-
-**Benefits:** Predictable behavior, safer polymorphism
-
 ---
 
-### 4. Interface Segregation Principle (ISP)
+#### 4. Interface Segregation Principle (ISP)
 
 **Definition:** Clients should not be forced to depend on methods they don't use.
 
-**Example:** Splitting large interfaces into specific ones.
-
-```java
-// Bad - Fat interface
-interface Machine {
-    void print();
-    void scan();
-    void fax();
-}
-
-// Good - Segregated interfaces
-interface Printer {
-    void print();
-}
-interface Scanner {
-    void scan();
-}
-interface FaxMachine {
-    void fax();
-}
-
-class MultiFunctionPrinter implements Printer, Scanner, FaxMachine { }
-class SimplePrinter implements Printer { }
-```
-
-**Benefits:** More flexible implementations, easier to maintain
-
 ---
 
-### 5. Dependency Inversion Principle (DIP)
+#### 5. Dependency Inversion Principle (DIP)
 
 **Definition:** Depend on abstractions, not concretions.
 
-**Example:** Using interfaces for dependencies.
+---
 
-```java
-// Bad - Depends on concrete class
-class NotificationService {
-    private EmailSender emailSender = new EmailSender();
-}
+### Other Core Principles
 
-// Good - Depends on abstraction
-interface MessageSender {
-    void send(String message);
-}
+#### KISS (Keep It Simple, Stupid)
 
-class NotificationService {
-    private MessageSender sender;
-    
-    NotificationService(MessageSender sender) {
-        this.sender = sender;
-    }
-}
+**Definition:** Simplicity should be a key goal in design, and unnecessary complexity should be avoided.
 
-class EmailSender implements MessageSender { }
-class SMSSender implements MessageSender { }
-```
+**Key Takeaway:** Write code that's easy to understand, maintain, and debug. Avoid over-engineering.
 
-**Benefits:** Loose coupling, easier testing with mocks, flexible implementations
+---
+
+#### YAGNI (You Aren't Gonna Need It)
+
+**Definition:** Don't add functionality until it's actually needed.
+
+**Key Takeaway:** Avoid speculative development and focus on current requirements.
+
+---
+
+#### DRY (Don't Repeat Yourself)
+
+**Definition:** Every piece of knowledge must have a single, unambiguous representation within a system.
+
+**Key Takeaway:** Eliminate code duplication by extracting common logic into reusable components.
 
 ---
 
@@ -256,12 +205,18 @@ class SMSSender implements MessageSender { }
 
 Focus on object creation mechanisms.
 
-| Pattern | Purpose | Use Case |
-|---------|---------|----------|
-| **Factory** | Object creation without specifying exact class | Database connections (MySQL, PostgreSQL, MongoDB) |
+| Pattern | Purpose | Example Use Case |
+|---------|---------|------------------|
+| **Factory** | Create objects without specifying exact class | Database connections (MySQL, PostgreSQL) |
+| **Abstract Factory** | Create families of related objects | UI themes (Windows, Mac, Linux) |
+| **Builder** | Construct complex objects step-by-step | HTTP requests with optional parameters |
 | **Prototype** | Clone existing objects | Creating similar game characters |
-| **Builder** | Construct complex objects step-by-step | Building HTTP requests with optional parameters |
 | **Singleton** | Ensure only one instance exists | Logger, Configuration manager |
+
+**Example Projects:**
+- Database Connection Factory
+- Vehicle Factory System
+- HTTP Request Builder
 
 ---
 
@@ -269,132 +224,100 @@ Focus on object creation mechanisms.
 
 Deal with object composition and relationships.
 
-| Pattern | Purpose | Use Case |
-|---------|---------|----------|
-| **Adapter** | Make incompatible interfaces work together | Integrating legacy payment systems |
+| Pattern | Purpose | Example Use Case |
+|---------|---------|------------------|
+| **Adapter** | Make incompatible interfaces work together | Legacy payment system integration |
 | **Bridge** | Decouple abstraction from implementation | Different vehicles with different engines |
-| **Decorator** | Add responsibilities dynamically | Adding features to coffee orders |
+| **Composite** | Treat individual and composite objects uniformly | File system hierarchy |
+| **Decorator** | Add responsibilities dynamically | Coffee shop order customization |
 | **Facade** | Simplified interface to complex subsystem | Home theater system control |
 | **Flyweight** | Share common state to reduce memory | Text editor character rendering |
-| **Proxy** | Control access to another object | Lazy loading images, access control |
-| **Composite** | Treat individual and composite objects uniformly | File system hierarchy |
+| **Proxy** | Control access to another object | Lazy loading, access control |
+
+**Example Projects:**
+- Coffee Shop (Decorator)
+- File System (Composite)
+- Image Loader (Proxy)
 
 ---
 
 ### Behavioral Patterns
 
-Focus on communication between objects.
+Focus on communication between objects and responsibility distribution.
 
-| Pattern | Purpose | Use Case |
-|---------|---------|----------|
-| **Observer** | Notify multiple objects of state changes | YouTube channel subscriptions |
-| **Strategy** | Define family of algorithms, choose at runtime | Payment methods, sorting algorithms |
-| **Command** | Encapsulate requests as objects | Text editor undo/redo |
-| **Chain of Responsibility** | Pass request through chain of handlers | Support ticket escalation |
-| **State** | Object changes behavior when state changes | Order status (Pending, Shipped, Delivered) |
-| **Template Method** | Define algorithm skeleton, customize steps | Data processing pipeline |
-| **Iterator** | Sequential access without exposing structure | Iterating through collections |
-| **Memento** | Capture and restore object state | Game save points |
+| Pattern | Purpose | Example Use Case |
+|---------|---------|------------------|
+| **Chain of Responsibility** | Pass request through chain of handlers | Support ticket escalation system |
+| **Command** | Encapsulate requests as objects | TV Remote Control, Text editor undo/redo |
+| **Interpreter** | Evaluate language expressions | Calculator, Expression evaluator |
+| **Iterator** | Sequential access without exposing structure | Collection traversal |
+| **Mediator** | Centralize complex communications | Chat room, Air traffic control |
+| **Memento** | Capture and restore object state | Game save points, Document versions |
+| **Observer** | Notify multiple objects of state changes | YouTube subscriptions, Stock price updates |
+| **State** | Change behavior when state changes | Order status tracking, Vending machine |
+| **Strategy** | Define family of algorithms | Payment methods, Sorting algorithms |
+| **Template Method** | Define algorithm skeleton | Data processing pipeline |
+| **Visitor** | Separate algorithms from objects | Tax calculation, Shopping cart |
 
----
-
-## System Design Projects
-
-Real-world applications demonstrating multiple patterns working together.
-
-### D1. Docs Design (Google Docs Clone)
-
-**Patterns Used:** Observer, Command, Memento
-
-**Features:** Real-time collaboration, undo/redo, auto-save
+**Example Projects:**
+- TV Remote Control System (Command)
+- Support Ticket System (Chain of Responsibility)
+- Coffee Shop (Decorator)
+- Expression Evaluator (Interpreter)
 
 ---
 
-### D2. Parking Lot Design
+## Practice Projects
 
-**Patterns Used:** Factory, Strategy, Observer
+Mini implementations to practice individual patterns:
 
-**Features:** Multiple vehicle types, dynamic pricing, spot allocation
-
----
-
-### D3. Instagram Design
-
-**Patterns Used:** Observer, Composite, Strategy
-
-**Features:** Posts, comments, likes, feed generation
+1. **TV Remote Control** - Command Pattern
+2. **Coffee Shop System** - Decorator Pattern
+3. **Calculator** - Interpreter Pattern
+4. **Support Ticket System** - Chain of Responsibility
+5. **Document Editor** - Memento, Command
+6. **Notification System** - Observer, Strategy
 
 ---
 
-### D4. Notification Design
+## Real-World Projects
 
-**Patterns Used:** Strategy, Factory, Template Method
+Complete system designs combining multiple patterns:
 
-**Features:** Email, SMS, Push notifications with preferences
+### 1. Food Delivery System
 
----
+**Patterns Used:** Factory, Strategy, Observer, State
 
-### D5. Payment Gateway System
-
-**Patterns Used:** Strategy, Factory, Chain of Responsibility
-
-**Features:** Multiple payment methods, fraud detection, retries
-
----
-
-### D6. Splitwise Design
-
-**Patterns Used:** Strategy, Observer, Command
-
-**Features:** Expense splitting algorithms, notifications, settlement
+**Features:**
+- Restaurant and menu management
+- Order processing with multiple states
+- Multiple payment methods
+- Real-time order tracking
+- Delivery assignment
 
 ---
 
-### D7. Dating App
+### 2. Search System
 
-**Patterns Used:** Strategy, Observer, State
+**Patterns Used:** Strategy, Factory, Decorator
 
-**Features:** Profile matching, notifications, conversation states
-
----
-
-### D8. Rate Limiter Design
-
-**Patterns Used:** Strategy, Proxy
-
-**Features:** Token bucket, sliding window, user/IP-based limits
+**Features:**
+- Multiple search algorithms
+- Search result ranking
+- Filters and facets
+- Caching layer
 
 ---
 
-### D9. URL Shortener
+### 3. Subscription System
 
-**Patterns Used:** Factory, Strategy
+**Patterns Used:** State, Strategy, Observer
 
-**Features:** Short URL generation, analytics, expiration
-
----
-
-### D10. Online Ticket Booking System
-
-**Patterns Used:** State, Observer, Command
-
-**Features:** Seat selection, booking flow, notifications
-
----
-
-### D11. News Feed System
-
-**Patterns Used:** Observer, Strategy, Composite
-
-**Features:** Post ranking, personalization, real-time updates
-
----
-
-### D12. Caching System
-
-**Patterns Used:** Proxy, Strategy, Decorator
-
-**Features:** LRU, LFU, TTL-based eviction policies
+**Features:**
+- Multiple subscription tiers
+- Billing cycle management
+- Auto-renewal handling
+- Notification system
 
 ---
 
@@ -414,43 +337,42 @@ git clone https://github.com/tusquake/Low-Level-Design.git
 cd Low-Level-Design
 
 # Navigate to a pattern
-cd "Observer Design Pattern"
+cd "4.Behavorial Design Pattern/Command Design Pattern"
 
-# Compile
+# Compile and run
 javac *.java
-
-# Run
 java Main
 ```
 
 ### Project Structure
 
-Each pattern/project folder contains:
-- `Main.java` - Runnable example
-- `README.md` - Detailed explanation
+Each pattern folder contains:
+- **README.md** - Comprehensive pattern documentation
+- **src/** - Source code with examples
+- **Main.java** - Runnable demonstration
 - Supporting classes organized by responsibility
 
 ---
 
 ## Learning Path
 
-### Beginner
+### Beginner (Week 1-2)
 
-1. Start with SOLID Principles
-2. Learn Creational Patterns (Factory, Singleton)
-3. Practice Structural Patterns (Adapter, Decorator)
+1. Start with **Design Principles** (SOLID, KISS, YAGNI, DRY)
+2. Learn **Creational Patterns** (Factory, Singleton, Builder)
+3. Study **Basic Structural Patterns** (Adapter, Decorator)
 
-### Intermediate
+### Intermediate (Week 3-4)
 
-4. Master Behavioral Patterns (Observer, Strategy, Command)
-5. Study pattern combinations
-6. Implement simple projects (Notification System)
+4. Master **Behavioral Patterns** (Observer, Strategy, Command)
+5. Study **Advanced Structural Patterns** (Composite, Proxy)
+6. Implement **Practice Projects** (TV Remote, Coffee Shop)
 
-### Advanced
+### Advanced (Week 5+)
 
-7. Complete system designs (Parking Lot, Splitwise)
-8. Learn when NOT to use patterns
-9. Practice interview questions
+7. Complete **Real-World Projects** (Food Delivery, Search System)
+8. Learn **Pattern Combinations** and when to use them
+9. Practice **Interview Questions** and system design
 
 ---
 
@@ -460,11 +382,31 @@ Common combinations seen in production systems:
 
 | Combination | Example | Use Case |
 |-------------|---------|----------|
-| Strategy + Factory + Orchestrator | Search System | Different search algorithms with runtime selection |
-| Observer + Command | Text Editor | Undo/redo with UI updates |
-| Adapter + Decorator | Food Delivery | Legacy integrations with dynamic features |
-| Factory + Singleton + Builder | Email Service | Single manager, provider selection, complex config |
-| Chain of Responsibility + Strategy | Authentication | Multiple checks with different auth methods |
+| **Strategy + Factory** | Payment System | Multiple payment processors with runtime selection |
+| **Observer + Command** | Text Editor | Undo/redo with UI updates |
+| **Decorator + Facade** | API Gateway | Request enhancement with simplified interface |
+| **Chain of Responsibility + Strategy** | Authentication | Multiple validation steps with different auth methods |
+| **State + Observer** | Order Tracking | State transitions with notifications |
+
+---
+
+## Key Features
+
+✅ **Comprehensive Documentation** - Each pattern has detailed README with:
+- Problem statement
+- Solution approach
+- Implementation details
+- Benefits and drawbacks
+- Real-world examples
+- Class diagrams
+
+✅ **Runnable Examples** - Every pattern includes working code demonstrations
+
+✅ **Interview-Ready** - Code structured for technical interview scenarios
+
+✅ **Progressive Complexity** - Start simple, build to complex real-world systems
+
+✅ **Best Practices** - Follows Java coding standards and design principles
 
 ---
 
@@ -474,17 +416,21 @@ Contributions are welcome! Please follow these guidelines:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/new-pattern`)
-3. Commit your changes (`git commit -m 'Add State pattern example'`)
-4. Push to the branch (`git push origin feature/new-pattern`)
-5. Open a Pull Request
+3. Follow existing documentation structure
+4. Add comprehensive README.md for new patterns
+5. Include runnable examples
+6. Commit your changes (`git commit -m 'Add Mediator pattern'`)
+7. Push to the branch (`git push origin feature/new-pattern`)
+8. Open a Pull Request
 
 ### Contribution Ideas
 
 - Add missing design patterns
-- Improve documentation
+- Improve existing documentation
 - Add more real-world examples
 - Create UML diagrams
 - Add unit tests
+- Translate to other languages
 
 ---
 
@@ -492,18 +438,41 @@ Contributions are welcome! Please follow these guidelines:
 
 ### Common Questions
 
-1. **Explain a design pattern you've used in production**
-   - Choose Observer, Strategy, or Factory
-   - Explain problem, solution, and benefits
+**1. Explain a design pattern you've used in production**
+- Choose patterns you understand deeply (Observer, Strategy, Factory)
+- Explain: Problem → Solution → Benefits → Trade-offs
 
-2. **When would you use Pattern X over Pattern Y?**
-   - Understand tradeoffs
-   - Provide specific scenarios
+**2. When would you use Pattern X over Pattern Y?**
+- Understand key differences and trade-offs
+- Provide specific scenarios for each
 
-3. **Design a system using multiple patterns**
-   - Start with requirements
-   - Identify varying aspects
-   - Apply appropriate patterns
+**3. Design a system using multiple patterns**
+- Start with requirements gathering
+- Identify areas that vary
+- Apply appropriate patterns
+- Explain pattern interactions
+
+### Study Approach
+
+1. **Understand the Problem** - Why does this pattern exist?
+2. **Learn the Structure** - Key components and relationships
+3. **Implement from Scratch** - Don't just copy code
+4. **Modify Examples** - Add features to existing implementations
+5. **Teach Others** - Explain patterns to solidify understanding
+
+---
+
+## Resources
+
+### Books
+- "Design Patterns: Elements of Reusable Object-Oriented Software" - Gang of Four
+- "Head First Design Patterns" - Freeman & Freeman
+- "Refactoring: Improving the Design of Existing Code" - Martin Fowler
+
+### Online Resources
+- [Refactoring Guru](https://refactoring.guru/design-patterns)
+- [Source Making](https://sourcemaking.com/design_patterns)
+- [Java Design Patterns](https://java-design-patterns.com/)
 
 ---
 
@@ -512,10 +481,24 @@ Contributions are welcome! Please follow these guidelines:
 **Author:** Tushar Seth
 
 **GitHub:** [@tusquake](https://github.com/tusquake)
-**Linkedin:** [@Tushar Seth](https://www.linkedin.com/in/sethtushar111/)
 
-For questions or suggestions, please open an issue or reach out via GitHub.
+**LinkedIn:** [@Tushar Seth](https://www.linkedin.com/in/sethtushar111/)
+
+For questions, suggestions, or collaboration:
+- Open an [issue](https://github.com/tusquake/Low-Level-Design/issues)
+- Submit a [pull request](https://github.com/tusquake/Low-Level-Design/pulls)
+- Reach out via LinkedIn
 
 ---
 
-**Star this repository** if you find it helpful for your learning journey!
+## License
+
+This repository is created by [Tushar Seth](https://www.linkedin.com/in/sethtushar111/) and open source and available for educational purposes.
+
+---
+
+**⭐ Star this repository** if you find it helpful for your learning journey!
+
+**🔗 Share** with friends preparing for technical interviews!
+
+**🤝 Contribute** to help others learn design patterns!
