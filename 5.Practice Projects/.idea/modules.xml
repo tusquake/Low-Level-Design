@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/5.Practice Projects.iml" filepath="$PROJECT_DIR$/.idea/5.Practice Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Caching/Caching.iml" filepath="$PROJECT_DIR$/Caching/Caching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Email Service Provider/Email Service Provider.iml" filepath="$PROJECT_DIR$/Email Service Provider/Email Service Provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Food Delivery/Food Delivery.iml" filepath="$PROJECT_DIR$/Food Delivery/Food Delivery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search System/Search System.iml" filepath="$PROJECT_DIR$/Search System/Search System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Simple Logger/Simple Logger.iml" filepath="$PROJECT_DIR$/Simple Logger/Simple Logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Subscription System/Subscription System.iml" filepath="$PROJECT_DIR$/Subscription System/Subscription System.iml" />
+    </modules>
+  </component>
+</project>
