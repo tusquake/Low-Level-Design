@@ -1,4 +1,4 @@
-# Decorator + Adapter Pattern: Food Delivery App
+````# Decorator + Adapter Pattern: Food Delivery App
 
 ## Real-World Scenario: Swiggy/Zomato Integration
 
@@ -449,4 +449,4 @@ The Adapter makes everything compatible first, then Decorators add features on t
 |---------|---------|-------------|
 | **Adapter** | Make incompatible interfaces work together | Integrating legacy/third-party systems |
 | **Decorator** | Add features dynamically without changing code | Optional features, dynamic behavior |
-| **Together** | Unified interface + Flexible features | Complex systems with multiple sources and optional add-ons |
+| **Together** | Unified interface + Flexible features | Complex systems with multiple sources and optional add-ons |````

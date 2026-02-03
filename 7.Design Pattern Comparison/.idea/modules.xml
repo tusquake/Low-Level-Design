@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/7.Design Pattern Comparison.iml" filepath="$PROJECT_DIR$/.idea/7.Design Pattern Comparison.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Decorator-vs-Inheritence/Decorator-vs-Inheritence.iml" filepath="$PROJECT_DIR$/Decorator-vs-Inheritence/Decorator-vs-Inheritence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stategy-vs-Template/Stategy-vs-Template.iml" filepath="$PROJECT_DIR$/Stategy-vs-Template/Stategy-vs-Template.iml" />
       <module fileurl="file://$PROJECT_DIR$/Factory-vs-Abstract-Factory/untitled.iml" filepath="$PROJECT_DIR$/Factory-vs-Abstract-Factory/untitled.iml" />
     </modules>
   </component>
