@@ -499,6 +499,4 @@ This repository is created by [Tushar Seth](https://www.linkedin.com/in/sethtush
 
 **⭐ Star this repository** if you find it helpful for your learning journey!
 
-**🔗 Share** with friends preparing for technical interviews!
-
 **🤝 Contribute** to help others learn design patterns!
