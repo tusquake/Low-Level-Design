@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/7.Design Pattern Comparison.iml" filepath="$PROJECT_DIR$/.idea/7.Design Pattern Comparison.iml" />
       <module fileurl="file://$PROJECT_DIR$/Decorator-vs-Inheritence/Decorator-vs-Inheritence.iml" filepath="$PROJECT_DIR$/Decorator-vs-Inheritence/Decorator-vs-Inheritence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Decorator-vs-Proxy/Decorator-vs-Proxy.iml" filepath="$PROJECT_DIR$/Decorator-vs-Proxy/Decorator-vs-Proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/Observor-vs-Pub-Sub/Observor-vs-Pub-Sub.iml" filepath="$PROJECT_DIR$/Observor-vs-Pub-Sub/Observor-vs-Pub-Sub.iml" />
       <module fileurl="file://$PROJECT_DIR$/Stategy-vs-Template/Stategy-vs-Template.iml" filepath="$PROJECT_DIR$/Stategy-vs-Template/Stategy-vs-Template.iml" />
       <module fileurl="file://$PROJECT_DIR$/Factory-vs-Abstract-Factory/untitled.iml" filepath="$PROJECT_DIR$/Factory-vs-Abstract-Factory/untitled.iml" />
