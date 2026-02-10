@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/solid/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" filepath="$PROJECT_DIR$/solid/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" />
       <module fileurl="file://$PROJECT_DIR$/dry/dry.iml" filepath="$PROJECT_DIR$/dry/dry.iml" />
       <module fileurl="file://$PROJECT_DIR$/kiss/kiss.iml" filepath="$PROJECT_DIR$/kiss/kiss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-hc/lc-hc.iml" filepath="$PROJECT_DIR$/lc-hc/lc-hc.iml" />
       <module fileurl="file://$PROJECT_DIR$/soc/soc.iml" filepath="$PROJECT_DIR$/soc/soc.iml" />
       <module fileurl="file://$PROJECT_DIR$/solid/solid.iml" filepath="$PROJECT_DIR$/solid/solid.iml" />
       <module fileurl="file://$PROJECT_DIR$/yagni/yagni.iml" filepath="$PROJECT_DIR$/yagni/yagni.iml" />
