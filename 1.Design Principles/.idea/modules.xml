@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/1.Design Principles.iml" filepath="$PROJECT_DIR$/.idea/1.Design Principles.iml" />
       <module fileurl="file://$PROJECT_DIR$/solid/4.Interface Seggregation Principle/4.Interface Seggregation Principle.iml" filepath="$PROJECT_DIR$/solid/4.Interface Seggregation Principle/4.Interface Seggregation Principle.iml" />
       <module fileurl="file://$PROJECT_DIR$/solid/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" filepath="$PROJECT_DIR$/solid/5.Dependency Inversion Principle/5.Dependency Inversion Principle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-over-inher/com-over-inher.iml" filepath="$PROJECT_DIR$/com-over-inher/com-over-inher.iml" />
       <module fileurl="file://$PROJECT_DIR$/dry/dry.iml" filepath="$PROJECT_DIR$/dry/dry.iml" />
       <module fileurl="file://$PROJECT_DIR$/kiss/kiss.iml" filepath="$PROJECT_DIR$/kiss/kiss.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-hc/lc-hc.iml" filepath="$PROJECT_DIR$/lc-hc/lc-hc.iml" />
