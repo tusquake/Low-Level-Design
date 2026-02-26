@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2.Creational Design Pattern.iml" filepath="$PROJECT_DIR$/2.Creational Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Abstract Factory Design Pattern/Abstract Factory Design Pattern.iml" filepath="$PROJECT_DIR$/Abstract Factory Design Pattern/Abstract Factory Design Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Builder Design Pattern/Builder Design Pattern.iml" filepath="$PROJECT_DIR$/Builder Design Pattern/Builder Design Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Factory Design Pattern/Factory Design Pattern.iml" filepath="$PROJECT_DIR$/Factory Design Pattern/Factory Design Pattern.iml" />
     </modules>
