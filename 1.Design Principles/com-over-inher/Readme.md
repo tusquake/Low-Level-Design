@@ -565,5 +565,3 @@ YES → Check: "Will X always be a Y?"
 Inheritance: "Be careful, once you extend, you're stuck"
 Composition: "Flexible like LEGO blocks, build anything"
 ```
-
-**Golden Rule:** If in doubt, use composition!
