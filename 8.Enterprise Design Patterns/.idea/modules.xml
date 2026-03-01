@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" filepath="$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" filepath="$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" filepath="$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Saga Pattern/Saga Pattern.iml" filepath="$PROJECT_DIR$/Saga Pattern/Saga Pattern.iml" />
     </modules>
   </component>
 </project>
