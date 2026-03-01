@@ -1,0 +1,20 @@
+# Ignore IDE and build files
+*.iml
+.idea/
+.vscode/
+out/
+build/
+target/
+dist/
+node_modules/
+
+# Java
+*.class
+
+# Python
+__pycache__/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
