@@ -104,6 +104,10 @@ class UsersQueryService implements EventListener {
     }
 }
 
+interface EventListener {
+    void onEvent(Event event);
+}
+
 
 public class Maineventbased {
 

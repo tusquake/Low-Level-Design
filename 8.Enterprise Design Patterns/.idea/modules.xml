@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" filepath="$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/CQRS/CQRS.iml" filepath="$PROJECT_DIR$/CQRS/CQRS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" filepath="$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" filepath="$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" filepath="$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" filepath="$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" />
     </modules>
