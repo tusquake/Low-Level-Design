@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" filepath="$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" filepath="$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" filepath="$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hexagonal Architecture/Hexagonal Architecture.iml" filepath="$PROJECT_DIR$/Hexagonal Architecture/Hexagonal Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" filepath="$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" filepath="$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" filepath="$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" />
