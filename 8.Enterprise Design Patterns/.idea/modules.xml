@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" filepath="$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" filepath="$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" />
+    </modules>
+  </component>
+</project>
