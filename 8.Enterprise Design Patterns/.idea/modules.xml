@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/FailFast_FailSafe/FailFast_FailSafe.iml" filepath="$PROJECT_DIR$/FailFast_FailSafe/FailFast_FailSafe.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hexagonal Architecture/Hexagonal Architecture.iml" filepath="$PROJECT_DIR$/Hexagonal Architecture/Hexagonal Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" filepath="$PROJECT_DIR$/Layered Architecture/Layered Architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Load Balancing/Load Balancing.iml" filepath="$PROJECT_DIR$/Load Balancing/Load Balancing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Observability/Observability.iml" filepath="$PROJECT_DIR$/Observability/Observability.iml" />
       <module fileurl="file://$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" filepath="$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" filepath="$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" />
