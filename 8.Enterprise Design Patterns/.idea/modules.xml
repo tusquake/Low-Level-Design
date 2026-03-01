@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" filepath="$PROJECT_DIR$/.idea/8.Enterprise Design Patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/API Gateway/API Gateway.iml" filepath="$PROJECT_DIR$/API Gateway/API Gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/CQRS/CQRS.iml" filepath="$PROJECT_DIR$/CQRS/CQRS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" filepath="$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" filepath="$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" />
