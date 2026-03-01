@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/CQRS/CQRS.iml" filepath="$PROJECT_DIR$/CQRS/CQRS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Cache Aside Pattern/Cache Aside Pattern.iml" filepath="$PROJECT_DIR$/Cache Aside Pattern/Cache Aside Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" filepath="$PROJECT_DIR$/Circuit Breaker Pattern/Circuit Breaker Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Database-per-service/Database-per-service.iml" filepath="$PROJECT_DIR$/Database-per-service/Database-per-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" filepath="$PROJECT_DIR$/Dependency Injection/Dependency Injection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" filepath="$PROJECT_DIR$/Event Driven Architecture/Event Driven Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/FailFast_FailSafe/FailFast_FailSafe.iml" filepath="$PROJECT_DIR$/FailFast_FailSafe/FailFast_FailSafe.iml" />
