@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" filepath="$PROJECT_DIR$/Outbox Pattern/Outbox Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" filepath="$PROJECT_DIR$/Repository Pattern/Repository Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Saga Pattern/Saga Pattern.iml" filepath="$PROJECT_DIR$/Saga Pattern/Saga Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strangler Design Pattern/Strangler Design Pattern.iml" filepath="$PROJECT_DIR$/Strangler Design Pattern/Strangler Design Pattern.iml" />
     </modules>
   </component>
 </project>
