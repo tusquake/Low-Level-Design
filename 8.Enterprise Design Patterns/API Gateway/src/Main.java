@@ -76,7 +76,7 @@ public class Main {
         System.out.println();
 
         // Invalid token
-        apiGateway.handleRequest("invalid-token", "/order");
+        apiGateway.handleRequest("invalidtoken", "/order");
 
         System.out.println();
 
