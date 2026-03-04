@@ -119,22 +119,44 @@ For cross-service events, we use **Spring Cloud Stream** with **Kafka** or **Rab
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is an Event-Driven Architecture?
-2. What is the role of an Event Broker?
-3. Mention three popular message brokers for EDA. (Answer: Kafka, RabbitMQ, ActiveMQ).
+1. **What is an Event-Driven Architecture?**
+   - **Answer**: It's an architecture where services communicate by publishing and consuming events. Instead of a service calling another service directly, it broadcasts that "something happened," and any interested service can react to it.
+
+2. **What is the role of an Event Broker?**
+   - **Answer**: It acts as the "Middleman" or "Post Office." It receives events from publishers, stores them (often temporarily), and ensures they are delivered to the correct consumers.
+
+3. **Mention three popular message brokers for EDA.**
+   - **Answer**: **Apache Kafka**, **RabbitMQ**, and **Amazon SNS/SQS**.
 
 ### Intermediate
-1. Difference between **Push-based** and **Pull-based** event consumption?
-2. What are "Idempotent Consumers"? Why are they important in EDA?
-3. Explain the "Exactly-Once" vs "At-Least-Once" delivery semantics.
+1. **Difference between Push-based and Pull-based event consumption?**
+   - **Answer**: 
+     - **Push-based**: The broker actively sends the event to the consumer as soon as it arrives (e.g., RabbitMQ). Good for low latency.
+     - **Pull-based**: The consumer asks the broker for new events when it's ready (e.g., Kafka). Good for handling large bursts of data without overwhelming the consumer (Backpressure).
+
+2. **What are "Idempotent Consumers"? Why are they important in EDA?**
+   - **Answer**: An idempotent consumer is one that can process the same event multiple times without changing the result beyond the first time. They are crucial because most brokers only guarantee "At-Least-Once" delivery, meaning a consumer might receive the same event twice due to network retries.
+
+3. **Explain the "Exactly-Once" vs "At-Least-Once" delivery semantics.**
+   - **Answer**: 
+     - **At-Least-Once**: Guarantees the message is delivered, but might be delivered multiple times.
+     - **Exactly-Once**: Guarantees the message is delivered exactly one time. This is much harder to achieve and often requires support from both the broker and the consumer logic.
 
 ### Advanced (Scenario-based)
-1. How do you handle "Event Versioning" when the structure of an event changes but old consumers are still running? (Answer: Use Avro/Protobuf with Schema Registry or maintain multiple event types).
-2. What is **Event Sourcing**? How is it different from EDA? (Answer: Event Sourcing uses events as the source of truth/state, while EDA uses events for communication).
+1. **How do you handle "Event Versioning" when the structure of an event changes but old consumers are still running?**
+   - **Answer**: 
+     - Use a **Schema Registry** (like Confluent Schema Registry) to manage backward/forward compatibility.
+     - Add a `version` field to the event header.
+     - Ensure the consumer code is designed to ignore unknown fields (Loose coupling).
+
+2. **What is Event Sourcing? How is it different from EDA?**
+   - **Answer**: 
+     - **EDA**: Uses events for **Communication** between services. The "Current State" is still stored in a traditional database.
+     - **Event Sourcing**: Uses events as the **Source of Truth**. To find the "Current State" of an object, you re-play all its historical events from the beginning.
 
 ### Trick Question
 - **Q**: Does EDA eliminate all tight coupling?
-- **A**: **No.** While it eliminates **Temporal coupling** (services don't need to be up at the same time), it introduces **Schema coupling** (consumers depend on the event's data structure).
+- **A**: **No.** It eliminates **Temporal coupling** (Service A doesn't need Service B to be online at the same time). However, it introduces **Schema coupling** (Service B must understand the exact data format produced by Service A). If Service A changes its event format without warning, Service B will break.
 
 ---
 

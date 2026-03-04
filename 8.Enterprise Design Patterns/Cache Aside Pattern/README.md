@@ -114,22 +114,44 @@ public class ProductService {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the Cache Aside pattern?
-2. What happens during a "Cache Miss"?
-3. What is the difference between Cache Aside and Read-Through caching?
+1. **What is the Cache Aside pattern?**
+   - **Answer**: It's a strategy where the application manages the relationship between the database and the cache. The app first checks the cache; if the data is missing (Cache Miss), it fetches it from the DB and manually updates the cache.
+
+2. **What happens during a "Cache Miss"?**
+   - **Answer**: 
+     1. The app requests data from the cache.
+     2. The cache returns `null`.
+     3. The app queries the database.
+     4. The app stores the DB result in the cache for future use.
+
+3. **What is the difference between Cache Aside and Read-Through caching?**
+   - **Answer**: In **Cache Aside**, the *application* code handles the logic of checking the cache and updating it. In **Read-Through**, the *cache library/provider* itself is responsible for fetching the data from the DB if it's missing (the app only talks to the cache).
 
 ### Intermediate
-1. How do you handle data consistency in Cache Aside? (Answer: Invalidate or Update the cache when the DB is updated).
-2. What is a "Cache Stampede" or "Thundering Herd" problem?
-3. What is a TTL (Time To Live)?
+1. **How do you handle data consistency in Cache Aside?**
+   - **Answer**: When the database is updated, you must either **Invalidate** (delete) the corresponding cache entry or **Update** it. Invalidation is generally safer as it prevents race conditions where an old update might overwrite a newer one in the cache.
+
+2. **What is a "Cache Stampede" or "Thundering Herd" problem?**
+   - **Answer**: It occurs when a popular cache key expires, and thousands of concurrent requests all see a "Cache Miss" at the exact same time. They all hit the database simultaneously to refresh it, potentially crashing the DB. (Solution: Use locking/synchronized blocks or "Promise" patterns).
+
+3. **What is a TTL (Time To Live)?**
+   - **Answer**: It's an expiration timer set on a cache entry. After the TTL expires, the data is automatically removed. This acts as a safety net to ensure that stale data eventually disappears even if the "Update/Invalidate" logic fails.
 
 ### Advanced (Scenario-based)
-1. If the database update succeeds but the cache eviction fails, how do you handle the inconsistency? (Answer: Use a retry queue, or set a short TTL as a safety net).
-2. How would you choose between "Invalidating" the cache vs "Updating" the cache on a write?
+1. **If the database update succeeds but the cache eviction fails, how do you handle the inconsistency?**
+   - **Answer**: 
+     - **Retry Pulse**: Use a message broker to retry the eviction.
+     - **Short TTL**: Always set a TTL so the inconsistency is temporary.
+     - **Transactional Cache**: Some frameworks provide a way to include cache operations in the DB transaction (though this is complex).
+
+2. **How would you choose between "Invalidating" the cache vs "Updating" the cache on a write?**
+   - **Answer**: 
+     - **Invalidating**: Safer, simpler, and better for low-write/high-read data.
+     - **Updating**: Better if the cost of a "Miss" is extremely high, or if you only update small parts of a large cached object.
 
 ### Trick Question
 - **Q**: Does Cache Aside require the cache to be always synchronized with the DB?
-- **A**: **No.** It is "Lazy". The cache is only updated when a read occurs. This is why we use TTLs or manual eviction to prevent stale data.
+- **A**: **No.** By definition, it is "Lazy". The cache is only filled when someone actually asks for the data. This means the cache might be empty or "stale" until the next read/update cycle.
 
 ---
 

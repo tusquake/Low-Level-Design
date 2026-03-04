@@ -103,22 +103,37 @@ Using **`@RefreshScope`** allows the service to reload specific beans when the c
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is a Config Server?
-2. Why should we separate configuration from code?
-3. Mention two common backends for a Config Server. (Answer: Git, HashiCorp Vault, JDBC).
+1. **What is a Config Server?**
+   - **Answer**: It is a centralized server that manages and serves configuration properties (like database credentials, feature flags, and timeouts) to all microservices in a system.
+
+2. **Why should we separate configuration from code?**
+   - **Answer**: To achieve **Environment Independence**. It allows you to use the same build (JAR/WAR) for Dev, UAT, and Prod by simply changing the configuration source, without needing to recompile or redeploy the code.
+
+3. **Mention two common backends for a Config Server.**
+   - **Answer**: **Git** (for versioned property files) and **HashiCorp Vault** (for secure secrets management).
 
 ### Intermediate
-1. What is the role of `bootstrap.yml` in a Spring Cloud application?
-2. Explain the **`@RefreshScope`** annotation.
-3. How do you handle secrets (passwords) in a Config Server? (Answer: Encryption/Decryption features or integration with Vault).
+1. **What is the role of `bootstrap.yml` in a Spring Cloud application?**
+   - **Answer**: It is used to configure the "Bootstrap Context," which runs *before* the main Application Context. Its primary job is to tell the application where to find the Config Server so it can fetch the main properties before the rest of the beans are initialized.
+
+2. **Explain the `@RefreshScope` annotation.**
+   - **Answer**: When applied to a Spring Bean, it allows that bean's properties to be reloaded at runtime (via the `/actuator/refresh` endpoint) without restarting the entire application. It essentially re-creates the bean with the new configuration values.
+
+3. **How do you handle secrets (passwords) in a Config Server?**
+   - **Answer**: 
+     - Use **Encryption**: The Config Server can encrypt values in Git and decrypt them on the fly before serving them to the client.
+     - Use **Vault Integration**: The Config Server can act as a proxy to HashiCorp Vault, fetching secrets securely at runtime.
 
 ### Advanced (Scenario-based)
-1. What happens if the Config Server is down when a microservice starts? (Answer: The service usually fails to start, but can be configured to use local "failover" properties).
-2. How would you notify 100 microservices that a configuration has changed in Git? (Answer: Using **Spring Cloud Bus** with a message broker like RabbitMQ).
+1. **What happens if the Config Server is down when a microservice starts?**
+   - **Answer**: By default, the microservice will fail to start. However, you can configure it to **Fail-Fast** or to **Fail-Safe** by providing local fallback properties or using a cached version of the last known good configuration.
+
+2. **How would you notify 100 microservices that a configuration has changed in Git?**
+   - **Answer**: By using **Spring Cloud Bus**. When a change is pushed to Git, a webhook triggers the Config Server to publish a "Refresh Event" to a message broker (like RabbitMQ or Kafka). All 100 microservices listen to this broker and automatically refresh their `@RefreshScope` beans.
 
 ### Trick Question
 - **Q**: Is it safe to store database passwords in plain text in a Git-backed Config Server?
-- **A**: **Absolutely not.** Passwords should be encrypted via the Config Server's encryption keys or stored in a dedicated Secrets Manager.
+- **A**: **Absolutely not.** This is a major security risk. Even if the Git repo is private, passwords should always be encrypted (using JCE or Vault) to ensure they are never stored in a human-readable format.
 
 ---
 

@@ -79,22 +79,38 @@ public class OrderService {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What does "Data Sovereignty" mean in microservices?
-2. Why is a shared database considered an anti-pattern in microservices?
-3. What is Polyglot Persistence?
+1. **What does "Data Sovereignty" mean in microservices?**
+   - **Answer**: It means that each microservice has exclusive ownership and control over its own data and schema. No other service can bypass the owner service's API to access that data.
+
+2. **Why is a shared database considered an anti-pattern in microservices?**
+   - **Answer**: 
+     - **Tight Coupling**: One schema change can break multiple services.
+     - **Scalability**: All services are bottlenecked by the same DB engine and hardware.
+     - **Fault Tolerance**: If the one DB fails, the entire system is down.
+
+3. **What is Polyglot Persistence?**
+   - **Answer**: The ability to use different database technologies (SQL, NoSQL, Graph, etc.) for different microservices based on which one best fits the service's specific data requirements.
 
 ### Intermediate
-1. How do you maintain data consistency in a decentralized environment? (Answer: Eventual Consistency, Sagas, Outbox Pattern).
-2. What is an **Anti-Corruption Layer (ACL)**? (Answer: A layer that translates data from a foreign service into a format the local service understands, preventing "Leaky Abstractions").
-3. How do you handle reporting/analytics in this architecture? (Answer: Export data to a centralized Data Warehouse / Data Lake).
+1. **How do you maintain data consistency in a decentralized environment?**
+   - **Answer**: Since you can't use ACID transactions across databases, you use **Eventual Consistency** and the **Saga Pattern**. You also use the **Transactional Outbox Pattern** to ensure that a database update and a message publication happen atomically.
+
+2. **What is an Anti-Corruption Layer (ACL)?**
+   - **Answer**: It's a layer (a set of classes or a dedicated service) that translates data/models from an external service into a format the local service understands. This prevents the "corruption" of the local domain model by external changes.
+
+3. **How do you handle reporting/analytics in this architecture?**
+   - **Answer**: You typically stream data changes from each decentralized database (using **CDC - Change Data Capture**) into a centralized **Data Warehouse** (like Snowflake or BigQuery) where complex analytical queries can be run without affecting production services.
 
 ### Advanced (Scenario-based)
-1. You have a "Customer" entity. Currently, 10 services need the "Customer Name". Do you make 10 API calls or duplicate the name? (Answer: Usually, duplicate a "Snapshot" of the name for performance, but the Customer Service remains the owner for updates).
-2. What happens if Service A's database is SQL and Service B's is NoSQL? (Answer: Nothing! That's the beauty of decentralization; the services only care about the API contract).
+1. **You have a "Customer" entity. Currently, 10 services need the "Customer Name". Do you make 10 API calls or duplicate the name?**
+   - **Answer**: Generally, you **Duplicate** a small "Snapshot" of the data (like the Name and ID) into the other 10 services' databases. This improves performance by avoiding extra network hops. The "Customer Service" remains the only authorized place to *update* that name.
+
+2. **What happens if Service A's database is SQL and Service B's is NoSQL?**
+   - **Answer**: That is perfectly fine and is one of the main goals of decentralization. Service A only knows Service B through its REST/gRPC API; it has no knowledge of (or interest in) how Service B stores its data internally.
 
 ### Trick Question
 - **Q**: Does decentralized data mean we can't use a single SQL Server instance?
-- **A**: **No.** You can have one SQL Server instance but use different **Schemas** or **Databases** with different credentials for each service. This gives logical decentralization even with shared hardware.
+- **A**: **No.** You can have multiple **Logical Databases** or **Schemas** on one physical SQL Server instance. This gives you the benefits of decentralized schemas and security while reducing the infrastructure cost of managing multiple servers.
 
 ---
 

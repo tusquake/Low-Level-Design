@@ -106,22 +106,38 @@ In production, we often use **Change Data Capture (CDC)** tools like **Debezium*
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the Outbox pattern?
-2. What problem does it solve in microservices?
-3. Is the Outbox pattern used for synchronous or asynchronous communication?
+1. **What is the Outbox pattern?**
+   - **Answer**: It's a reliable message publishing pattern where events are saved into a database table (`OUTBOX`) as part of the same transaction as the business data, ensuring atomicity.
+
+2. **What problem does it solve in microservices?**
+   - **Answer**: It solves the **Dual Write Problem**. Without Outbox, you might update the DB but fail to send the message, or send the message but fail to commit the DB, leading to inconsistent state across services.
+
+3. **Is the Outbox pattern used for synchronous or asynchronous communication?**
+   - **Answer**: **Asynchronous.** The business transaction completes immediately after writing to the Outbox table. The actual delivery to the message broker happens later, decoupled from the main request.
 
 ### Intermediate
-1. Explain the "Dual Write" problem.
-2. How do you ensure that an event is not published twice? (Answer: Idempotent consumers or exactly-once semantic configuration).
-3. What is the role of a "Message Relay" in this pattern?
+1. **Explain the "Dual Write" problem.**
+   - **Answer**: It occurs when an application tries to update two different systems (e.g., a Database and a Kafka broker) without a distributed transaction. Since you can't guarantee that both will succeed or fail together, the system can end up in an inconsistent state.
+
+2. **How do you ensure that an event is not published twice?**
+   - **Answer**: The Outbox pattern itself actually guarantees **At-Least-Once** delivery, meaning duplicates *can* happen. To handle this, the **Consumer** must be **Idempotent** (it should check if it has already processed the event ID before taking action).
+
+3. **What is the role of a "Message Relay" in this pattern?**
+   - **Answer**: The Message Relay is a separate process (or a CDC tool like Debezium) that monitors the Outbox table, picks up new entries, publishes them to the message broker, and then marks them as "Processed" or deletes them from the table.
 
 ### Advanced (Scenario-based)
-1. Your polling process is slow and causing the `OUTBOX` table to grow excessively. How would you scale it? (Answer: Partition the table or use CDC like Debezium).
-2. What happens if the message relay crashes after sending the message but before marking it as "Published"? (Answer: It will be sent again on restart - this is why consumers must be **idempotent**).
+1. **Your polling process is slow and causing the `OUTBOX` table to grow excessively. How would you scale it?**
+   - **Answer**: 
+     - Use **Change Data Capture (CDC)** like Debezium instead of polling. CDC reads the DB transaction logs directly, which is far more efficient.
+     - **Partition** the Outbox table and run multiple relay instances.
+     - Increase the **Polling Frequency** or the **Batch Size** of the relay.
+
+2. **What happens if the message relay crashes after sending the message but before marking it as "Published"?**
+   - **Answer**: When the relay restarts, it will see the message hasn't been marked as "Published" yet, so it will **send it again**. This results in a duplicate message at the broker, which is why downstream consumers must be designed to be idempotent.
 
 ### Trick Question
 - **Q**: Does the Outbox pattern guarantee "Exactly-Once" delivery?
-- **A**: **No.** It guarantees **At-Least-Once** delivery. Because the "Send" and "Mark as Published" steps are separate, a failure in between results in a duplicate message.
+- **A**: **No.** It guarantees **At-Least-Once** delivery. There is always a small chance of a crash between sending the message and updating the database status, leading to a re-send. "Exactly-Once" usually requires end-to-end support across the broker and consumer.
 
 ---
 

@@ -114,22 +114,39 @@ public class UserPersistenceAdapter implements UserOutputPort {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is Hexagonal Architecture?
-2. What are "Ports" and "Adapters"?
-3. How does it improve testability?
+1. **What is Hexagonal Architecture?**
+   - **Answer**: It's an architectural pattern that isolates the core business logic (inside) from external concerns like databases, UI, and APIs (outside) using standard interfaces.
+
+2. **What are "Ports" and "Adapters"?**
+   - **Answer**: 
+     - **Ports**: Interfaces that define the "contract" for how the outside world interacts with the core (Input) or vice versa (Output).
+     - **Adapters**: Concrete implementations that translate between a Port and a specific technology (e.g., a Controller is an Input Adapter, a JPA Repository is an Output Adapter).
+
+3. **How does it improve testability?**
+   - **Answer**: Because the core logic only depends on interfaces (Ports), you can unit test 100% of your business rules by plugging in "Mock Adapters" without needing a real database, web server, or network connection.
 
 ### Intermediate
-1. Explain the difference between **Driving (Input)** and **Driven (Output)** adapters.
-2. Why should the Core have zero dependencies on external frameworks?
-3. How is Hexagonal Architecture different from the standard Layered Architecture? (Answer: Dependent direction - in Hexagonal, Infrastructure depends on Domain, not the other way around).
+1. **Explain the difference between Driving (Input) and Driven (Output) adapters.**
+   - **Answer**: 
+     - **Driving (Input)**: These "trigger" the application (e.g., a REST API, a CLI command, or a Cron job). They call the Input Ports.
+     - **Driven (Output)**: These are "triggered by" the application (e.g., a Database, an Email service, or a Message Queue). The Core calls these via Output Ports.
+
+2. **Why should the Core have zero dependencies on external frameworks?**
+   - **Answer**: To prevent "Vendor Lock-in" and ensure the business logic remains pure. If your core logic is littered with Spring or Hibernate annotations, migrating to a different framework or version becomes a massive, risky refactoring effort.
+
+3. **How is Hexagonal Architecture different from the standard Layered Architecture?**
+   - **Answer**: In **Layered Architecture**, the dependency flow is top-down (UI -> Service -> DB). In **Hexagonal**, the dependency flow is **Inward** (Infrastructure -> Domain). The Domain defines the interface (Port) that the Infrastructure must implement, effectively inverting the dependency.
 
 ### Advanced (Scenario-based)
-1. In a Hexagonal setup, how do you handle Domain events that need to be published to Kafka? (Answer: Define an `EventPublisherPort` in the core and implement a `KafkaAdapter`).
-2. How do you map entities between the Domain layer and the Database layer without leaking technical details into the core? (Answer: Use separate Domain/Entity models and a Mapping layer).
+1. **In a Hexagonal setup, how do you handle Domain events that need to be published to Kafka?**
+   - **Answer**: You define an `EventPublisherPort` interface inside your Core. When the business logic finishes, it calls this port. You then create a `KafkaAdapter` in the infrastructure layer that implements this interface and handles the actual Kafka template calls.
+
+2. **How do you map entities between the Domain layer and the Database layer without leaking technical details into the core?**
+   - **Answer**: You maintain separate models: a **Domain Model** (POJO) and a **Persistence Entity** (with JPA annotations). You use a Mapper class (or MapStruct) in the Adapter layer to convert between the two. This ensures your Domain logic never knows about `@Table` or `@Column` annotations.
 
 ### Trick Question
 - **Q**: Is Hexagonal Architecture the same as Clean Architecture?
-- **A**: **Mostly yes.** Clean Architecture (by Uncle Bob) is a variation that uses concentric circles, but both share the same fundamental principle: **Dependency Inversion** towards the core Domain.
+- **A**: **Mostly yes.** Both share the same goal of isolating the domain. Clean Architecture (by Robert C. Martin) uses concentric circles, while Hexagonal (by Alistair Cockburn) uses the "inside/outside" metaphor, but the underlying principle of **Dependency Inversion** is identical.
 
 ---
 

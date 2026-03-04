@@ -100,22 +100,38 @@ As you migrate more endpoints, you simply update the NGINX configuration to poin
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the Strangler Pattern?
-2. Why is it called "Strangler Fig"?
-3. What is the main benefit of incremental migration vs. a "Big Bang" rewrite?
+1. **What is the Strangler Pattern?**
+   - **Answer**: It's an incremental migration strategy to replace a legacy system with a modern one by slowly wrapping it in new services until the old system is completely "strangled" and can be retired.
+
+2. **Why is it called "Strangler Fig"?**
+   - **Answer**: It's named after the Strangler Fig tree, which grows around a host tree, eventually replacing it entirely. In software, the new system is the "fig" and the legacy is the "host."
+
+3. **What is the main benefit of incremental migration vs. a "Big Bang" rewrite?**
+   - **Answer**: Lower risk. A "Big Bang" rewrite takes months/years before any value is delivered to the business. Strangler delivers value service-by-service and allows for easy rollbacks if a single service fails.
 
 ### Intermediate
-1. What is the role of a "Facade" in the Strangler pattern?
-2. How do you handle data consistency between the old and new systems during migration? (Answer: Database synchronization, Eventual consistency, or dual-writes).
-3. When is the "Monolith" finally shut down?
+1. **What is the role of a "Facade" in the Strangler pattern?**
+   - **Answer**: The Facade (usually an API Gateway or Reverse Proxy) intercepts all incoming traffic and routes it to either the legacy system or the new microservice based on the URL path or headers.
+
+2. **How do you handle data consistency between the old and new systems during migration?**
+   - **Answer**: 
+     - **Database Synchronizer**: A background job that mirrors data between the old and new DBs.
+     - **Dual Writes**: The application writes to both databases simultaneously (temporary logic).
+     - **Event-Driven**: The new service publishes an event that the legacy system consumes to update its own DB.
+
+3. **When is the "Monolith" finally shut down?**
+   - **Answer**: Only when 100% of its business functionality has been successfully migrated to the new system, verified in production, and all traffic is permanently routed to the new services.
 
 ### Advanced (Scenario-based)
-1. You have migrated the "Order" feature, but it still needs to call the "User" logic which is still in the monolith. How do you handle this? (Answer: Use an **Anti-Corruption Layer (ACL)** to call the monolith).
-2. How do you handle authentication during the transition period? (Answer: Centralize auth at the Gateway or use a shared session store/JWT).
+1. **You have migrated the "Order" feature, but it still needs to call the "User" logic which is still in the monolith. How do you handle this?**
+   - **Answer**: Use an **Anti-Corruption Layer (ACL)**. The new "Order" service calls the ACL, which handles the "ugly" logic of talking to the legacy monolith's API or Database, keeping the new system clean.
+
+2. **How do you handle authentication during the transition period?**
+   - **Answer**: Centralize authentication at the **API Gateway** level using JWT. Both the legacy monolith and the new microservices should be updated to accept the same JWT token for identity.
 
 ### Trick Question
 - **Q**: Is the Strangler Pattern only for Microservices?
-- **A**: **No.** It's a general migration pattern. You can use it to replace a database, a frontend framework, or even a 3rd party library inside a single application.
+- **A**: **No.** It can be used anytime you replace one component with another incrementally. For example, replacing an old React class component with Hooks, or moving from an old XML-based configuration to Java-based config in Spring.
 
 ---
 

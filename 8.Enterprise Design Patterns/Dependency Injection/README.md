@@ -104,22 +104,43 @@ In Spring Boot, the framework handles the "Injection" for you.
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is Dependency Injection?
-2. What is the difference between IoC and DI? (Answer: IoC is the concept; DI is the specific implementation pattern).
-3. Why is Constructor injection preferred over Field injection? (Answer: It allows for immutable dependencies, easier unit testing, and prevents `NullPointerException` at runtime).
+1. **What is Dependency Injection?**
+   - **Answer**: It's a design pattern where a class's dependencies are "injected" or provided by an external source (like the Spring IoC container) rather than the class creating them itself using the `new` keyword.
+
+2. **What is the difference between IoC and DI?**
+   - **Answer**: **IoC (Inversion of Control)** is the broad architectural principle of transferring the control of objects/logic to a container or framework. **DI (Dependency Injection)** is a specific *pattern* used to implement IoC by providing objects with their requirements at runtime.
+
+3. **Why is Constructor injection preferred over Field injection?**
+   - **Answer**: 
+     - **Immutability**: You can define dependencies as `final`.
+     - **Testability**: You don't need a Spring context to unit test (just call the constructor with mocks).
+     - **Safety**: Prevents `NullPointerException` because the object can't even be created without its dependencies.
 
 ### Intermediate
-1. Mention the different ways to inject dependencies in Spring.
-2. What is a **Circular Dependency**? How does Spring handle it? (Answer: When A depends on B and B depends on A. Spring handles it via Setter injection but usually fails with Constructor injection).
-3. What is the **`@Qualifier`** annotation used for? (Answer: To specify which bean to inject when multiple implementations of an interface exist).
+1. **Mention the different ways to inject dependencies in Spring.**
+   - **Answer**: 
+     - **Constructor Injection**: Recommended.
+     - **Setter Injection**: Used for optional dependencies.
+     - **Field Injection**: Using `@Autowired` on private fields (generally discouraged).
+
+2. **What is a Circular Dependency? How does Spring handle it?**
+   - **Answer**: It occurs when Class A depends on Class B, and Class B depends on Class A. Spring can often resolve this using **Setter Injection** (by creating a partially initialized bean), but for **Constructor Injection**, it will throw a `BeanCurrentlyInCreationException`. (Solution: Use `@Lazy` or refactor the code).
+
+3. **What is the `@Qualifier` annotation used for?**
+   - **Answer**: When you have multiple implementations of the same interface (e.g., `SmsService` and `EmailService`), Spring won't know which one to inject. `@Qualifier("emailService")` tells Spring exactly which bean ID to use.
 
 ### Advanced (Scenario-based)
-1. You have two implementations of any interface: `FastService` and `SafeService`. How do you ensure `FastService` is injected by default but allows for switching? (Answer: Use **`@Primary`** and **`@Qualifier`**).
-2. How does DI help in making code more **Testable**? (Answer: By allowing us to inject Mock objects using frameworks like Mockito during unit tests).
+1. **You have two implementations of an interface: `FastService` and `SafeService`. How do you ensure `FastService` is injected by default but allows for switching?**
+   - **Answer**: 
+     - Mark `FastService` with **`@Primary`**.
+     - Use **`@Qualifier("safeService")`** on the specific constructor/field where you want the alternative implementation.
+
+2. **How does DI help in making code more Testable?**
+   - **Answer**: By allowing you to "plug and play" dependencies. During a unit test, you can swap a complex `RealDatabaseClient` with a lightweight `Mockito.mock(DatabaseClient.class)`, focusing your test strictly on the business logic of the class under test.
 
 ### Trick Question
 - **Q**: Does DI make the application faster?
-- **A**: **No.** It might add a very slight overhead during application startup as the container wires beans together. However, it significantly improves **developer productivity** and **code quality**.
+- **A**: **No.** In fact, there is a tiny performance overhead at startup while the Spring container searches for beans and wires them together. However, this is negligible compared to the massive gains in **maintainability** and **decoupling**.
 
 ---
 

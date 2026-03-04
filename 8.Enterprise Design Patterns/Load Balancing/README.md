@@ -105,22 +105,42 @@ Spring will automatically look up `PAYMENT-SERVICE` in the **Service Registry** 
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the main purpose of a Load Balancer?
-2. Mention three common Load Balancing algorithms. (Answer: Round Robin, Least Connections, IP Hash).
-3. Difference between Hardware and Software Load Balancers?
+1. **What is the main purpose of a Load Balancer?**
+   - **Answer**: To distribute incoming network traffic across multiple servers to ensure high availability, prevent server overload, and improve the overall responsiveness of the application.
+
+2. **Mention three common Load Balancing algorithms.**
+   - **Answer**: 
+     - **Round Robin**: Requests are distributed sequentially.
+     - **Least Connections**: Sends requests to the server with the fewest active connections.
+     - **IP Hash**: Uses the client's IP address to consistently route them to the same server.
+
+3. **Difference between Hardware and Software Load Balancers?**
+   - **Answer**: 
+     - **Hardware**: Dedicated physical devices (like F5 BIG-IP). Extremely powerful but expensive and less flexible.
+     - **Software**: Applications running on standard servers (like Nginx, HAProxy, or AWS ELB). More flexible, easier to scale, and cost-effective.
 
 ### Intermediate
-1. What are **Sticky Sessions** (Session Affinity)?
-2. How does a Load Balancer know if a server has crashed? (Answer: Health Checks/Heartbeats).
-3. Distinguish between **L4 (Transport Layer)** and **L7 (Application Layer)** Load Balancing.
+1. **What are Sticky Sessions (Session Affinity)?**
+   - **Answer**: A feature where a Load Balancer "remembers" which server handled a client's first request and routes all subsequent requests from that same client to that same server. This is necessary if the application stores session data locally on the server.
+
+2. **How does a Load Balancer know if a server has crashed?**
+   - **Answer**: Through **Health Checks**. The Load Balancer periodically sends a "Ping" or an HTTP request to a specific endpoint (e.g., `/health`). If the server doesn't respond or returns an error, the LB stops sending traffic to it.
+
+3. **Distinguish between L4 (Transport Layer) and L7 (Application Layer) Load Balancing.**
+   - **Answer**: 
+     - **L4**: Operates at the network/transport level (TCP/UDP). It only looks at the IP and Port. It's faster but can't make routing decisions based on content.
+     - **L7**: Operates at the application level (HTTP). It can look at headers, cookies, and URL paths (e.g., send `/images` to one server and `/api` to another).
 
 ### Advanced (Scenario-based)
-1. You have two servers: one with 32GB RAM and another with 8GB RAM. Which algorithm would you use? (Answer: **Weighted Round Robin**).
-2. How would you handle a "Global Server Load Balancing" (GSLB) for a user in India vs. a user in the USA? (Answer: DNS-based load balancing using Geolocation).
+1. **You have two servers: one with 32GB RAM and another with 8GB RAM. Which algorithm would you use?**
+   - **Answer**: **Weighted Round Robin**. You can assign a higher "weight" to the 32GB server so it receives more requests (e.g., a 4:1 ratio) than the 8GB server.
+
+2. **How would you handle a "Global Server Load Balancing" (GSLB) for a user in India vs. a user in the USA?**
+   - **Answer**: Use **DNS-based GSLB** (like AWS Route53). When the user resolves the domain name, the DNS server checks their location and returns the IP of the data center closest to them to reduce latency.
 
 ### Trick Question
 - **Q**: Does a Load Balancer reduce the latency of a single request?
-- **A**: **No.** It might actually add a tiny delay (overhead). However, it improves the **throughput** and **overall system response time** under load by preventing server saturation.
+- **A**: **No.** In fact, it adds a tiny bit of network overhead. However, it significantly improves the **overall system throughput** and prevents "Tail Latency" caused by a single server being overloaded.
 
 ---
 

@@ -110,22 +110,37 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the goal of the Repository Pattern?
-2. How does it help in unit testing?
-3. Where does the Repository layer sit in a 3-tier architecture?
+1. **What is the goal of the Repository Pattern?**
+   - **Answer**: To decouple the business logic (Service) from the data access technology (DB/API), making the system more maintainable, testable, and flexible.
+
+2. **How does it help in unit testing?**
+   - **Answer**: Since the Service depends on a Repository *interface*, you can easily inject a **Mock** repository using Mockito. This allows you to test the business logic without needing a running database.
+
+3. **Where does the Repository layer sit in a 3-tier architecture?**
+   - **Answer**: It sits between the **Business/Service Layer** and the **Data Access/Mapping Layer**.
 
 ### Intermediate
-1. What is the difference between a **DAO (Data Access Object)** and a **Repository**? (Answer: DAO is usually 1:1 with DB tables, while Repository is 1:1 with Domain Aggregates).
-2. Can a Repository return a DTO? (Answer: Generally, it should return Domain Entities, but custom methods can return DTOs for performance).
-3. How do you handle pagination in a Repository?
+1. **What is the difference between a DAO (Data Access Object) and a Repository?**
+   - **Answer**: 
+     - **DAO**: Usually 1:1 with a database table and focus on raw SQL/CRUD operations.
+     - **Repository**: Usually higher-level, 1:1 with a **Domain Aggregate**, and behaves like an in-memory collection. A Repository may use multiple DAOs internally to reconstruct a complex object.
+
+2. **Can a Repository return a DTO?**
+   - **Answer**: **Generally, no.** A Repository should return Domain Entities to keep the domain pure. However, for specialized "Read-Only" performance requirements (like large reports), custom methods can return DTOs or projections.
+
+3. **How do you handle pagination in a Repository?**
+   - **Answer**: By passing a `Pageable` or `Offset` object to the method. In Spring Data, you simply return a `Page<T>` or `Slice<T>` instead of a `List<T>`.
 
 ### Advanced (Scenario-based)
-1. You are migrating from a Monolith with a single SQL DB to a Microservice with Redis + MongoDB. How does the Repository pattern help?
-2. How do you implement a "Specification Pattern" with a Repository to handle complex dynamic queries?
+1. **You are migrating from a Monolith with a single SQL DB to a Microservice with Redis + MongoDB. How does the Repository pattern help?**
+   - **Answer**: You only need to create a new implementation of your Repository interface (e.g., `MongoUserRepository`). The `UserService` code won't change at all because it only knows about the interface, not the database.
+
+2. **How do you implement a "Specification Pattern" with a Repository to handle complex dynamic queries?**
+   - **Answer**: You define a `Specification` object that encapsulates a query criteria (e.g., `isPremiumUser()`). The Repository then has a method `findAll(Specification spec)` which translates these domain rules into the appropriate SQL/NoSQL query at runtime.
 
 ### Trick Question
 - **Q**: Is `JpaRepository` an implementation of the Repository Pattern?
-- **A**: It is an **abstraction** that enables the pattern. The actual implementation is provided by Spring Data JPA (using `SimpleJpaRepository`).
+- **A**: **No.** It is an **interface (abstraction)** that enables the pattern. The actual implementation is provided by the framework (e.g., `SimpleJpaRepository` in Spring Data JPA) using reflection and proxies.
 
 ---
 

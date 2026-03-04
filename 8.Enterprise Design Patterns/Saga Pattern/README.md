@@ -105,22 +105,39 @@ public void handleOrderCreated(OrderCreatedEvent event) {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is a Saga pattern?
-2. What is a "Compensating Transaction"?
-3. How does Saga differ from 2PC (Two-Phase Commit)?
+1. **What is a Saga pattern?**
+   - **Answer**: A failure management pattern for distributed systems. It's a sequence of local transactions, where each transaction updates a database and publishes an event or message to trigger the next step.
+
+2. **What is a "Compensating Transaction"?**
+   - **Answer**: It's an "Undo" operation that reverses the effect of a previously successful local transaction if a subsequent step in the Saga fails.
+
+3. **How does Saga differ from 2PC (Two-Phase Commit)?**
+   - **Answer**: 2PC is a **synchronous** protocol that locks database resources across multiple services until the transaction finishes (not scalable for microservices). Saga is **asynchronous** and relies on eventual consistency without long-lived locks.
 
 ### Intermediate
-1. Explain **Choreography** vs. **Orchestration** in Sagas.
-2. What happens if a Compensating Transaction itself fails? (Answer: Retry logic or manual intervention/Dead Letter Queues).
-3. Is a Saga ACID compliant? (Answer: No, it lacks "Isolation" - intermediate states are visible).
+1. **Explain Choreography vs. Orchestration in Sagas.**
+   - **Answer**: 
+     - **Choreography**: Decentralized. Each service produces and listens to events from other services. Easy for simple workflows but hard to debug for complex ones.
+     - **Orchestration**: Centralized. A "Saga Manager" or "Orchestrator" tells each service what to do and when. Easier to manage and monitor but introduces a central controller.
+
+2. **What happens if a Compensating Transaction itself fails?**
+   - **Answer**: This is a critical edge case. You must use **Retries** with exponential backoff. If it still fails after many retries, the system should move the message to a **Dead Letter Queue (DLQ)** for manual intervention by an operator.
+
+3. **Is a Saga ACID compliant?**
+   - **Answer**: **No.** It lacks full **Isolation**. In a traditional transaction, other users can't see the "intermediate" state of your data. In a Saga, because each step commits to its own DB, another process could see the "Flight Booked" status before the "Hotel Booked" status, leading to "dirty reads."
 
 ### Advanced (Scenario-based)
-1. How do you handle "Idempotency" in a Saga? (Answer: Use unique Transaction IDs and check if an event was already processed).
-2. How would you monitor the progress of a long-running Saga? (Answer: Saga Log or State machine persistence).
+1. **How do you handle "Idempotency" in a Saga?**
+   - **Answer**: Since messages might be delivered more than once (e.g., Kafka retries), every service must check if it has already processed a specific **Transaction ID**. If it sees a duplicate, it should simply ignore it or return the previous success response instead of executing the logic again.
+
+2. **How would you monitor the progress of a long-running Saga?**
+   - **Answer**: 
+     - Use a **Saga Log** or a specialized database to track the current state of each orchestrator instance.
+     - Use distributed tracing tools like **Zipkin** or **Jaeger** to see the flow of events across services.
 
 ### Trick Question
 - **Q**: Does Saga guarantee 100% data consistency at all times?
-- **A**: **No.** It guarantees **Eventual Consistency**. There will be a window of time where data is inconsistent (e.g., flight booked but hotel not yet).
+- **A**: **No.** It guarantees **Eventual Consistency**. There is a temporary period where data across different services might look inconsistent until all steps (or all compensation steps) are finalized.
 
 ---
 

@@ -135,22 +135,37 @@ public class PaymentService {
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the main intent of the Strategy Pattern?
-2. How does Strategy differ from a simple `if-else` block?
-3. Which SOLID principle does the Strategy pattern primarily support? (Answer: Open/Closed Principle).
+1. **What is the main intent of the Strategy Pattern?**
+   - **Answer**: To define a family of algorithms, encapsulate each one, and make them interchangeable at runtime without altering the client code.
+
+2. **How does Strategy differ from a simple `if-else` block?**
+   - **Answer**: `if-else` hardcodes the logic inside the client, making it hard to maintain and violating the Open/Closed principle. Strategy moves each "branch" into its own class, allowing you to add new behaviors by adding new classes instead of modifying existing ones.
+
+3. **Which SOLID principle does the Strategy pattern primarily support?**
+   - **Answer**: The **Open/Closed Principle**. The system is open for extension (adding new strategies) but closed for modification (the context class doesn't change).
 
 ### Intermediate
-1. How can you avoid passing the Strategy instance manually in a Spring Boot application?
-2. What is the relationship between the Context and the Strategy?
-3. Can the Strategy pattern be used with the Factory pattern? How?
+1. **How can you avoid passing the Strategy instance manually in a Spring Boot application?**
+   - **Answer**: By using a **Strategy Map**. You can inject all implementations of an interface into a `Map<String, StrategyInterface>` or a `List`. At runtime, you pick the required bean from the map based on a key (like a string from a request).
+
+2. **What is the relationship between the Context and the Strategy?**
+   - **Answer**: It is a **"Has-A" relationship (Composition)**. The Context holds a reference to a Strategy interface and delegates the work to it.
+
+3. **Can the Strategy pattern be used with the Factory pattern? How?**
+   - **Answer**: Yes. A **Factory** can be used to create/fetch the correct **Strategy** object based on some input, which is then passed to the **Context** to execute.
 
 ### Advanced (Scenario-based)
-1. In a microservices environment, how would you handle a strategy that requires external API calls vs one that is purely local?
-2. How would you handle a situation where a new strategy needs to be added without redeploying the context? (Hint: Dynamic class loading or Scripting).
+1. **In a microservices environment, how would you handle a strategy that requires external API calls vs one that is purely local?**
+   - **Answer**: Both would implement the same interface. The "Remote Strategy" would use a Feign client or RestTemplate inside its `execute()` method, while the "Local Strategy" would contain direct logic. The Context remains oblivious to the network call.
+
+2. **How would you handle a situation where a new strategy needs to be added without redeploying the context?**
+   - **Answer**: You could use **Dynamic Class Loading**, **Service Provider Interface (SPI)**, or a scripting engine (like Groovy). Alternatively, in a cloud-native setup, you could use a "Plugin" architecture where the new strategy is a separate sidecar or serverless function called via a generic "Remote Strategy".
 
 ### Trick Question
 - **Q**: Is Strategy Pattern the same as State Pattern?
-- **A**: No. While the structure is similar, the **intent** is different. Strategy is about choosing "how" to do something (algorithms), while State is about "what" to do based on the object's internal state.
+- **A**: **No.** While the UML structure is nearly identical (both use a context and an interface), the **intent** differs. 
+  - **Strategy** is about "How" (choosing an algorithm/action). The client usually sets the strategy.
+  - **State** is about "What" (changing behavior based on internal state). The state often transitions itself automatically.
 
 ---
 

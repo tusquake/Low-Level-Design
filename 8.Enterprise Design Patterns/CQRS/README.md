@@ -101,22 +101,38 @@ In Spring Boot, we often use libraries like **Axon Framework** for full CQRS/Eve
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What does CQRS stand for?
-2. Why should we separate the Read side from the Write side?
-3. Does CQRS require two different databases? (Answer: No, it can be two different sets of classes/APIs hitting the same DB, but separate DBs are common for scaling).
+1. **What does CQRS stand for?**
+   - **Answer**: Command Query Responsibility Segregation.
+
+2. **Why should we separate the Read side from the Write side?**
+   - **Answer**: Reads and writes often have very different performance and scaling requirements. Separating them allows you to use a write-optimized schema (like 3rd normal form) and a read-optimized schema (denormalized, materialized views) independently.
+
+3. **Does CQRS require two different databases?**
+   - **Answer**: **No.** You can implement CQRS within a single database by having separate classes/services for commands and queries. However, using two separate databases (e.g., SQL for writes, NoSQL for reads) is a common pattern for high-scale systems.
 
 ### Intermediate
-1. Explain the difference between a DTO and a Command in CQRS.
-2. How do you handle synchronization between the Command and Query databases?
-3. What is "Eventual Consistency" in the context of CQRS?
+1. **Explain the difference between a DTO and a Command in CQRS.**
+   - **Answer**: A **Command** represents an "intent" to change state (e.g., `CreateUserCommand`). It carries data and is processed by a handler. A **DTO** is a "data carrier" usually used on the query side to return exactly what the UI needs, without exposing the full domain entity.
+
+2. **How do you handle synchronization between the Command and Query databases?**
+   - **Answer**: Usually via **Events**. When a command successfully changes the write store, it publishes an event (e.g., `UserCreatedEvent`). A listener on the query side subscribes to this event and updates the read store accordingly.
+
+3. **What is "Eventual Consistency" in the context of CQRS?**
+   - **Answer**: Since the read store is updated after the write store (often asynchronously), there is a small window of time where the read store might not reflect the very latest changes. The system is "eventually" consistent once the updates propagate.
 
 ### Advanced (Scenario-based)
-1. You have a requirement where a user creates a profile and must see it immediately on the next screen. How would you handle this with a CQRS architecture that uses an async read store? (Answer: Client-side optimistic UI, or passing the Write version to the Read request).
-2. How does CQRS improve performance in a microservices environment?
+1. **You have a requirement where a user creates a profile and must see it immediately on the next screen. How would you handle this with a CQRS architecture that uses an async read store?**
+   - **Answer**: 
+     - **Option 1 (Optimistic UI)**: The frontend immediately shows the data it just sent.
+     - **Option 2 (Version/Token)**: Return a version/timestamp from the command and have the query side wait or poll until that version is reached.
+     - **Option 3 (Read-from-Write)**: For the "immediate following" screen only, allow a direct read from the write database or a cache.
+
+2. **How does CQRS improve performance in a microservices environment?**
+   - **Answer**: It prevents "Resource Contention". The heavy read traffic doesn't slow down the critical write path. It also allows using specialized databases (like Elasticsearch for searching) which are 100x faster for queries than standard SQL JOINs.
 
 ### Trick Question
 - **Q**: Is CQRS an implementation of the Mediator pattern?
-- **A**: Often yes (using tools like MediatR in .NET or Handlers in Java), but CQRS is an **architectural pattern** for state management, while Mediator is a **design pattern** for object communication.
+- **A**: **Often yes.** Many frameworks (like Axon or MediatR) use the Mediator pattern to dispatch commands/queries to their respective handlers. However, CQRS is a **high-level architectural concept**, while Mediator is a **low-level design pattern** for object communication.
 
 ---
 

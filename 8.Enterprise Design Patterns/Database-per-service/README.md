@@ -89,22 +89,43 @@ Since you can't `JOIN` tables across different databases, you have two choices:
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the Database-per-Service pattern?
-2. Why shouldn't microservices share a single database?
-3. What is Polyglot Persistence?
+1. **What is the Database-per-Service pattern?**
+   - **Answer**: It's a microservices pattern where each service owns its own private database. No other service can access this database directly; they must use the service's API to get or change data.
+
+2. **Why shouldn't microservices share a single database?**
+   - **Answer**: 
+     - **Tight Coupling**: A schema change in one service could break another.
+     - **Single Point of Failure**: If the shared DB goes down, the entire system crashes.
+     - **Scaling**: A high-load service's DB needs might negatively impact a low-load service.
+
+3. **What is Polyglot Persistence?**
+   - **Answer**: It's the practice of using different database technologies for different services based on their specific needs (e.g., MySQL for Orders, MongoDB for Product Catalogs, Redis for Sessions).
 
 ### Intermediate
-1. How do you handle a "JOIN" when data is split across two databases?
-2. How do you maintain data consistency without distributed transactions? (Answer: Use the **Saga Pattern** or **Eventual Consistency**).
-3. What is the impact of this pattern on reporting and analytics? (Answer: You can no longer run a single SQL query; you need a Centralized Data Warehouse or Data Lake using ETL/ELT).
+1. **How do you handle a "JOIN" when data is split across two databases?**
+   - **Answer**: 
+     - **API Composition**: The Gateway/Client calls both Service A and Service B and joins the data in memory.
+     - **CQRS**: Maintain a separate "read-only" database that pre-aggregates and joins the data from multiple services via events.
+
+2. **How do you maintain data consistency without distributed transactions?**
+   - **Answer**: By using the **Saga Pattern** (a sequence of local transactions) and **Eventual Consistency**. If a step in the sequence fails, compensating transactions are triggered to "undo" previous steps.
+
+3. **What is the impact of this pattern on reporting and analytics?**
+   - **Answer**: Since data is scattered, you can't run a simple SQL query across the whole system. You usually need an **ETL/ELT** process to stream data into a centralized **Data Warehouse** or **Data Lake** for reporting.
 
 ### Advanced (Scenario-based)
-1. You are migrating a monolith with 1 shared DB to microservices. Should you split the DB first or the code first? (Answer: Usually split the code into "Vertical Slices" first, but keep them pointing to the same DB until you are ready to physically split the data).
-2. What happens if Service A needs 50% of the data from Service B in every request? (Answer: This might indicate "Tight Data Coupling". Consider merging the services or using data replication/caching).
+1. **You are migrating a monolith with 1 shared DB to microservices. Should you split the DB first or the code first?**
+   - **Answer**: Split the **Code first**. Create "vertical slices" of the application that only access their own tables, even if they stay in the same physical DB. Once the code is decoupled, physically moving the data into separate databases becomes much easier and less risky.
+
+2. **What happens if Service A needs 50% of the data from Service B in every request?**
+   - **Answer**: This is a sign of **Tight Data Coupling**. You should either:
+     - Merge the two services into one.
+     - Replicate the necessary data from Service B to Service A via events.
+     - Re-evaluate the boundaries of your microservices.
 
 ### Trick Question
 - **Q**: Can two services share the same database *instance* but use different *schemas*?
-- **A**: **Yes**, this is a "Logical" version of the pattern. However, for maximum isolation (scaling and fault tolerance), separate database *instances* are preferred.
+- **A**: **Yes**, this is a "Logical" version of the pattern. It's a good middle ground for small teams to avoid infrastructure overhead while maintaining schema isolation. However, for true high availability and independent scaling, separate physical instances are better.
 
 ---
 

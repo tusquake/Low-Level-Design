@@ -108,22 +108,38 @@ spring:
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is the primary role of an API Gateway?
-2. Mention three benefits of using an API Gateway.
-3. How does a Gateway improve system security?
+1. **What is the primary role of an API Gateway?**
+   - **Answer**: To act as a single entry point for all clients, handling request routing, composition, and protocol translation while centralizing cross-cutting concerns.
+
+2. **Mention three benefits of using an API Gateway.**
+   - **Answer**: 
+     - **Security**: Centralized authentication and authorization.
+     - **Efficiency**: Reduces the number of requests from the client (Request Aggregation).
+     - **Maintenance**: Clients don't need to know the internal IP addresses or locations of microservices.
+
+3. **How does a Gateway improve system security?**
+   - **Answer**: It provides a perimeter defense where you can implement SSL termination, Rate Limiting (to prevent DoS attacks), and JWT validation in one place.
 
 ### Intermediate
-1. What is "Request Aggregation" in the context of an API Gateway?
-2. Explain the difference between an API Gateway and a Load Balancer.
-3. How can an API Gateway handle service discovery?
+1. **What is "Request Aggregation" in the context of an API Gateway?**
+   - **Answer**: It's the process where the Gateway receives a single client request, calls multiple backend services in parallel, combines their results, and returns a single unified response to the client. This is especially useful for mobile clients to save battery and data.
+
+2. **Explain the difference between an API Gateway and a Load Balancer.**
+   - **Answer**: A **Load Balancer** (L4/L7) simply distributes traffic across multiple instances of the *same* service. An **API Gateway** (L7) is "application-aware" and routes traffic to *different* services based on the path, handles authentication, and can transform request/response data.
+
+3. **How can an API Gateway handle service discovery?**
+   - **Answer**: The Gateway integrates with a **Service Registry** (like Eureka). Instead of hardcoding microservice IPs, the Gateway looks up the service name in the registry to find currently active instances.
 
 ### Advanced (Scenario-based)
-1. If the API Gateway becomes a Single Point of Failure (SPOF), how would you mitigate this? (Answer: Run multiple instances behind a high-availability Load Balancer).
-2. How would you implement Rate Limiting at the Gateway level for a specific API key?
+1. **If the API Gateway becomes a Single Point of Failure (SPOF), how would you mitigate this?**
+   - **Answer**: You should never run a single instance of a Gateway. Instead, run multiple instances behind a high-availability Load Balancer (like AWS ELB or Nginx). This ensures that if one Gateway goes down, the others continue to serve requests.
+
+2. **How would you implement Rate Limiting at the Gateway level for a specific API key?**
+   - **Answer**: Using a filter or middleware that identifies the client by an `x-api-key` header. It checks a fast-access store (like **Redis**) to see if the client has exceeded their allowed quota (e.g., 100 requests per minute) and returns a `429 Too Many Requests` status if they have.
 
 ### Trick Question
 - **Q**: Does the API Gateway replace the need for security in backend services?
-- **A**: **No.** This is a common misconception (the "Hard Shell, Soft Center" problem). You should still use internal security (like Service-to-Service mTLS or shared secrets) to prevent unauthorized access if the gateway is bypassed.
+- **A**: **No.** This is a common security mistake (often called the "Everglades" or "Hard Shell, Soft Center" problem). While the Gateway handles external security, you should still use **Zero Trust** principles internally, such as **mTLS** or **Shared Secrets**, to ensure that if a hacker bypasses the gateway, they can't freely access the internal services.
 
 ---
 

@@ -109,22 +109,41 @@ Spring Boot projects almost always follow this pattern by convention:
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What is Layered Architecture?
-2. What are the four typical layers of an enterprise application?
-3. What is the main benefit of this pattern? (Answer: Separation of concerns and ease of development).
+1. **What is Layered Architecture?**
+   - **Answer**: It's a standard architectural pattern where an application is organized into horizontal layers (Presentation, Business, Persistence, Database), each with a specific responsibility. 
+
+2. **What are the four typical layers of an enterprise application?**
+   - **Answer**: 
+     - **Presentation**: UI or API endpoints.
+     - **Business**: Core logic and rules.
+     - **Persistence**: Data access and mapping.
+     - **Database**: Physical storage.
+
+3. **What is the main benefit of this pattern?**
+   - **Answer**: **Separation of Concerns**. It makes the codebase easier to organize, understand, and maintain because each layer has a clear and distinct role.
 
 ### Intermediate
-1. Explain the difference between an **Open Layer** and a **Closed Layer**.
-2. What is "Leaky Abstraction" in the context of layers?
-3. What is an **Anemic Domain Model**? (Answer: When the business layer has all the logic and domain objects are just data holders/POJOs).
+1. **Explain the difference between an Open Layer and a Closed Layer.**
+   - **Answer**: 
+     - **Closed Layer**: A layer that can only be accessed by the layer directly above it. (Most common).
+     - **Open Layer**: A layer that can be bypassed. For example, if the Service layer is "Open," the Controller could call the Repository directly. (Generally discouraged as it leads to tight coupling).
+
+2. **What is "Leaky Abstraction" in the context of layers?**
+   - **Answer**: It occurs when details of a lower layer "leak" into a higher one. For example, if your Service layer (Business) has to handle `SQLException` or `ResultSet` (Persistence details), the abstraction has leaked.
+
+3. **What is an Anemic Domain Model?**
+   - **Answer**: It's a design where the Domain objects (Entities) are simple data holders with only getters/setters, and all the actual business logic resides in the Service layer. It's often considered an anti-pattern in complex systems but common in simple CRUD apps.
 
 ### Advanced (Scenario-based)
-1. How do you handle cross-cutting concerns like Logging or Security in a layered architecture? (Answer: Use AOP - Aspect Oriented Programming or Filters/Interceptors).
-2. What happens if the Presentation layer starts calling the Repository layer directly? (Answer: It breaks the pattern, making the system harder to test and maintaining a "Tight Coupling" between UI and DB).
+1. **How do you handle cross-cutting concerns like Logging or Security in a layered architecture?**
+   - **Answer**: Since these concerns affect multiple layers, we typically use **Aspect-Oriented Programming (AOP)** to "weave" this logic into the layers without cluttering the business code. In Spring, we use `@Aspect`, Interceptors, or Filters.
+
+2. **What happens if the Presentation layer starts calling the Repository layer directly?**
+   - **Answer**: This is called a **Sinkhole Anti-pattern**. It breaks the principle of layers, making the system harder to test (you can't test logic without a DB) and tightly coupling the UI to the database schema.
 
 ### Trick Question
 - **Q**: Is Layered Architecture the same as MVC?
-- **A**: **No.** MVC is a pattern for the **Presentation Layer** (how UI and logic interact), while Layered Architecture is a pattern for the **Entire System** organization.
+- **A**: **No.** MVC (Model-View-Controller) is a pattern specifically for the **Presentation Layer** (how the UI interacts with data). Layered Architecture is a high-level pattern for the **Entire System** structure.
 
 ---
 

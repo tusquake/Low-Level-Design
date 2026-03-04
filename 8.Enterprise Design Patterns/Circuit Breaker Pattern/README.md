@@ -114,22 +114,41 @@ resilience4j:
 
 ## 8️⃣ Interview Questions
 ### Basic
-1. What are the three states of a Circuit Breaker?
-2. How does a Circuit Breaker prevent cascading failures?
-3. What is the difference between an OPEN and CLOSED state?
+1. **What are the three states of a Circuit Breaker?**
+   - **Answer**: 
+     - **CLOSED**: Default state. Requests are allowed.
+     - **OPEN**: Failure threshold reached. Requests fail immediately (Fail-Fast).
+     - **HALF-OPEN**: Waiting period over. A few requests are allowed to test service health.
+
+2. **How does a Circuit Breaker prevent cascading failures?**
+   - **Answer**: By "tripping" the circuit when a downstream service fails, it prevents the upstream service from hanging or exhausting its own resources (like thread pools) while waiting for a response that will never come or will take too long.
+
+3. **What is the difference between an OPEN and CLOSED state?**
+   - **Answer**: In the **CLOSED** state, the circuit breaker allows all requests to pass through to the target service. In the **OPEN** state, it intercepts all requests and immediately returns a failure or fallback, without even attempting to call the target service.
 
 ### Intermediate
-1. What triggers the transition from OPEN to HALF-OPEN?
-2. How do you decide the failure threshold for a production service?
-3. What is a "Fallback" mechanism in the context of a Circuit Breaker?
+1. **What triggers the transition from OPEN to HALF-OPEN?**
+   - **Answer**: A **Timeout**. After the circuit enters the OPEN state, it stays there for a configured duration (e.g., 60 seconds). Once that time passes, it automatically transitions to HALF-OPEN to "test the waters."
+
+2. **How do you decide the failure threshold for a production service?**
+   - **Answer**: It depends on the SLA (Service Level Agreement). Common strategies include a **percentage-based threshold** (e.g., trip if >50% of the last 100 requests failed) or a **count-based threshold** (trip after 5 consecutive failures).
+
+3. **What is a "Fallback" mechanism in the context of a Circuit Breaker?**
+   - **Answer**: It's the alternative logic that executes when the circuit is OPEN or when a call fails. Examples include returning cached data, a default "stub" response, or a "System busy" message to the user.
 
 ### Advanced (Scenario-based)
-1. In a high-traffic system (e.g., 10,000 TPS), how would you configure the Circuit Breaker to avoid tripping on every small network spike? (Answer: Use a Sliding Window based on time or count).
-2. How would you handle a "Half-Open" state if 5 out of 10 requests succeed but the other 5 fail?
+1. **In a high-traffic system (e.g., 10,000 TPS), how would you configure the Circuit Breaker to avoid tripping on every small network spike?**
+   - **Answer**: 
+     - Use a **Sliding Window** (Time-based or Count-based) so the decision is based on a representative sample of traffic, not a single failure.
+     - Set a **Minimum Number of Calls** before the failure rate is even calculated (to avoid tripping on the very first request failing).
+     - Use a **Failure Rate Threshold** rather than a fixed failure count.
+
+2. **How would you handle a "Half-Open" state if 5 out of 10 requests succeed but the other 5 fail?**
+   - **Answer**: Most modern libraries (like Resilience4j) allow you to configure this. Usually, if the failure rate in HALF-OPEN stays above the threshold, the circuit transitions back to **OPEN**. If the success rate is high enough, it transitions back to **CLOSED**.
 
 ### Trick Question
 - **Q**: Does a Circuit Breaker solve the root cause of service failure?
-- **A**: **No.** It is a defense mechanism. It allows the system to remain partially functional while the root cause is being investigated/fixed.
+- **A**: **No.** It is a "Safety Fuse." It protects the *rest* of the system from the failure and gives the failing service time to recover or allows the dev team time to investigate. The root cause (e.g., a bug, DB crash) must still be fixed manually or via auto-scaling.
 
 ---
 
