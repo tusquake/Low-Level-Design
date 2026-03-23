@@ -85,7 +85,7 @@ class ParkingSpot {
         if (status != SpotStatus.AVAILABLE) {
             return false;
         }
-!
+
         switch (vehicle.getType()) {
             case MOTORCYCLE:
                 return true;
@@ -114,11 +114,25 @@ class ParkingSpot {
         this.status = SpotStatus.AVAILABLE;
     }
 
-    public String getSpotId() { return spotId; }
-    public SpotType getType() { return type; }
-    public SpotStatus getStatus() { return status; }
-    public Vehicle getParkedVehicle() { return parkedVehicle; }
-    public int getFloor() { return floor; }
+    public String getSpotId() {
+        return spotId;
+    }
+
+    public SpotType getType() {
+        return type;
+    }
+
+    public SpotStatus getStatus() {
+        return status;
+    }
+
+    public Vehicle getParkedVehicle() {
+        return parkedVehicle;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
 
     @Override
     public String toString() {
@@ -147,14 +161,37 @@ class ParkingTicket {
         return Duration.between(entryTime, end).toMinutes();
     }
 
-    public String getTicketId() { return ticketId; }
-    public Vehicle getVehicle() { return vehicle; }
-    public ParkingSpot getSpot() { return spot; }
-    public LocalDateTime getEntryTime() { return entryTime; }
-    public LocalDateTime getExitTime() { return exitTime; }
-    public void setExitTime(LocalDateTime exitTime) { this.exitTime = exitTime; }
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+    public String getTicketId() {
+        return ticketId;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public ParkingSpot getSpot() {
+        return spot;
+    }
+
+    public LocalDateTime getEntryTime() {
+        return entryTime;
+    }
+
+    public LocalDateTime getExitTime() {
+        return exitTime;
+    }
+
+    public void setExitTime(LocalDateTime exitTime) {
+        this.exitTime = exitTime;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 
     @Override
     public String toString() {
@@ -210,11 +247,16 @@ class VehicleTypePricing implements PricingStrategy {
         long hours = (long) Math.ceil(ticket.getParkingDuration() / 60.0);
 
         switch (ticket.getVehicle().getType()) {
-            case MOTORCYCLE: return hours * 10.0;
-            case CAR:        return hours * 20.0;
-            case TRUCK:      return hours * 40.0;
-            case BUS:        return hours * 50.0;
-            default:         return hours * 20.0;
+            case MOTORCYCLE:
+                return hours * 10.0;
+            case CAR:
+                return hours * 20.0;
+            case TRUCK:
+                return hours * 40.0;
+            case BUS:
+                return hours * 50.0;
+            default:
+                return hours * 20.0;
         }
     }
 }
@@ -310,8 +352,7 @@ public class ParkingLotDemo {
         ParkingLot lot = new ParkingLot(
                 "City Center Parking",
                 new NearestSpotStrategy(),
-                new VehicleTypePricing()
-        );
+                new VehicleTypePricing());
 
         lot.addSpot(new ParkingSpot("G-101", SpotType.COMPACT, 0));
         lot.addSpot(new ParkingSpot("G-102", SpotType.COMPACT, 0));
