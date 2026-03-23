@@ -1,4 +1,4 @@
-````# Decorator + Adapter Pattern: Food Delivery App
+# Decorator + Adapter Pattern: Food Delivery App
 
 ## Real-World Scenario: Swiggy/Zomato Integration
 

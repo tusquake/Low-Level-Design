@@ -2,6 +2,7 @@ import java.util.*;
 
 interface Cache<K, V> {
     V get(K key);
+
     void put(K key, V value);
 }
 
@@ -19,8 +20,11 @@ class CacheEntry<V> {
 
 interface EvictionStrategy<K> {
     K evictKey();
+
     void keyAccessed(K key);
+
     void keyAdded(K key);
+
     void keyRemoved(K key);
 }
 
@@ -99,7 +103,8 @@ class RandomEvictionStrategy<K> implements EvictionStrategy<K> {
         return keys.get(random.nextInt(keys.size()));
     }
 
-    public void keyAccessed(K key) {}
+    public void keyAccessed(K key) {
+    }
 
     public void keyAdded(K key) {
         keys.add(key);
@@ -158,12 +163,10 @@ class InMemoryCache<K, V> implements Cache<K, V> {
 public class CacheDemo {
     public static void main(String[] args) {
 
-        Cache<String, String> cache =
-                new InMemoryCache<>(
-                        3,
-                        5000,
-                        new LRUEvictionStrategy<>()
-                );
+        Cache<String, String> cache = new InMemoryCache<>(
+                3,
+                5000,
+                new LRUEvictionStrategy<>());
 
         cache.put("A", "Apple");
         cache.put("B", "Banana");
@@ -175,7 +178,3 @@ public class CacheDemo {
         System.out.println(cache.get("B"));
     }
 }
-
-
-
-

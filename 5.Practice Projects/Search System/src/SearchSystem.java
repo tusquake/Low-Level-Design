@@ -1,8 +1,8 @@
-interface SearchStrategy{
+interface SearchStrategy {
     void search(String query);
 }
 
-class LocationBasedSearchStrategy implements SearchStrategy{
+class LocationBasedSearchStrategy implements SearchStrategy {
 
     @Override
     public void search(String query) {
@@ -10,7 +10,7 @@ class LocationBasedSearchStrategy implements SearchStrategy{
     }
 }
 
-class RatingBasedSearchStrategy implements SearchStrategy{
+class RatingBasedSearchStrategy implements SearchStrategy {
 
     @Override
     public void search(String query) {
@@ -18,16 +18,16 @@ class RatingBasedSearchStrategy implements SearchStrategy{
     }
 }
 
-class PriceOptimizedSearchStrategy implements SearchStrategy{
+class PriceOptimizedSearchStrategy implements SearchStrategy {
 
     @Override
     public void search(String query) {
-        System.out.println("Searching Based on Rating" + query);
+        System.out.println("Searching Based on Price" + query);
     }
 }
 
-class SearchStrategyFactory{
-    public static SearchStrategy getStrategy(String userType, Boolean discountActive){
+class SearchStrategyFactory {
+    public static SearchStrategy getStrategy(String userType, Boolean discountActive) {
         if (discountActive) {
             return new PriceOptimizedSearchStrategy();
         }
@@ -46,8 +46,7 @@ class SearchOrchestrator {
             throw new IllegalArgumentException("Search query cannot be empty");
         }
 
-        SearchStrategy strategy =
-                SearchStrategyFactory.getStrategy(userType, discountActive);
+        SearchStrategy strategy = SearchStrategyFactory.getStrategy(userType, discountActive);
 
         strategy.search(query);
 
@@ -64,10 +63,6 @@ public class SearchSystem {
         orchestrator.handleSearch(
                 "AC Repair",
                 "PREMIUM",
-                false
-        );
+                false);
     }
 }
-
-
-

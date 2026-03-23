@@ -446,7 +446,7 @@ Vehicle v = VehicleFactory.getVehicle("BIKE");
 
 // Strategy: Changes behavior
 ride.setPricing(new SurgePricing());  // Can switch anytime
-```"
+```
 
 ---
 
