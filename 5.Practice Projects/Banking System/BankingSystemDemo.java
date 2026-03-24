@@ -26,8 +26,8 @@ class Transaction {
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String prefix = (type == TransactionType.DEPOSIT || type == TransactionType.TRANSFER_IN) ? "+" : "-";
-        return String.format("[%s] %-12s: %s$%.2f (ID: %s)", 
-            timestamp.format(formatter), type, prefix, amount, id);
+        return String.format("[%s] %-12s: %s$%.2f (ID: %s)",
+                timestamp.format(formatter), type, prefix, amount, id);
     }
 }
 
@@ -45,13 +45,15 @@ abstract class Account {
     }
 
     public void deposit(double amount) {
-        if (amount <= 0) return;
+        if (amount <= 0)
+            return;
         balance += amount;
         transactions.add(new Transaction(TransactionType.DEPOSIT, amount));
     }
 
     public boolean withdraw(double amount) {
-        if (amount <= 0 || balance < amount) return false;
+        if (amount <= 0 || balance < amount)
+            return false;
         balance -= amount;
         transactions.add(new Transaction(TransactionType.WITHDRAWAL, amount));
         return true;
@@ -75,8 +77,13 @@ abstract class Account {
         System.out.println("Final Balance: $" + balance);
     }
 
-    public String getAccountNumber() { return accountNumber; }
-    public double getBalance() { return balance; }
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
 }
 
 class SavingsAccount extends Account {
@@ -104,7 +111,8 @@ class Bank {
 
     public void deposit(String accNum, double amount) {
         Account acc = accounts.get(accNum);
-        if (acc != null) acc.deposit(amount);
+        if (acc != null)
+            acc.deposit(amount);
     }
 
     public void withdraw(String accNum, double amount) {
@@ -131,7 +139,8 @@ class Bank {
 
     public void showHistory(String accNum) {
         Account acc = accounts.get(accNum);
-        if (acc != null) acc.displayHistory();
+        if (acc != null)
+            acc.displayHistory();
     }
 }
 
@@ -143,7 +152,8 @@ public class BankingSystemDemo {
 
         // Create accounts
         SavingsAccount savings = new SavingsAccount("S001", "Alice", 2.5);
-        Account current = new Account("C001", "Bob") {}; // Anonymous class for "Standard" account
+        Account current = new Account("C001", "Bob") {
+        }; // Anonymous class for "Standard" account
 
         bank.createAccount(savings);
         bank.createAccount(current);
@@ -151,7 +161,7 @@ public class BankingSystemDemo {
         // Transactions
         bank.deposit("S001", 1000);
         bank.deposit("C001", 500);
-        
+
         bank.withdraw("S001", 200);
         bank.transfer("S001", "C001", 300);
 
