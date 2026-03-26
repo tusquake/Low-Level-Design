@@ -40,59 +40,59 @@ This repository provides:
 ```
 Low-Level-Design/
 │
-├── 1. Design Principles/
-│   ├── SOLID Principles/
-│   │   ├── 1. Single Responsibility Principle/
-│   │   ├── 2. Open Closed Principle/
-│   │   ├── 3. Liskov Substitution Principle/
-│   │   ├── 4. Interface Segregation Principle/
-│   │   └── 5. Dependency Inversion Principle/
-│   │
-│   └── Other Principles/
-│       ├── KISS (Keep It Simple, Stupid)/
-│       ├── YAGNI (You Aren't Gonna Need It)/
-│       └── DRY (Don't Repeat Yourself)/
+├── 1. OOPS/
+│   ├── 1. Encapsulation/
+│   ├── 2. Inheritance/
+│   ├── 3. Polymorphism/
+│   ├── 4. Abstraction/
+│   ├── 5. Object Relationships/
+│   └── 6. Coupling and Cohesion/
 │
-├── 2. Creational Design Pattern/
-│   ├── Factory Design Pattern/
-│   ├── Abstract Factory Design Pattern/
-│   ├── Builder Design Pattern/
-│   ├── Prototype Design Pattern/
-│   └── Singleton Design Pattern/
+├── 2. Design Principles/
+│   ├── solid/
+│   ├── kiss/
+│   ├── yagni/
+│   ├── dry/
+│   └── (Other Principles)/
 │
-├── 3. Structural Design Pattern/
-│   ├── Adapter Design Pattern/
-│   ├── Bridge Design Pattern/
-│   ├── Composite Design Pattern/
-│   ├── Decorator Design Pattern/
-│   ├── Facade Design Pattern/
-│   ├── Flyweight Design Pattern/
-│   └── Proxy Design Pattern/
+├── 3. Creational Design Pattern/
+│   └── (Factory, Builder, Singleton, etc.)/
 │
-├── 4. Behavioral Design Pattern/
-│   ├── Chain of Responsibility/
-│   ├── Command Design Pattern/
-│   ├── Interpreter Design Pattern/
-│   ├── Iterator Design Pattern/
-│   ├── Mediator Design Pattern/
-│   ├── Memento Design Pattern/
-│   ├── Observer Design Pattern/
-│   ├── State Design Pattern/
-│   ├── Strategy Design Pattern/
-│   ├── Template Method Design Pattern/
-│   └── Visitor Design Pattern/
+├── 4. Structural Design Pattern/
+│   └── (Adapter, Decorator, Facade, etc.)/
 │
-├── 5. Practice Projects/
-│   └── (Mini implementations and exercises)/
+├── 5. Behavioral Design Pattern/
+│   └── (Observer, Strategy, State, etc.)/
 │
-├── 6. Real World Projects/
+├── 6. Practice Projects/
+│   ├── Banking System/
+│   ├── Library Management System/
+│   ├── Movie Ticket Booking/
+│   └── (Other Mini Projects)/
+│
+├── 7. Real World Projects/
 │   ├── Food Delivery System/
 │   ├── Search System/
-│   └── Subscription System/
+│   └── Meeting Scheduler System/
 │
 └── Concepts in JS/
-    └── (JavaScript implementations of concepts)/
+    └── (JavaScript implementations)/
 ```
+
+---
+
+## Object-Oriented Programming (OOPS)
+
+Foundational concepts for building robust software systems.
+
+1.  **Encapsulation**: Bundling data and methods, protecting state via access modifiers. (Spring Boot: DTOs, Entities).
+2.  **Inheritance**: Reusing code via parent-child relationships. (Spring Boot: BaseEntities, Repositories).
+3.  **Polymorphism**: Ability of objects to take multiple forms (Overloading/Overriding). (Spring Boot: Dependency Injection).
+4.  **Abstraction**: Hiding complexity via interfaces and abstract classes. (Spring Boot: Service Interfaces).
+5.  **Object Relationships**: Association, Aggregation, and Composition. (Spring Boot: JPA Mappings).
+6.  **Coupling and Cohesion**: Promoting loose coupling and high internal focus. (Spring Boot: DI & Modules).
+
+---
 
 ---
 
@@ -269,14 +269,16 @@ Focus on communication between objects and responsibility distribution.
 
 ## Practice Projects
 
-Mini implementations to practice individual patterns:
+Mini implementations to practice individual concepts and patterns:
 
-1. **TV Remote Control** - Command Pattern
-2. **Coffee Shop System** - Decorator Pattern
-3. **Calculator** - Interpreter Pattern
-4. **Support Ticket System** - Chain of Responsibility
-5. **Document Editor** - Memento, Command
-6. **Notification System** - Observer, Strategy
+1. **Banking System** - Encapsulation, Transactions
+2. **Library Management** - Aggregation, Issue/Return logic
+3. **Movie Ticket Booking** - Thread-safe seat allocation
+4. **TV Remote Control** - Command Pattern
+5. **Coffee Shop System** - Decorator Pattern
+6. **Vending Machine** - State Pattern (Consolidated)
+7. **Simple Logger** - Singleton, Strategy
+8. **Notification System** - Observer, Strategy
 
 ---
 
@@ -285,27 +287,14 @@ Mini implementations to practice individual patterns:
 Complete system designs combining multiple patterns:
 
 ### 1. Food Delivery System
-
-**Patterns Used:** Factory, Strategy, Observer, State
-
-**Features:**
-- Restaurant and menu management
-- Order processing with multiple states
-- Multiple payment methods
-- Real-time order tracking
-- Delivery assignment
-
----
+**Patterns:** Factory, Strategy, Observer, State.
 
 ### 2. Search System
+**Patterns:** Strategy, Factory, Decorator.
 
-**Patterns Used:** Strategy, Factory, Decorator
-
-**Features:**
-- Multiple search algorithms
-- Search result ranking
-- Filters and facets
-- Caching layer
+### 3. Meeting Scheduler System
+**Patterns:** PriorityQueue, Strategy.
+**Features:** Reminders, Recurring meetings, Thread-safety.
 
 ---
 
@@ -357,22 +346,19 @@ Each pattern folder contains:
 ## Learning Path
 
 ### Beginner (Week 1-2)
-
-1. Start with **Design Principles** (SOLID, KISS, YAGNI, DRY)
-2. Learn **Creational Patterns** (Factory, Singleton, Builder)
-3. Study **Basic Structural Patterns** (Adapter, Decorator)
+1. Master **OOPS Concepts** (The 4 Pillars, Relationships, Coupling/Cohesion).
+2. Start with **Design Principles** (SOLID, KISS, YAGNI, DRY).
+3. Learn **Creational Patterns** (Factory, Singleton, Builder).
 
 ### Intermediate (Week 3-4)
-
-4. Master **Behavioral Patterns** (Observer, Strategy, Command)
-5. Study **Advanced Structural Patterns** (Composite, Proxy)
-6. Implement **Practice Projects** (TV Remote, Coffee Shop)
+4. Study **Structural Patterns** (Adapter, Decorator, Facade).
+5. Master **Behavioral Patterns** (Observer, Strategy, Command, State).
+6. Implement **Practice Projects** (Banking, Library, Vending Machine).
 
 ### Advanced (Week 5+)
-
-7. Complete **Real-World Projects** (Food Delivery, Search System)
-8. Learn **Pattern Combinations** and when to use them
-9. Practice **Interview Questions** and system design
+7. Complete **Real-World Projects** (Food Delivery, Meeting Scheduler).
+8. Learn **Pattern Combinations** across microservices.
+9. Practice **Interview Scenarios** and System Design.
 
 ---
 

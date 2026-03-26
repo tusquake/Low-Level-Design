@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Coupling and Cohesion Demo
  * 
