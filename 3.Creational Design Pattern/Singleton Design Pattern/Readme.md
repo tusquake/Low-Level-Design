@@ -12,6 +12,7 @@ A demonstration of the **Singleton Design Pattern** implemented in Java, showcas
 - [Class Diagram](#class-diagram)
 - [Implementation Details](#implementation-details)
 - [How to Run](#how-to-run)
+- [The Unbreakable Singleton (Boss Level)](#the-unbreakable-singleton-boss-level)
 - [Example Output](#example-output)
 - [Key Concepts](#key-concepts)
 - [Benefits](#benefits)
@@ -61,9 +62,14 @@ src/
 ├── ThreadSafeSingleton.java         # Thread-safe variant
 ├── DoubleCheckedLockingSingleton.java # Double-checked locking variant
 ├── BillPughSingleton.java           # Bill Pugh solution (recommended)
-├── EnumSingleton.java               # Enum-based singleton
-└── Main.java                        # Demo application
+├── UnbreakableSingleton.java        # "Boss Level" implementation with guards
+├── EnumSingleton.java               # Enum-based singleton (modern preferred)
+├── UnbreakableSingletonDemo.java    # Verification suite for attacks
+└── Main.java                        # Original demo application
 ```
+
+> [!TIP]
+> **Check out the [🛡️ Unbreakable Singleton Guide](./THE-UNBREAKABLE-SINGLETON.md)** for a deep-dive into Reflection, Serialization, and Cloning guards.
 
 ## Class Diagram
 

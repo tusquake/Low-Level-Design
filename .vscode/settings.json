@@ -1,0 +1,20 @@
+{
+    "java.project.sourcePaths": [
+        "7.Real World Projects/D4.Notification Design/Notification System/src",
+        "7.Real World Projects/D3.Instagram Design",
+        "6.Practice Projects/Movie Ticket Booking",
+        "5.Behavorial Design Pattern/Command Design Pattern/TV Remote Control System/src",
+        "10. Personal Practice/5.Support System",
+        "10. Personal Practice/4.SmartHome",
+        "10. Personal Practice/3.Shipping System",
+        "10. Personal Practice/2.Pizza Shop",
+        "10. Personal Practice/1.Weather Monitoring App",
+        "1.OOPS/6.Coupling and Cohesion",
+        "1.OOPS/5.Object Relationships",
+        "1.OOPS/4.Abstraction",
+        "1.OOPS/3.Polymorphism",
+        "1.OOPS/2.Inheritance",
+        "1.OOPS/1.Encapsulation",
+        "3.Creational Design Pattern/Singleton Design Pattern/src"
+    ]
+}

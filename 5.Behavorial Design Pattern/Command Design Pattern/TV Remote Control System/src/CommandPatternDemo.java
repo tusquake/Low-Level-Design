@@ -15,6 +15,6 @@ public class CommandPatternDemo {
         // Execute
         remote.pressButton(0); // TV ON
         remote.pressButton(1); // Volume UP
-        remote.pressUndo();    // Undo last command
+        remote.pressUndo(); // Undo last command
     }
 }
