@@ -6,6 +6,8 @@
         "5.Behavorial Design Pattern/Command Design Pattern/TV Remote Control System/src",
         "3.Creational Design Pattern/Singleton Design Pattern/src",
         "3.Creational Design Pattern/Abstract Factory Design Pattern/src",
+        "10. Personal Practice/8.Payment Processing System",
+        "10. Personal Practice/7.Prototype Pattern",
         "10. Personal Practice/6.Thread Safety",
         "10. Personal Practice/5.Support System",
         "10. Personal Practice/4.SmartHome",
@@ -18,6 +20,6 @@
         "1.OOPS/3.Polymorphism",
         "1.OOPS/2.Inheritance",
         "1.OOPS/1.Encapsulation",
-        "10. Personal Practice/7.Prototype Pattern"
+        "10. Personal Practice/9. Warehouse Management System"
     ]
 }
