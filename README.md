@@ -13,6 +13,7 @@ A comprehensive repository of **Design Patterns**, **Design Principles**, and **
    - [Creational Patterns](#creational-patterns)
    - [Structural Patterns](#structural-patterns)
    - [Behavioral Patterns](#behavioral-patterns)
+- [Frontend Low Level Design](#frontend-low-level-design)
 - [Practice Projects](#practice-projects)
 - [Real-World Projects](#real-world-projects)
 - [Getting Started](#getting-started)
@@ -75,8 +76,13 @@ Low-Level-Design/
 │   ├── Search System/
 │   └── Meeting Scheduler System/
 │
-└── Concepts in JS/
-    └── (JavaScript implementations)/
+└── Frontend Low Level Design/
+    ├── 1. Design Principles/
+    ├── 2. Creational Patterns/
+    ├── 3. Structural Patterns/
+    ├── 4. Behavioral Patterns/
+    ├── 5. Frontend Patterns/
+    └── 6. Pattern Combinations/
 ```
 
 ---
@@ -267,6 +273,28 @@ Focus on communication between objects and responsibility distribution.
 
 ---
 
+## Frontend Low Level Design
+
+A comprehensive 41-topic curriculum focused on professional frontend architecture using **React**, **TypeScript**, and **Modern Design Patterns**.
+
+### Curriculum Overview
+
+| Module | Topics | Key Focus |
+|--------|--------|-----------|
+| **1. Design Principles** | 1 - 7 | SOLID, DRY, KISS applied to Frontend components |
+| **2. Creational Patterns** | 8 - 12 | Singleton, Factory, Builder in React state/services |
+| **3. Structural Patterns** | 13 - 17 | Proxy, Decorator, Facade for component logic |
+| **4. Behavioral Patterns** | 18 - 26 | Observer, Strategy, Command for state management |
+| **5. Frontend Patterns** | 27 - 36 | Render Props, HOCs, Compound Components, Hooks |
+| **6. Pattern Combinations** | 37 - 41 | Complex combinations for scalable React apps |
+
+**Key Features:**
+- **Professional READMEs**: Theory and interview questions for every topic.
+- **Functional Examples**: Production-ready code in React/TypeScript.
+- **No Emojis**: Clean, professional documentation style.
+
+---
+
 ## Practice Projects
 
 Mini implementations to practice individual concepts and patterns:
@@ -357,8 +385,9 @@ Each pattern folder contains:
 
 ### Advanced (Week 5+)
 7. Complete **Real-World Projects** (Food Delivery, Meeting Scheduler).
-8. Learn **Pattern Combinations** across microservices.
-9. Practice **Interview Scenarios** and System Design.
+8. Master **Frontend Low Level Design** (41 Patterns in React/TypeScript).
+9. Learn **Pattern Combinations** across microservices and frontend architectures.
+10. Practice **Interview Scenarios** and System Design.
 
 ---
 
