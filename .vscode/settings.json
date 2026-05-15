@@ -6,7 +6,7 @@
         "7.Real World Projects/D18.FlipMed/src/main/java/com/flipmed/system",
         "7.Real World Projects/D16.Resolution System/src/main/java/com/resolution.system",
         "6.Practice Projects/Movie Ticket Booking",
-        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src/com/nullobject/pattern",
+        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src",
         "5.Behavorial Design Pattern/Command Design Pattern/TV Remote Control System/src",
         "3.Creational Design Pattern/Singleton Design Pattern/src",
         "3.Creational Design Pattern/Abstract Factory Design Pattern/src",
@@ -25,6 +25,6 @@
         "1.OOPS/3.Polymorphism",
         "1.OOPS/2.Inheritance",
         "1.OOPS/1.Encapsulation",
-        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src"
+        "5.Behavorial Design Pattern/Special Case Design Pattern/CustomerExample/src"
     ]
 }
