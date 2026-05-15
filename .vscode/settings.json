@@ -2,9 +2,11 @@
     "java.project.sourcePaths": [
         "7.Real World Projects/D4.Notification Design/Notification System/src",
         "7.Real World Projects/D3.Instagram Design",
+        "7.Real World Projects/D19.CricBuzz/src/main/java/com/cricbuzz/system",
         "7.Real World Projects/D18.FlipMed/src/main/java/com/flipmed/system",
         "7.Real World Projects/D16.Resolution System/src/main/java/com/resolution.system",
         "6.Practice Projects/Movie Ticket Booking",
+        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src/com/nullobject/pattern",
         "5.Behavorial Design Pattern/Command Design Pattern/TV Remote Control System/src",
         "3.Creational Design Pattern/Singleton Design Pattern/src",
         "3.Creational Design Pattern/Abstract Factory Design Pattern/src",
@@ -23,6 +25,6 @@
         "1.OOPS/3.Polymorphism",
         "1.OOPS/2.Inheritance",
         "1.OOPS/1.Encapsulation",
-        "7.Real World Projects/D19.CricBuzz/src/main/java/com/cricbuzz/system"
+        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src"
     ]
 }
