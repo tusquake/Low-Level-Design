@@ -27,8 +27,11 @@ Understanding design patterns in isolation is good. Seeing how a production-grad
 19. [Iterator Pattern](#19-iterator-pattern)
 20. [Flyweight Pattern](#20-flyweight-pattern)
 21. [Mediator Pattern](#21-mediator-pattern)
-22. [Thread Safety in Spring](#thread-safety-in-spring)
-23. [Quick Reference Table](#quick-reference-table)
+22. [Null Object Pattern](#22-null-object-pattern)
+23. [Special Case Pattern](#23-special-case-pattern)
+24. [Specification Pattern](#24-specification-pattern)
+25. [Thread Safety in Spring](#thread-safety-in-spring)
+26. [Quick Reference Table](#quick-reference-table)
 
 ---
 
@@ -629,9 +632,99 @@ WITH Mediator:
 
 Services never call each other directly. They publish events to the publisher (mediator), which routes them to the correct listeners.
 
+
 ---
 
-## Thread Safety in Spring
+## 22. Null Object Pattern
+
+**Spring Component:** `Optional<T>`, `NullValueSerializer`
+
+**What it means:** Avoid null checks by providing an object that does nothing or represents a "safe" empty state. Instead of returning `null`, you return an object that implements the expected interface but has neutral behaviour.
+
+**Real-world analogy:** A "Reserved" sign on a table. Instead of the waiter wondering if the table is empty or missing, the sign tells them clearly it is not available for new guests, but does not require a new set of rules to handle.
+
+**How Spring uses it:**
+
+- **Spring Data Repositories:** Returning `Optional<T>` is the most common implementation. It forces the caller to think about the empty case.
+- **Jackson Serialization:** You can define a `NullValueSerializer` so that when a field is null, it doesn't just disappear or show as `null` in JSON, but returns a specific "Special Case" string or empty object.
+
+```java
+public interface UserRepository extends JpaRepository<User, Long> {
+    // Instead of returning null if user is not found, it returns an empty Optional
+    Optional<User> findByEmail(String email);
+}
+
+// Client code - no null check needed!
+userRepository.findByEmail(email)
+    .ifPresent(user -> sendEmail(user)); 
+    // or
+    .orElseGet(() -> new GuestUser()); // Returns a Special Case/Null Object
+```
+
+> **Key insight:** Null Object pattern in modern Java is often replaced by `Optional`, but the core philosophy remains: stop returning `null` and start returning "valid objects that represent nothing."
+
+---
+
+## 23. Special Case Pattern
+
+**Spring Component:** `AnonymousAuthenticationToken`, `DefaultErrorAttributes`
+
+**What it means:** An extension of the Null Object pattern where you have multiple "special" types of objects for different edge cases (e.g., Guest, Deactivated, Expired).
+
+**Real-world analogy:** A "Guest" badge at a conference. You are not a "null" person, but you have a special set of permissions (cannot enter VIP lounge) that is different from a "Full Member" or "Staff."
+
+**How Spring Security uses it:**
+Spring Security never leaves the `SecurityContext` empty when a user is not logged in. Instead, it creates an **`AnonymousAuthenticationToken`**. This is a "Special Case" object that allows the rest of the filter chain (like `@PreAuthorize`) to work normally without checking for `null` constantly.
+
+```java
+// Spring Security internally does something like this:
+if (currentAuth == null) {
+    // It creates a "Special Case" object rather than leaving it null
+    SecurityContextHolder.getContext().setAuthentication(
+        new AnonymousAuthenticationToken("key", "anonymousUser", authorities)
+    );
+}
+
+// Now you can safely check roles without a null check
+@PreAuthorize("hasRole('ROLE_ANONYMOUS')")
+public void browsePublicCatalog() { ... }
+```
+
+---
+
+## 24. Specification Pattern
+
+**Spring Component:** `org.springframework.data.jpa.domain.Specification`, `CriteriaBuilder`
+
+**What it means:** Encapsulate business rules as reusable objects that can be chained together (AND/OR/NOT) to build complex database queries dynamically.
+
+**Real-world analogy:** A complex filter on a shopping site. You pick "Color: Blue" AND "Price < $100". Each checkbox is a "Specification" that can be combined to find the right products.
+
+**How Spring Data JPA uses it:**
+You define `Specification` objects for your entities and pass them to the repository. It uses the JPA Criteria API underneath to build the SQL.
+
+```java
+public class UserSpecs {
+    public static Specification<User> isAdult() {
+        return (root, query, builder) -> builder.greaterThan(root.get("age"), 18);
+    }
+    
+    public static Specification<User> isActive() {
+        return (root, query, builder) -> builder.equal(root.get("active"), true);
+    }
+}
+
+// In your Service, you can chain them dynamically
+List<User> users = userRepository.findAll(
+    Specification.where(UserSpecs.isAdult()).and(UserSpecs.isActive())
+);
+```
+
+> **Why it matters:** It prevents the "Query explosion" problem where you would otherwise need `findByAgeAndActive`, `findByAgeOrActive`, `findByAgeAndActiveAndEmail`, etc.
+
+---
+
+## 25. Thread Safety in Spring
 
 Spring Boot runs on an embedded Tomcat server, which is multi-threaded by default. Understanding how Spring handles concurrency is critical.
 
@@ -697,6 +790,9 @@ public class OrderService {
 | Iterator | `JdbcCursorItemReader`, `Page<T>` | Traverse collection without knowing internals | TV remote "next channel" |
 | Flyweight | HikariCP connection pool | Share reusable objects from a pool | Library book borrowing |
 | Mediator | `DispatcherServlet`, Event publisher | Centralised coordination between objects | Air traffic control |
+| Null Object | `Optional<T>`, `NullValueSerializer` | Safe object for absence of data | "Reserved" sign on a table |
+| Special Case | `AnonymousAuthenticationToken` | Specialized objects for edge cases | "Guest" badge at a conference |
+| Specification | `org.springframework.data.jpa.domain.Specification` | Reusable, chainable business rules | Complex e-commerce filters |
 
 ---
 
