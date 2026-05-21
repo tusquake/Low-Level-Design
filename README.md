@@ -95,7 +95,7 @@ Foundational concepts for building robust software systems.
 2.  **Inheritance**: Reusing code via parent-child relationships. (Spring Boot: BaseEntities, Repositories).
 3.  **Polymorphism**: Ability of objects to take multiple forms (Overloading/Overriding). (Spring Boot: Dependency Injection).
 4.  **Abstraction**: Hiding complexity via interfaces and abstract classes. (Spring Boot: Service Interfaces).
-5.  **Object Relationships**: Association, Aggregation, and Composition. (Spring Boot: JPA Mappings).
+5.  **Object Relationships**: Association, Aggregation, Composition, Generalization, Realization, and Dependency. (Spring Boot: JPA Mappings, Interface Implementation).
 6.  **Coupling and Cohesion**: Promoting loose coupling and high internal focus. (Spring Boot: DI & Modules).
 
 ---
