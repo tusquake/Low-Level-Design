@@ -1,6 +1,6 @@
-# 📌 Decentralized Data Management Pattern
+# Decentralized Data Management Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Decentralized Data Management** is a core principle of microservices where each service is responsible for its own data. Unlike a monolith with a central database, this pattern advocates for **Data Sovereignty**, meaning a service "owns" its schema and data, and no other service can bypass its API to access that data.
 
 - **Objective**: To eliminate tight coupling at the database level.
@@ -8,7 +8,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Personal Secretary / Inbox**.
 - In an old office (Monolith), there is a **Giant Central Filing Cabinet (Shared DB)**. Anyone can walk up, open any drawer, and change any file. It's easy, but if two people try to change the same file, or if the cabinet is locked, the whole office stops.
 - In a modern office (Microservices), every manager has their own **Personal Secretary (Service)** and **Private Desk (Private DB)**. 
@@ -18,7 +18,7 @@ If a manager decides to organize their desk alphabetically instead of by date, n
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Migration**: Moving away from a "God Database" that contains 500 tables.
 - **Domain Driven Design (DDD)**: When you have clear **Bounded Contexts** (e.g., "Sales" vs. "Support") that have different ways of looking at the same data (like a "Customer").
 - **Polyglot Persistence**: When different services need different types of databases (SQL for Finance, NoSQL for Catalog, Graph for Recommendations).
@@ -26,14 +26,14 @@ If a manager decides to organize their desk alphabetically instead of by date, n
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Small Teams / Simple Apps**: The overhead of managing consistency across databases is too high.
 - **Highly Relational Data**: If your application relies heavily on complex multi-table SQL JOINs that are hard to replicate via APIs.
 - **Strong Immediate Consistency**: If the business absolute requires that "Step A" and "Step B" happen in the same 1-millisecond transaction across two services.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Service A (Order) ] <---> [ Database A (Postgres) ]
           |
@@ -45,7 +45,7 @@ If a manager decides to organize their desk alphabetically instead of by date, n
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Concept: Data Encapsulation
 In this pattern, code is designed so that a service never creates a connection string to a "foreign" database.
 
@@ -69,7 +69,7 @@ public class OrderService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 ### Handling the Challenges:
 1. **Queries**: Use **CQRS** (Command Query Responsibility Segregation) to create a materialized view of data from multiple services for searching.
 2. **Consistency**: Use the **Saga Pattern** (Choreography or Orchestration) to handle transactions that span across multiple decentralized databases.
@@ -77,7 +77,7 @@ public class OrderService {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What does "Data Sovereignty" mean in microservices?**
    - **Answer**: It means that each microservice has exclusive ownership and control over its own data and schema. No other service can bypass the owner service's API to access that data.
@@ -114,25 +114,25 @@ public class OrderService {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Eventual Consistency**: Understanding that the system might be "in-between states" for a short time.
 - **CAP Theorem**: Choosing between Availability and Consistency in partitioned systems.
 - **Base vs ACID**: (Basically Available, Soft state, Eventual consistency).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Agility**: Teams are independent and move faster.
-- ✅ **Scaling**: Scale specifically the database that is under heavy load.
-- ✅ **Resilience**: A corruption in one DB doesn't affect the whole system.
+- **Agility**: Teams are independent and move faster.
+- **Scaling**: Scale specifically the database that is under heavy load.
+- **Resilience**: A corruption in one DB doesn't affect the whole system.
 
 ### Cons
-- ❌ **Complexity**: Managing distributed transactions (Sagas) is hard.
-- ❌ **Data Integrity**: Harder to enforce referential integrity (Foreign Keys).
-- ❌ **Redundancy**: Some data is duplicated across the system.
+- **Complexity**: Managing distributed transactions (Sagas) is hard.
+- **Data Integrity**: Harder to enforce referential integrity (Foreign Keys).
+- **Redundancy**: Some data is duplicated across the system.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Decentralized data management empowers each microservice to own and manage its own data, ensuring loose coupling and allowing for independent technology choices.

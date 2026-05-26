@@ -1,6 +1,6 @@
-# 📌 Saga Pattern
+# Saga Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Saga Pattern** is a failure management pattern used in microservices to manage **distributed transactions**. Since traditional ACID transactions (2PC - Two-Phase Commit) don't scale well in microservices, a Saga breaks a large transaction into a sequence of smaller, local transactions.
 
 - **Sequence**: Each local transaction updates the database and publishes an event/message to trigger the next local transaction.
@@ -9,7 +9,7 @@ The **Saga Pattern** is a failure management pattern used in microservices to ma
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Booking a Vacation**.
 1. **Step 1**: Book a Flight.
 2. **Step 2**: Book a Hotel.
@@ -23,7 +23,7 @@ This "Undo" logic is the compensating transaction of the Saga.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **E-commerce Order Processing**: Involving Order, Payment, and Inventory services.
 - **Travel Reservation Systems**: Handling flights, hotels, and insurance.
 - **Financial Transfers**: Moving money between two different banking systems.
@@ -31,14 +31,14 @@ This "Undo" logic is the compensating transaction of the Saga.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: Use standard database transactions (`@Transactional`) instead.
 - **Tightly Coupled Services**: If services can't fail independently, your architecture might need rethinking before applying Saga.
 - **Small Transactions**: If the operation only involves one or two quick database updates in the same service.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ### Choreography (Event-based)
 ```text
 Service A --(Done)--> Service B --(Done)--> Service C
@@ -55,7 +55,7 @@ Service A  Service B  Service C
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Simplified Orchestrator Logic
 ```java
 public class OrderSagaOrchestrator {
@@ -89,7 +89,7 @@ public class OrderSagaOrchestrator {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In production, we use frameworks like **Eventuate**, **Axon**, or **Camunda** to manage Saga state.
 
 ### Using Spring Cloud Stream (Choreography)
@@ -103,7 +103,7 @@ public void handleOrderCreated(OrderCreatedEvent event) {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is a Saga pattern?**
    - **Answer**: A failure management pattern for distributed systems. It's a sequence of local transactions, where each transaction updates a database and publishes an event or message to trigger the next step.
@@ -141,25 +141,25 @@ public void handleOrderCreated(OrderCreatedEvent event) {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Performance**: Impact of message broker latency.
 - **Complexity**: Debugging distributed Sagas vs. monolithic transactions.
 - **Frameworks**: Mentioning Axon, Seata, or Cadence/Temporal.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Scalability**: No long-lived locks on database rows.
-- ✅ **Resilience**: Services can fail and recover independently.
-- ✅ **Decoupling**: Services only need to know about events or the orchestrator.
+- **Scalability**: No long-lived locks on database rows.
+- **Resilience**: Services can fail and recover independently.
+- **Decoupling**: Services only need to know about events or the orchestrator.
 
 ### Cons
-- ❌ **Complexity**: Writing compensating logic is difficult.
-- ❌ **Debugging**: Hard to trace a transaction across 5 different services.
-- ❌ **No Isolation**: Other transactions might see "dirty" data before the Saga finishes.
+- **Complexity**: Writing compensating logic is difficult.
+- **Debugging**: Hard to trace a transaction across 5 different services.
+- **No Isolation**: Other transactions might see "dirty" data before the Saga finishes.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Saga manages distributed transactions by breaking them into local steps with "undo" (compensating) logic to ensure eventual consistency.

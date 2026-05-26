@@ -1,6 +1,6 @@
-# 📌 Database-per-Service Pattern
+# Database-per-Service Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Database-per-Service Pattern** is a microservices pattern where each service has its own private data store. Other services can only access this data via the service's API; they are strictly forbidden from connecting directly to the database of another service.
 
 - **Objective**: To ensure that services are loosely coupled and can be developed, deployed, and scaled independently.
@@ -8,7 +8,7 @@ The **Database-per-Service Pattern** is a microservices pattern where each servi
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Private Bank Accounts**.
 - Suppose you and your coworkers are all part of the same "Company" (Application).
 - **Shared DB (Old way)**: Everyone's salary is put into one giant box. Anyone can take money out or accidentally spill coffee on everyone's money. If the box breaks, nobody gets paid.
@@ -19,7 +19,7 @@ If your coworker switches from one bank to another (e.g., MySQL to MongoDB), it 
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Architecture**: When building a system where different services have different data needs (e.g., Order service needs SQL for transactions, while Product Search needs Elasticsearch).
 - **Independent Scaling**: If the "Product" service has 1 million reads per second, you can scale its database separately from the "User" service database.
 - **Polyglot Persistence**: Using the best database technology for each specific task.
@@ -27,14 +27,14 @@ If your coworker switches from one bank to another (e.g., MySQL to MongoDB), it 
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: A single shared database is much simpler and faster.
 - **Strong ACID Requirements across Services**: If you need real-time, 100% atomic transactions across multiple services (Distributed transactions are hard and slow).
 - **Small Teams**: Managing 20 databases for 20 services requires significant DevOps overhead (DBA, Patches, Backups).
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Service A ] ----> [ Database A (MySQL) ]
       |
@@ -46,7 +46,7 @@ If your coworker switches from one bank to another (e.g., MySQL to MongoDB), it 
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Architecture Principle (Enforced by code separation)
 Each service is in its own project/package with its own configuration.
 
@@ -77,7 +77,7 @@ public class UserService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, each service usually has its own `application.yml` with unique `spring.datasource.url`.
 
 ### Cross-Service Queries (The Challenge)
@@ -87,7 +87,7 @@ Since you can't `JOIN` tables across different databases, you have two choices:
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the Database-per-Service pattern?**
    - **Answer**: It's a microservices pattern where each service owns its own private database. No other service can access this database directly; they must use the service's API to get or change data.
@@ -129,25 +129,25 @@ Since you can't `JOIN` tables across different databases, you have two choices:
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **CAP Theorem**: Consistency vs. Availability in distributed databases.
 - **Sagas vs. 2PC (Two-Phase Commit)**: Why 2PC is avoided in microservices.
 - **Foreign Keys**: How do you handle relationships without DB-level foreign key constraints? (Answer: Logical IDs and Application-level validation).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Independence**: Teams can change schemas without breaking others.
-- ✅ **Fault Isolation**: A failure in one DB doesn't crash the whole system.
-- ✅ **Scalability**: Optimize and scale each DB based on its specific load.
+- **Independence**: Teams can change schemas without breaking others.
+- **Fault Isolation**: A failure in one DB doesn't crash the whole system.
+- **Scalability**: Optimize and scale each DB based on its specific load.
 
 ### Cons
-- ❌ **Complexity**: Maintaining many databases (backups, security, monitoring).
-- ❌ **Query Challenges**: No SQL JOINs across services.
-- ❌ **Data Integrity**: Maintaining consistency across services is difficult.
+- **Complexity**: Maintaining many databases (backups, security, monitoring).
+- **Query Challenges**: No SQL JOINs across services.
+- **Data Integrity**: Maintaining consistency across services is difficult.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Database-per-service ensures microservice autonomy by giving each service its own private database, accessible only through APIs.

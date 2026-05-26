@@ -1,6 +1,6 @@
-# 📌 Externalized Configuration (Config Server) Pattern
+# Externalized Configuration (Config Server) Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Externalized Configuration Pattern** (often implemented via a **Config Server**) centralizes the management of configuration properties for all microservices in a single place. Instead of bundling properties like DB URLs or API keys inside the service's JAR/WAR file, the service fetches them from a remote server at startup.
 
 - **Purpose**: To manage configuration separately from code, allowing for environment-specific settings (Dev, Stage, Prod) without rebuilding the application.
@@ -8,7 +8,7 @@ The **Externalized Configuration Pattern** (often implemented via a **Config Ser
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Centralized Control Tower** at an airport.
 - Each **Airplane (Microservice)** doesn't decide its own runway or gate independently based on a manual kept inside the cockpit.
 - When an airplane is ready to take off or land, it contacts the **Control Tower (Config Server)**.
@@ -18,7 +18,7 @@ If a runway is closed, the Tower updates the information once, and every airplan
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Architecture**: When you have many services sharing common settings (e.g., logging levels, security headers).
 - **Multiple Environments**: Managing different database credentials for `local`, `uat`, and `prod` environments cleanly.
 - **Dynamic Updates**: When you want to change a feature flag or a timeout value without restarting the entire service.
@@ -26,14 +26,14 @@ If a runway is closed, the Tower updates the information once, and every airplan
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: Storing a single `application.properties` file is usually sufficient.
 - **Static Configurations**: If your settings never change and are the same across all environments.
 - **Air-gapped Systems**: If services cannot reach a central server due to strict network isolation.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Git / Vault / Database ] (Storage)
            |
@@ -45,7 +45,7 @@ If a runway is closed, the Tower updates the information once, and every airplan
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Internal Config Server Representation
 ```java
 public class ConfigServer {
@@ -81,7 +81,7 @@ public class OrderService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In the Spring ecosystem, **Spring Cloud Config** is the industry standard.
 
 ### Config Server (@EnableConfigServer)
@@ -101,7 +101,7 @@ Using **`@RefreshScope`** allows the service to reload specific beans when the c
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is a Config Server?**
    - **Answer**: It is a centralized server that manages and serves configuration properties (like database credentials, feature flags, and timeouts) to all microservices in a system.
@@ -137,24 +137,24 @@ Using **`@RefreshScope`** allows the service to reload specific beans when the c
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Hierarchy of Overrides**: How Spring resolves properties (Local file vs. Config Server vs. Env Variables).
 - **Profiles**: Using `prod`, `test`, `dev` profiles for environment-specific settings.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Consistency**: One source of truth for the entire system.
-- ✅ **Version Control**: Track history of config changes in Git.
-- ✅ **Dynamic**: Update settings without rebuilding or (sometimes) restarting.
+- **Consistency**: One source of truth for the entire system.
+- **Version Control**: Track history of config changes in Git.
+- **Dynamic**: Update settings without rebuilding or (sometimes) restarting.
 
 ### Cons
-- ❌ **Complexity**: Adds another moving part to the infrastructure.
-- ❌ **Dependency**: Services depend on the Config Server for startup.
-- ❌ **Latency**: Slight increase in startup time due to network calls.
+- **Complexity**: Adds another moving part to the infrastructure.
+- **Dependency**: Services depend on the Config Server for startup.
+- **Latency**: Slight increase in startup time due to network calls.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Config Server centralizes all environment-specific settings in one place, allowing changes to be made without rebuilding or redeploying the microservices.

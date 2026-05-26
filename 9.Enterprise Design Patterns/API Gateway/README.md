@@ -1,6 +1,6 @@
-# 📌 API Gateway Pattern
+# API Gateway Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 An **API Gateway** is a server that acts as a single entry point for all clients. It sits in front of one or more backend microservices and decouples the client from the underlying service architecture.
 
 - **Purpose**: To handle cross-cutting concerns (Authentication, Rate Limiting, Logging) in one place rather than repeating them in every microservice.
@@ -8,7 +8,7 @@ An **API Gateway** is a server that acts as a single entry point for all clients
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Hotel Receptionist**.
 - When you (the client) enter a hotel, you don't go directly to the cleaner for a room, the chef for food, or the plumber for a leak.
 - You go to the **Receptionist (API Gateway)**. You provide your ID (Token), and ask for what you need.
@@ -16,7 +16,7 @@ Think of a **Hotel Receptionist**.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Ecosystem**: When you have many small services and want to hide their complexity from mobile or web clients.
 - **Protocol Translation**: Converting between external HTTP/JSON and internal gRPC or Thrift.
 - **Security Consolidation**: Implementing JWT validation, SSL termination, and CORS at the edge.
@@ -24,14 +24,14 @@ Think of a **Hotel Receptionist**.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: If you only have one backend service, a gateway adds unnecessary latency and complexity.
 - **Low Latency Critical Systems**: Every hop adds a few milliseconds. If your system is extremely latency-sensitive, you might consider direct service communication with a sidecar.
 - **Simple Internal Tools**: If services only talk to each other inside a secure network, a Gateway might be overkill for internal traffic.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 Mobile / FE Client
       | (JSON/HTTPS)
@@ -47,7 +47,7 @@ Mobile / FE Client
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Simplified Service Interfaces
 ```java
 class UserService {
@@ -86,7 +86,7 @@ public class ApiGateway {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In the Spring ecosystem, **Spring Cloud Gateway** is the go-to solution.
 
 ### Spring Cloud Gateway Config (application.yml)
@@ -106,7 +106,7 @@ spring:
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the primary role of an API Gateway?**
    - **Answer**: To act as a single entry point for all clients, handling request routing, composition, and protocol translation while centralizing cross-cutting concerns.
@@ -143,25 +143,25 @@ spring:
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Backends for Frontends (BFF)**: When to have separate gateways for Mobile vs. Web.
 - **Latency**: How to minimize the performance hit of a Gateway.
 - **Caching**: Storing GET responses at the edge to reduce backend load.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Simplified Client**: One URL to rule them all.
-- ✅ **Cross-cutting Concerns**: Centralized security, monitoring, and transformation.
-- ✅ **Dynamic Routing**: Change backend service URLs without updating clients.
+- **Simplified Client**: One URL to rule them all.
+- **Cross-cutting Concerns**: Centralized security, monitoring, and transformation.
+- **Dynamic Routing**: Change backend service URLs without updating clients.
 
 ### Cons
-- ❌ **Single Point of Failure**: If the gateway is down, everything is down.
-- ❌ **Performance Bottleneck**: All traffic flows through it.
-- ❌ **Complexity**: Requires careful configuration and maintenance.
+- **Single Point of Failure**: If the gateway is down, everything is down.
+- **Performance Bottleneck**: All traffic flows through it.
+- **Complexity**: Requires careful configuration and maintenance.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 API Gateway is the "Front Door" of your microservices, managing entry, routing, and security in a centralized manner.

@@ -1,6 +1,6 @@
-# 📌 Hexagonal Architecture (Ports and Adapters)
+# Hexagonal Architecture (Ports and Adapters)
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Hexagonal Architecture**, also known as **Ports and Adapters**, is an architectural pattern that aims to create loosely coupled application components. It isolates the core business logic (the application's "inside") from outside concerns like databases, UI, and 3rd party APIs (the "outside").
 
 - **Core (Hexagon)**: Contains the business logic and domain entities. It has no dependencies on external frameworks.
@@ -9,7 +9,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **USB Port** on your laptop.
 - The **Laptop's Internal Circuitry (Core)** knows how to process data.
 - The **USB Port (Port)** defines a standard interface for connecting devices.
@@ -19,7 +19,7 @@ The laptop doesn't care *what* is plugged in, as long as it follows the USB stan
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Complex Domain Logic**: Where the business rules are the most important part and should be protected from technical changes.
 - **Multiple Entry Points**: When your application needs to be accessed via REST API, CLI, and Messaging simultaneously.
 - **Interchangeable Foundations**: If you want to be able to switch from a SQL database to a NoSQL one without rewriting business rules.
@@ -27,14 +27,14 @@ The laptop doesn't care *what* is plugged in, as long as it follows the USB stan
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple CRUD Apps**: If the application is just a pass-through to a database, Hexagonal architecture adds too much boilerplate.
 - **Micro-Microservices**: If a service only has 2-3 classes, the overhead of ports/adapters is not worth it.
 - **Prototyping**: When you need to ship a proof-of-concept as fast as possible.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ External Service / UI ] ----> [ Input Adapter (Controller) ]
                                           |
@@ -51,7 +51,7 @@ The laptop doesn't care *what* is plugged in, as long as it follows the USB stan
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. The Port (Output Interface)
 ```java
 public interface PaymentPort {
@@ -88,7 +88,7 @@ public class StripeAdapter implements PaymentPort {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In a typical Spring Boot project, the packages would look like this:
 - `com.myapp.domain` (Core - No Spring annotations here!)
 - `com.myapp.application.ports` (Interfaces)
@@ -112,7 +112,7 @@ public class UserPersistenceAdapter implements UserOutputPort {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is Hexagonal Architecture?**
    - **Answer**: It's an architectural pattern that isolates the core business logic (inside) from external concerns like databases, UI, and APIs (outside) using standard interfaces.
@@ -150,25 +150,25 @@ public class UserPersistenceAdapter implements UserOutputPort {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **DIP (Dependency Inversion Principle)**: Understanding that the core defines the interface that the outside world must implement.
 - **Onion Architecture**: Another similar pattern focusing on layers.
 - **Mapping Overhead**: Dealing with multiple model versions (Domain, Entity, DTO).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Technology Agnostic**: Switch databases or frameworks easily.
-- ✅ **Testability**: Extreme ease of unit testing.
-- ✅ **Focused Business Logic**: The core is pure Java/logic.
+- **Technology Agnostic**: Switch databases or frameworks easily.
+- **Testability**: Extreme ease of unit testing.
+- **Focused Business Logic**: The core is pure Java/logic.
 
 ### Cons
-- ❌ **Overhead**: Lots of interfaces and mapping code.
-- ❌ **Complexity**: Can be confusing for developers used to simple layered apps.
-- ❌ **Boilerplate**: Multiple models for the same data (Entity -> Domain -> DTO).
+- **Overhead**: Lots of interfaces and mapping code.
+- **Complexity**: Can be confusing for developers used to simple layered apps.
+- **Boilerplate**: Multiple models for the same data (Entity -> Domain -> DTO).
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Hexagonal architecture isolates the core business logic from external technologies using standard interfaces (Ports) and their implementations (Adapters).

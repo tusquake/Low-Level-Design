@@ -1,6 +1,6 @@
-# 📌 Load Balancing Pattern
+# Load Balancing Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Load Balancing** is the process of distributing network traffic across multiple servers. This ensures that no single server bears too much demand. By spreading the load, load balancing improves application responsiveness and increases availability of applications and services.
 
 - **Purpose**: To handle high traffic volumes and ensure high availability (Reliability).
@@ -8,7 +8,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Checkout Line at a Supermarket**.
 - If there is only one cashier (Server), a long line forms, and customers (Clients) wait a long time.
 - If the store opens 5 checkout counters, a **Store Manager (Load Balancer)** directs arriving customers to different lines.
@@ -18,7 +18,7 @@ This keeps the flow of customers smooth and prevents any one cashier from being 
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **High Traffic Websites**: E-commerce during a sale, Social Media platforms.
 - **Microservices Internal Calls**: When Service A calls Service B, it uses a load balancer to choose between multiple instances of Service B.
 - **Redundancy/High Availability**: Ensuring that if one server fails, the traffic is redirected to another without the user noticing.
@@ -26,13 +26,13 @@ This keeps the flow of customers smooth and prevents any one cashier from being 
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Small Applications**: If your app only handles 10 users a day, a load balancer is an unnecessary cost and complexity.
 - **Stateful Applications (Carefully)**: If the server keeps local session data that isn't shared (Sticky Sessions are needed here, but it's better to use a stateless design).
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
       [ Client ]
           |
@@ -44,7 +44,7 @@ This keeps the flow of customers smooth and prevents any one cashier from being 
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Load Balancing Strategy Interface
 ```java
 interface LoadBalancingStrategy {
@@ -85,7 +85,7 @@ public class LoadBalancer {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Cloud, **Spring Cloud LoadBalancer** (which replaced Netflix Ribbon) is used.
 
 ### Usage with RestTemplate
@@ -103,7 +103,7 @@ Spring will automatically look up `PAYMENT-SERVICE` in the **Service Registry** 
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the main purpose of a Load Balancer?**
    - **Answer**: To distribute incoming network traffic across multiple servers to ensure high availability, prevent server overload, and improve the overall responsiveness of the application.
@@ -144,25 +144,25 @@ Spring will automatically look up `PAYMENT-SERVICE` in the **Service Registry** 
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **SSL Termination**: Decrypting traffic at the Load Balancer to save server CPU.
 - **Static vs. Dynamic Algorithms**: Comparison between Round Robin and Least Response Time.
 - **Failover**: What happens if the primary Load Balancer itself fails? (Mention Active-Passive setup).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Availability**: No downtime if one server fails.
-- ✅ **Scalability**: Add/Remove servers on the fly.
-- ✅ **Clean Separation**: Clients only deal with one entry point.
+- **Availability**: No downtime if one server fails.
+- **Scalability**: Add/Remove servers on the fly.
+- **Clean Separation**: Clients only deal with one entry point.
 
 ### Cons
-- ❌ **Single Point of Failure**: If not configured in High Availability (HA) mode.
-- ❌ **Cost**: Extra infrastructure costs (Cloud LB or specialized hardware).
-- ❌ **Complexity**: Managing health checks and sticky sessions.
+- **Single Point of Failure**: If not configured in High Availability (HA) mode.
+- **Cost**: Extra infrastructure costs (Cloud LB or specialized hardware).
+- **Complexity**: Managing health checks and sticky sessions.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Load Balancing is the traffic cop of your architecture, directing requests to multiple servers to ensure high availability and optimal performance.

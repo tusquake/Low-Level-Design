@@ -1,6 +1,6 @@
-# 📌 Strangler Fig Pattern (Strangler Pattern)
+# Strangler Fig Pattern (Strangler Pattern)
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Strangler Fig Pattern** is a software migration strategy used to incrementally replace a legacy system with a new one. It works by creating a "facade" or "router" that intercepts requests and directs them to either the old system or the new system. Over time, more features are migrated to the new system until the old system is completely "strangled" and can be retired.
 
 - **Purpose**: To migrate large, complex monolithic applications to microservices without a "Big Bang" rewrite.
@@ -9,7 +9,7 @@ The **Strangler Fig Pattern** is a software migration strategy used to increment
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of the **Strangler Fig tree found in rain forests**.
 - It grows its roots around a host tree.
 - Slowly, it climbs higher and wraps itself completely around the host.
@@ -19,7 +19,7 @@ The "New System" is the Strangler Fig, and the "Legacy Monolith" is the original
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Legacy Migration**: Moving from a 10-year-old COBOL or old Java monolith to a modern Spring Boot microservice.
 - **Tech Stack Upgrade**: Moving from JSP/Servlets to a React/Node.js or Spring Boot/Angular setup.
 - **Cloud Migration**: Gradually moving on-premise components to AWS/GCP.
@@ -27,14 +27,14 @@ The "New System" is the Strangler Fig, and the "Legacy Monolith" is the original
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Small Applications**: If the system is small enough to be rewritten in a few weeks, don't waste time with a strangler facade.
 - **Dead Ends**: If the legacy system is already well-designed and just needs minor updates.
 - **High Interdependence**: If the monolith's database is so tightly coupled that extracting one service requires extracting everything (in which case, you might need a different data-focused strategy first).
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
         [ External Client ]
                |
@@ -50,7 +50,7 @@ The "New System" is the Strangler Fig, and the "Legacy Monolith" is the original
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Simplified Router Logic
 ```java
 public class StranglerRouter {
@@ -81,7 +81,7 @@ class NewOrderService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In real-world projects, the **API Gateway** (like Spring Cloud Gateway or NGINX) acts as the Strangler Facade.
 
 ### NGINX Routing Strategy
@@ -98,7 +98,7 @@ As you migrate more endpoints, you simply update the NGINX configuration to poin
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the Strangler Pattern?**
    - **Answer**: It's an incremental migration strategy to replace a legacy system with a modern one by slowly wrapping it in new services until the old system is completely "strangled" and can be retired.
@@ -135,25 +135,25 @@ As you migrate more endpoints, you simply update the NGINX configuration to poin
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Rollback Strategy**: How easily can we revert to the legacy system if the new one fails?
 - **Feature Flags**: Using tools like LaunchDarkly to switch traffic at the application level.
 - **Database Refactoring**: The "Branch by Abstraction" technique.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Continuous Delivery**: New features can be released while old ones are being migrated.
-- ✅ **Low Risk**: If a new service fails, you can quickly route back to the legacy system.
-- ✅ **Early ROI**: The business gets value from the new tech stack much earlier.
+- **Continuous Delivery**: New features can be released while old ones are being migrated.
+- **Low Risk**: If a new service fails, you can quickly route back to the legacy system.
+- **Early ROI**: The business gets value from the new tech stack much earlier.
 
 ### Cons
-- ❌ **Maintenance**: You have to maintain two systems (and the router) for a period.
-- ❌ **Latency**: The router/facade adds a small network hop.
-- ❌ **Infrastructure Overhead**: You need twice the monitoring and logging.
+- **Maintenance**: You have to maintain two systems (and the router) for a period.
+- **Latency**: The router/facade adds a small network hop.
+- **Infrastructure Overhead**: You need twice the monitoring and logging.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Strangler pattern is an incremental migration technique that replaces legacy features one by one via a routing facade until the entire system is modernized.

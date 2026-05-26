@@ -1,6 +1,6 @@
-# 📌 Outbox Pattern
+# Outbox Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Transactional Outbox Pattern** is a technique used to reliably publish events in a microservices architecture. It ensures that a database update and the publishing of an event happen **atomically** within a single transaction.
 
 - **Operation**: Instead of sending a message directly to a broker (like Kafka) during a business transaction, the application saves the message into a special `OUTBOX` table in the same database. A separate process eventually picks up the message and sends it.
@@ -8,7 +8,7 @@ The **Transactional Outbox Pattern** is a technique used to reliably publish eve
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Sending a Physical Letter**.
 1. You write the letter (Business Logic).
 2. You don't walk 50 miles to the destination yourself. You put it in your **Outbox/Mailbox** (Outbox Table) at the front of your house.
@@ -18,7 +18,7 @@ Even if you are asleep or busy when the postman arrives, the letter is safe in t
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Event-Driven Architectures**: When a change in one service (e.g., Order Service) must trigger an action in another (e.g., Email Service).
 - **Saga Pattern Implementation**: Using the Outbox to transition between Saga steps reliably.
 - **Data Synchronization**: Propagating changes from a SQL database to a search index like Elasticsearch.
@@ -26,14 +26,14 @@ Even if you are asleep or busy when the postman arrives, the letter is safe in t
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: Where you can use a single database transaction for everything.
 - **Low Reliability Requirements**: If occasional message loss is acceptable (unlikely in enterprise apps).
 - **Real-time Synchronous Requests**: If the action MUST happen instantly before the response is sent to the user (though you should usually rethink this design).
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Service ] --(Single Transaction)--> [ SQL DB ]
                                        |-- [ Business Table ]
@@ -47,7 +47,7 @@ Even if you are asleep or busy when the postman arrives, the letter is safe in t
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Transactional Service
 ```java
 public class OrderService {
@@ -94,7 +94,7 @@ public class OutboxRelay {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In production, we often use **Change Data Capture (CDC)** tools like **Debezium** instead of writing a manual polling relay.
 
 ### Debezium Strategy
@@ -104,7 +104,7 @@ In production, we often use **Change Data Capture (CDC)** tools like **Debezium*
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the Outbox pattern?**
    - **Answer**: It's a reliable message publishing pattern where events are saved into a database table (`OUTBOX`) as part of the same transaction as the business data, ensuring atomicity.
@@ -141,25 +141,25 @@ In production, we often use **Change Data Capture (CDC)** tools like **Debezium*
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Debezium vs. Polling**: Pros and cons of each relay method.
 - **Idempotency**: How to implement it on the consumer side (e.g., using a `processed_event_ids` table).
 - **Cleanup**: How and when to delete old records from the `OUTBOX` table.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Atomicity**: DB update and Event are tied together.
-- ✅ **Reliability**: No events are lost if the broker is down.
-- ✅ **Order Guarantee**: Events are usually processed in the order they were committed.
+- **Atomicity**: DB update and Event are tied together.
+- **Reliability**: No events are lost if the broker is down.
+- **Order Guarantee**: Events are usually processed in the order they were committed.
 
 ### Cons
-- ❌ **Complexity**: Requires a relay process or CDC tool.
-- ❌ **Latency**: Small delay between DB commit and message arrival at the broker.
-- ❌ **Database Load**: Increased writes and reads on the specialized Outbox table.
+- **Complexity**: Requires a relay process or CDC tool.
+- **Latency**: Small delay between DB commit and message arrival at the broker.
+- **Database Load**: Increased writes and reads on the specialized Outbox table.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Outbox pattern ensures reliability by saving events in the database as part of the business transaction and publishing them asynchronously.

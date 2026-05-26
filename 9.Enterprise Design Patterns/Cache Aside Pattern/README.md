@@ -1,6 +1,6 @@
-# 📌 Cache Aside Pattern
+# Cache Aside Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Cache Aside Pattern** (also known as Lazy Loading) is a caching strategy where the application is responsible for managing the cache and the data store. The application code first checks the cache for data; if it's not there, it fetches it from the database, stores it in the cache, and then returns it.
 
 - **Operation**: 
@@ -11,7 +11,7 @@ The **Cache Aside Pattern** (also known as Lazy Loading) is a caching strategy w
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Student studying for an exam**.
 - **The Desk (Cache)**: Where you keep the 2-3 books you are currently reading. Access is instant.
 - **The Bookshelf (Database)**: Where all your 100+ books are kept. It takes time to stand up, find the book, and bring it to the desk.
@@ -22,21 +22,21 @@ When you need a fact:
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Read-Heavy Workloads**: Applications like News portals, Social media profiles, or Product catalogs where data is read much more often than it's updated.
 - **General Purpose Caching**: The most common strategy for Redis or Memcached in web applications.
 - **Resilience**: If the cache fails, the application can still function by falling back to the database (though performance will drop).
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Frequently Changing Data**: If data changes every few seconds, the cache will be constantly invalidated, making it useless or even harmful.
 - **Write-Intensive Apps**: If you write more than you read, managing cache consistency adds overhead without much benefit.
 - **Data that must be 100% Real-time**: If your application cannot tolerate even a few seconds of stale data.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
       [ Application ]
         /        \
@@ -49,7 +49,7 @@ When you need a fact:
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Service Implementation
 ```java
 public class UserService {
@@ -89,7 +89,7 @@ public class UserService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, this is primarily handled using the **`@Cacheable`** and **`@CacheEvict`** annotations.
 
 ### Spring Example
@@ -112,7 +112,7 @@ public class ProductService {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the Cache Aside pattern?**
    - **Answer**: It's a strategy where the application manages the relationship between the database and the cache. The app first checks the cache; if the data is missing (Cache Miss), it fetches it from the DB and manually updates the cache.
@@ -155,25 +155,25 @@ public class ProductService {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Eviction Policies**: LRU (Least Recently Used), LFU, FIFO.
 - **Cold Starts**: How to "warm up" the cache before a high-traffic event (like a flash sale).
 - **Redis vs. Memcached**: When to use which for this pattern.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Resilience**: Cache failure doesn't crash the app.
-- ✅ **Efficiency**: Only requested data is cached (saves memory).
-- ✅ **Flexibility**: Works with different types of data stores and caches.
+- **Resilience**: Cache failure doesn't crash the app.
+- **Efficiency**: Only requested data is cached (saves memory).
+- **Flexibility**: Works with different types of data stores and caches.
 
 ### Cons
-- ❌ **Stale Data**: High risk if invalidation logic is missing.
-- ❌ **Lazy Loading Delay**: The very first request for an item is always slow (Cache Miss).
-- ❌ **Implementation Overhead**: Application code must handle two data sources.
+- **Stale Data**: High risk if invalidation logic is missing.
+- **Lazy Loading Delay**: The very first request for an item is always slow (Cache Miss).
+- **Implementation Overhead**: Application code must handle two data sources.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Cache Aside is a "Lazy" caching strategy where the app first checks the cache, falls back to the DB on a miss, and updates the cache for future requests.

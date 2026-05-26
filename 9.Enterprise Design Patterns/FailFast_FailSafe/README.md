@@ -1,6 +1,6 @@
-# 📌 Fail-Fast & Fail-Safe Patterns
+# Fail-Fast & Fail-Safe Patterns
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 In the context of software architecture and Java programming:
 
 - **Fail-Fast**: A system or component that immediately reports any condition that is likely to lead to failure. It stops operation at the first sign of an error rather than trying to continue with flawed data.
@@ -11,14 +11,14 @@ In the context of software architecture and Java programming:
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Electrical Fuses vs. Emergency Generators**.
 - **Fail-Fast (Fuse)**: When there is a power surge (Error), the fuse "blows" immediately and cuts off all electricity to prevent the house from catching fire. The system stops working, but it's safe.
 - **Fail-Safe (Emergency Generator)**: When the main power goes out, the backup generator kicks in. The lights might dim, and the AC might stop, but the essential equipment (like a hospital ventilator) keeps running.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 ### Fail-Fast
 - **Input Validation**: Checking if `userId` is null before querying the database.
 - **Bootstrapping**: Crashing the application if the Config Server is unreachable at startup.
@@ -31,13 +31,13 @@ Think of **Electrical Fuses vs. Emergency Generators**.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Fail-Fast**: Don't use it in critical systems where "some service is better than no service" (e.g., medical equipment, flight controls).
 - **Fail-Safe**: Don't use it when "wrong data is worse than no data" (e.g., Bank balance transfers, complex accounting calculations).
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Fail-Fast Path ]
 Input -> [ Validator ] --(Invalid)--> [ Throw Exception / Stop ]
@@ -55,7 +55,7 @@ Input -> [ Operation ] --(Error)--> [ Catch & Fallback ] --> [ Return Degraded R
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. Fail-Fast Implementation
 ```java
 public class Validator {
@@ -88,7 +88,7 @@ public class RecommendationService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 ### Fail-Fast
 - Using **Hibernate Validator (`@NotNull`, `@Min`)** on DTOs. If validation fails, Spring returns a `400 Bad Request` before ever hitting your service logic.
 
@@ -98,7 +98,7 @@ public class RecommendationService {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **Difference between Fail-Fast and Fail-Safe?**
    - **Answer**: 
@@ -136,23 +136,23 @@ public class RecommendationService {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Graceful Degradation**: The core philosophy of Fail-Safe systems.
 - **ConcurrentModificationException**: Understanding the internal "modCount" in Java collections.
 - **Defensive Programming**: Writing code that expects and handles failures.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Fail-Fast**: Easier to debug (error at source), prevents data corruption.
-- ✅ **Fail-Safe**: Higher availability, better user experience (no "Oops" screens).
+- **Fail-Fast**: Easier to debug (error at source), prevents data corruption.
+- **Fail-Safe**: Higher availability, better user experience (no "Oops" screens).
 
 ### Cons
-- ❌ **Fail-Fast**: Can cause system downtime for minor issues.
-- ❌ **Fail-Safe**: Can hide bugs if not logged properly, might provide stale or incorrect data.
+- **Fail-Fast**: Can cause system downtime for minor issues.
+- **Fail-Safe**: Can hide bugs if not logged properly, might provide stale or incorrect data.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Fail-Fast terminates immediately upon error to avoid corruption, while Fail-Safe provides a fallback to ensure the system remains available.

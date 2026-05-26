@@ -1,6 +1,6 @@
-# 📌 Observability Pattern
+# Observability Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Observability** is the ability to understand the internal state of a system by looking at its external outputs. In a microservices environment, where a single request can travel through dozens of services, observability is critical for debugging and monitoring.
 
 - **The Three Pillars**:
@@ -11,7 +11,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Modern Car Dashboard**.
 - **Warning Lights (Metrics)**: A small indicator turns red if the engine is too hot or the tire pressure is low. It gives you a high-level "Metric" of health.
 - **Service History (Logging)**: A notebook whereทุก time you change the oil or fix a brake, it's recorded with a timestamp.
@@ -21,7 +21,7 @@ Without these, you'd just be driving a "Black Box" and wouldn't know the car is 
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Architecture**: When a bug in Service A might be caused by a slow response in Service D.
 - **Distributed Systems**: To understand network latency and serialization overhead.
 - **Performance Tuning**: Identifying the exact line of code or database query that is slowing down the system.
@@ -29,14 +29,14 @@ Without these, you'd just be driving a "Black Box" and wouldn't know the car is 
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple Monoliths on Single Server**: Simple logging (`tail -f log.txt`) is often enough.
 - **Experimental Code**: Don't waste too much time instrumenting code that will be deleted in a week.
 - **Excessive Overhead**: Be careful not to log so much that the logging itself slows down the application or fills up the disk.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Client ] --(Request + TraceID)--> [ Svc 1 ] ----(TraceID)----> [ Svc 2 ]
                                        |                            |
@@ -49,7 +49,7 @@ Without these, you'd just be driving a "Black Box" and wouldn't know the car is 
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Simplified Trace and Log Logic
 ```java
 public class OrderService {
@@ -81,7 +81,7 @@ public class OrderService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 Spring Boot makes this easy with **Micrometer** and **Spring Cloud Sleuth/Micrometer Tracing**.
 
 ### Production Stack
@@ -95,7 +95,7 @@ In Spring:
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What are the three pillars of observability?**
    - **Answer**: 
@@ -137,25 +137,25 @@ In Spring:
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **OpenTelemetry**: The industry standard for vendor-neutral observability data.
 - **Log Levels**: When to use ERROR vs. WARN vs. INFO vs. DEBUG.
 - **Alerting**: Setting thresholds on metrics (e.g., Alert if 5xx errors > 1%).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Faster Debugging**: Find the "needle in the haystack" across 100 services.
-- ✅ **Root Cause Analysis**: Understand why a system failed, not just that it failed.
-- ✅ **Performance Visibility**: Identify bottlenecks instantly.
+- **Faster Debugging**: Find the "needle in the haystack" across 100 services.
+- **Root Cause Analysis**: Understand why a system failed, not just that it failed.
+- **Performance Visibility**: Identify bottlenecks instantly.
 
 ### Cons
-- ❌ **Performance Hit**: Collecting all this data uses CPU and Memory.
-- ❌ **Storage Costs**: Storing TBs of logs and traces can be expensive.
-- ❌ **Complexity**: Requires setting up and managing a separate data platform.
+- **Performance Hit**: Collecting all this data uses CPU and Memory.
+- **Storage Costs**: Storing TBs of logs and traces can be expensive.
+- **Complexity**: Requires setting up and managing a separate data platform.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Observability uses logs, metrics, and distributed tracing to provide deep visibility into the health and behavior of complex distributed systems.

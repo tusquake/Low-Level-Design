@@ -1,6 +1,6 @@
-# 📌 Event-Driven Architecture (EDA)
+# Event-Driven Architecture (EDA)
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Event-Driven Architecture (EDA)** is a software architecture pattern where the flow of the program is determined by events—actions such as a user click, a message from another service, or a sensor output.
 
 - **Publisher (Producer)**: The component that detects the event and "broadcasts" it. It doesn't know who will receive it.
@@ -10,7 +10,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Radio Station**.
 - The **Radio Station (Publisher)** broadcasts music and news as "events" over a specific frequency.
 - The station doesn't know how many people are listening or who they are.
@@ -19,7 +19,7 @@ Think of a **Radio Station**.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Asynchronous Workflows**: Sending a confirmation email after an order is placed without making the user wait.
 - **Microservices Communication**: Reducing direct dependencies between services (e.g., Order service doesn't need to check if the Loyalty Points service is up).
 - **Real-time Analytics**: Buffering and processing data streams (e.g., stock market tracking, IoT sensors).
@@ -27,14 +27,14 @@ Think of a **Radio Station**.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple CRUD Apps**: If you only have one service and one database.
 - **Strict Sequence with High Latency Sensitivity**: If Step B MUST happen immediately after Step A and any delay is unacceptable.
 - **Debugging Complexity**: If you have 50 services and it's hard to trace which service triggered what, the "Spaghetti of Events" can become a nightmare.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Producer ] --(Publishes ItemAddedEvent)--> [ Event Broker / Bus ]
                                                |
@@ -46,7 +46,7 @@ Think of a **Radio Station**.
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. The Event Object
 ```java
 public class OrderPlacedEvent {
@@ -90,7 +90,7 @@ public class ShippingService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 Spring provides a built-in event mechanism called **`ApplicationEventPublisher`**.
 
 ### Spring Internal Events
@@ -117,7 +117,7 @@ For cross-service events, we use **Spring Cloud Stream** with **Kafka** or **Rab
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is an Event-Driven Architecture?**
    - **Answer**: It's an architecture where services communicate by publishing and consuming events. Instead of a service calling another service directly, it broadcasts that "something happened," and any interested service can react to it.
@@ -160,25 +160,25 @@ For cross-service events, we use **Spring Cloud Stream** with **Kafka** or **Rab
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Message Ordering**: How to ensure events are processed in the correct order (e.g., Kafka Partitions).
 - **Backpressure**: What happens if the consumers are too slow to keep up with the events?
 - **Dead Letter Queues (DLQ)**: Handling failed event processing.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Loose Coupling**: Services are independent.
-- ✅ **High Scalability**: Producers and consumers scale independently.
-- ✅ **Extensibility**: Add new consumers without changing the producer.
+- **Loose Coupling**: Services are independent.
+- **High Scalability**: Producers and consumers scale independently.
+- **Extensibility**: Add new consumers without changing the producer.
 
 ### Cons
-- ❌ **Complexity**: Distributed tracing and debugging is harder.
-- ❌ **Consistency**: Usually implies eventual consistency.
-- ❌ **Overhead**: Managing a message broker infrastructure.
+- **Complexity**: Distributed tracing and debugging is harder.
+- **Consistency**: Usually implies eventual consistency.
+- **Overhead**: Managing a message broker infrastructure.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 EDA uses events to trigger asynchronous actions across decoupled services, enabling high scalability and independent evolution of system components.

@@ -1,6 +1,6 @@
-# 📌 CQRS (Command Query Responsibility Segregation)
+# CQRS (Command Query Responsibility Segregation)
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **CQRS** is an architectural pattern that separates the models for reading and writing data. 
 
 - **Command**: Operations that change the state of the system (Create, Update, Delete). They should not return data (except perhaps an ID or status).
@@ -9,7 +9,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Library**.
 - **The Librarian (Command Side)**: Handles books coming in, registration, and shelf organization. They ensure the integrity of the collection.
 - **The Catalog/Index (Query Side)**: A separate system (like a digital portal) that allows you to search for books by title, author, or genre. It is optimized for fast searching and doesn't care about the logistics of how the books are stored on the shelf.
@@ -18,7 +18,7 @@ Updating the shelf (Command) eventually reflects in the Catalog (Query), keeping
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **High-Read Scalability**: When your application has a massive read-to-write ratio (e.g., Social Media feeds, E-commerce product listings).
 - **Complex Domain Logic**: When the validation rules for saving data are very different from how you need to display that data.
 - **Microservices Architecture**: Keeping the write-optimized database separate from a read-optimized View store (like Elasticsearch or Redis).
@@ -26,14 +26,14 @@ Updating the shelf (Command) eventually reflects in the Catalog (Query), keeping
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple CRUD Applications**: If your read and write models are identical, CQRS adds unnecessary complexity.
 - **Small Teams**: It requires maintaining two models (and often two databases), which increases development and maintenance overhead.
 - **Strict Real-Time Consistency**: If the read side must be perfectly consistent with the write side *instantly*, the eventual consistency model of many CQRS implementations may be a challenge.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 Client 
   |
@@ -46,7 +46,7 @@ Client
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### The Domain Model
 ```java
 class User {
@@ -90,7 +90,7 @@ public class EventBus {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, we often use libraries like **Axon Framework** for full CQRS/Event Sourcing, or simply separate our Repository layers.
 
 ### Spring Data Strategy
@@ -99,7 +99,7 @@ In Spring Boot, we often use libraries like **Axon Framework** for full CQRS/Eve
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What does CQRS stand for?**
    - **Answer**: Command Query Responsibility Segregation.
@@ -136,24 +136,24 @@ In Spring Boot, we often use libraries like **Axon Framework** for full CQRS/Eve
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Event Sourcing vs. CQRS**: CQRS doesn't *require* Event Sourcing, but Event Sourcing *requires* CQRS.
 - **Latency**: Discuss the latency between a write operation and its visibility in the query store.
 - **Error Handling**: What happens if the write succeeds but the query store update fails? (Mention Outbox Pattern or Retries).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Independent Scaling**: Scale reads separately from writes.
-- ✅ **Optimized Schemas**: Read DB can be denormalized for speed.
-- ✅ **Security**: Easier to manage who can change data vs. who can see it.
+- **Independent Scaling**: Scale reads separately from writes.
+- **Optimized Schemas**: Read DB can be denormalized for speed.
+- **Security**: Easier to manage who can change data vs. who can see it.
 
 ### Cons
-- ❌ **Complexity**: More code, more moving parts.
-- ❌ **Data Lag**: Read store might be slightly behind the write store.
+- **Complexity**: More code, more moving parts.
+- **Data Lag**: Read store might be slightly behind the write store.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 CQRS separates the "Change" logic from the "Read" logic to handle high-load systems and complex domain requirements independently.

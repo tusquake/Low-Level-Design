@@ -1,6 +1,6 @@
-# 📌 Circuit Breaker Pattern
+# Circuit Breaker Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Circuit Breaker Pattern** is a stability pattern used in distributed systems to prevent a failure in one service from cascading to others. It automatically "trips" or opens when a service is failing, stopping further requests until the service is healthy again.
 
 - **Purpose**: To handle faults that are likely to take a variable amount of time to recover from.
@@ -11,14 +11,14 @@ The **Circuit Breaker Pattern** is a stability pattern used in distributed syste
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of an **Electrical Circuit Breaker** in your home.
 - If there is a power surge or a short circuit (Service Failure), the breaker **trips (OPEN)** to protect your appliances (The rest of the system).
 - You can't just flip it back immediately if the short is still there. You wait, fix the issue, and then try to **reset (HALF-OPEN/CLOSED)** it.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **External API Calls**: When calling a 3rd party service (e.g., Payment Gateway, SMS Provider) that is experiencing downtime.
 - **Database Overload**: When the DB is slow or unresponsive to prevent exhausting connection pools.
 - **Network Latency**: To avoid blocking threads in the calling service when a target service is slow to respond.
@@ -26,14 +26,14 @@ Think of an **Electrical Circuit Breaker** in your home.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Local Error Handling**: Don't use it for simple exceptions (like NullPointerException) that are local to your code.
 - **Short-lived Faults**: For occasional network glitches, a simple **Retry Pattern** with exponential backoff might be more appropriate.
 - **Small Applications**: It adds more architectural overhead than a simple timeout might solve for non-distributed systems.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Client ] 
     |
@@ -46,7 +46,7 @@ Think of an **Electrical Circuit Breaker** in your home.
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Circuit Breaker States
 ```java
 public enum State { CLOSED, OPEN, HALF_OPEN }
@@ -94,7 +94,7 @@ public class CircuitBreaker {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In modern Java development, **Resilience4j** is the standard library, replacing the older **Netflix Hystrix**.
 
 ### Spring Resilience4j Config
@@ -112,7 +112,7 @@ resilience4j:
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What are the three states of a Circuit Breaker?**
    - **Answer**: 
@@ -152,24 +152,24 @@ resilience4j:
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Circuit Breaker vs. Retry**: When to use which?
 - **Monitoring**: Importance of dashboards (e.g., Grafana) to see the state of circuits.
 - **Bulkhead Pattern**: Often used alongside Circuit Breaker to isolate resources.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **System Resilience**: Keeps the overall system alive during partial outages.
-- ✅ **Resource Conservation**: Saves threads and memory from being wasted on failing calls.
-- ✅ **Immediate Feedback**: Failing fast is better than making the user wait 30 seconds for a timeout.
+- **System Resilience**: Keeps the overall system alive during partial outages.
+- **Resource Conservation**: Saves threads and memory from being wasted on failing calls.
+- **Immediate Feedback**: Failing fast is better than making the user wait 30 seconds for a timeout.
 
 ### Cons
-- ❌ **Complexity**: Hard to test all state transitions correctly.
-- ❌ **Parameter Tuning**: Setting thresholds too low or too high can cause issues (tripping too often or not enough).
+- **Complexity**: Hard to test all state transitions correctly.
+- **Parameter Tuning**: Setting thresholds too low or too high can cause issues (tripping too often or not enough).
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Circuit Breaker stops a failing service from bringing down the entire system by failing fast and allowing the failing service time to recover.

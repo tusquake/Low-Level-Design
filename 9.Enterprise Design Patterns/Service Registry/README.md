@@ -1,6 +1,6 @@
-# 📌 Service Registry Pattern
+# Service Registry Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Service Registry Pattern** is a key component of service discovery in a microservices architecture. It acts as a database of network locations (IP address and port) for all available service instances. 
 
 - **Registration**: When a service instance starts, it registers its network location with the Service Registry.
@@ -9,7 +9,7 @@ The **Service Registry Pattern** is a key component of service discovery in a mi
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Phonebook (or Truecaller)**.
 - If you want to call "John", you don't need to know if John changed his phone number or moved to a different city yesterday.
 - You look up "John" in the **Phonebook (Service Registry)**.
@@ -18,7 +18,7 @@ Think of a **Phonebook (or Truecaller)**.
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Microservices Architecture**: Essential when services need to talk to each other without knowing specific IPs.
 - **Cloud-Native Apps**: Where platforms like Kubernetes or AWS automatically assign dynamic network addresses.
 - **Auto-Scaling**: When new instances of a service are created or destroyed based on traffic.
@@ -26,14 +26,14 @@ Think of a **Phonebook (or Truecaller)**.
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Monolithic Applications**: There is only one service at a fixed location.
 - **Small Systems with Static IPs**: If you only have 2 services and they always run on the same server/port, a registry adds unnecessary infrastructure.
 - **Serverless (SaaS)**: Many serverless platforms handle discovery internally via DNS or internal routing.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Service Instance A ] --(Register)--> [ SERVICE REGISTRY ]
                                               ^
@@ -43,7 +43,7 @@ Think of a **Phonebook (or Truecaller)**.
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### The Service Registry
 ```java
 public class ServiceRegistry {
@@ -87,7 +87,7 @@ public class OrderService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Cloud, **Netflix Eureka** or **Consul** are the most popular implementations.
 
 ### Eureka Server (@EnableEurekaServer)
@@ -104,7 +104,7 @@ When using `RestTemplate` or `WebClient` with **LoadBalanced** annotation, Sprin
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is a Service Registry?**
    - **Answer**: It is a database of network locations (IP and Port) of all active service instances in a microservices architecture. It allows services to find each other dynamically.
@@ -142,25 +142,25 @@ When using `RestTemplate` or `WebClient` with **LoadBalanced** annotation, Sprin
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Strong Consistency vs. Eventual Consistency**: Why Eureka is fine being eventually consistent (AP in CAP).
 - **Health Checks**: Different types (TCP, HTTP, Custom).
 - **Security**: How to prevent unauthorized services from registering.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Dynamic Scaling**: New instances are automatically discovered.
-- ✅ **Decoupling**: Services only need to know "Name", not "Location".
-- ✅ **Resilience**: Faulty instances are automatically removed from the list.
+- **Dynamic Scaling**: New instances are automatically discovered.
+- **Decoupling**: Services only need to know "Name", not "Location".
+- **Resilience**: Faulty instances are automatically removed from the list.
 
 ### Cons
-- ❌ **Single Point of Failure**: If the registry is down and clients have no cache, discovery fails.
-- ❌ **Network Overhead**: Constant registration/heartbeat traffic.
-- ❌ **Complexity**: One more infrastructure component to manage and monitor.
+- **Single Point of Failure**: If the registry is down and clients have no cache, discovery fails.
+- **Network Overhead**: Constant registration/heartbeat traffic.
+- **Complexity**: One more infrastructure component to manage and monitor.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Service Registry is a dynamic directory that stores service locations, allowing microservices to find and communicate with each other without hardcoded IPs.

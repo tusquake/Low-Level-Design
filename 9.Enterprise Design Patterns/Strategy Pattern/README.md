@@ -1,6 +1,6 @@
-# 📌 Strategy Design Pattern
+# Strategy Design Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Strategy Design Pattern** is a behavioral design pattern that defines a family of algorithms, encapsulates each one, and makes them interchangeable. It allows the algorithm to vary independently from the clients that use it.
 
 - **When to use**: When you have multiple ways to perform a specific task (e.g., sorting, compression, payment) and want to switch between them at runtime.
@@ -8,7 +8,7 @@ The **Strategy Design Pattern** is a behavioral design pattern that defines a fa
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of **Google Maps Navigation**.  
 When you want to go from Point A to Point B, you can choose different "strategies":
 - **Driving**: Fastest route by car.
@@ -19,7 +19,7 @@ The "Context" (Google Maps) remains the same, but the "Strategy" (Transport Mode
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Payment Processing**: Handling multiple gateways (Stripe, PayPal, UPI) in an e-commerce backend.
 - **Sorting/Filtering**: Applying different sorting algorithms based on data size or type.
 - **File Exporting**: Exporting data as CSV, PDF, or Excel based on user preference.
@@ -27,13 +27,13 @@ The "Context" (Google Maps) remains the same, but the "Strategy" (Transport Mode
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple Logic**: If you only have two constant behaviors that will never change, a simple `if-else` is better. Don't overengineer.
 - **Increased Complexity**: It introduces more classes and interfaces. If the application is small, this might be overkill.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 Client -> StrategyContext
               |
@@ -46,7 +46,7 @@ ConcreteA ConcreteB ConcreteC
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### Interface
 ```java
 public interface PaymentStrategy {
@@ -108,7 +108,7 @@ public class Main {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, the Strategy pattern is often implemented using a **Map** to avoid manual `if-else` logic.
 
 ### Spring Example
@@ -133,7 +133,7 @@ public class PaymentService {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the main intent of the Strategy Pattern?**
    - **Answer**: To define a family of algorithms, encapsulate each one, and make them interchangeable at runtime without altering the client code.
@@ -169,24 +169,24 @@ public class PaymentService {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Difference from Factory**: Factory returns an object; Strategy uses an object.
 - **Performance**: High numbers of concrete strategies can increase the memory footprint (object overhead).
 - **Thread-safety**: If strategies are stateless (preferred), they are inherently thread-safe. If they hold state, you must manage it carefully (e.g., using `ThreadLocal` or prototypes).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Encapsulation**: Algorithms are isolated from the client.
-- ✅ **Runtime Switching**: Choose behavior dynamically.
-- ✅ **Open/Closed**: Add new strategies without touching existing code.
+- **Encapsulation**: Algorithms are isolated from the client.
+- **Runtime Switching**: Choose behavior dynamically.
+- **Open/Closed**: Add new strategies without touching existing code.
 
 ### Cons
-- ❌ **Client Awareness**: The client must know about different strategies to choose one.
-- ❌ **Increased Object Count**: Every algorithm variant becomes a class.
+- **Client Awareness**: The client must know about different strategies to choose one.
+- **Increased Object Count**: Every algorithm variant becomes a class.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Strategy pattern is about encapsulating interchangeable algorithms into separate classes to move conditional logic from the client to the architecture.

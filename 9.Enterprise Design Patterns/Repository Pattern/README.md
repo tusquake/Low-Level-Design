@@ -1,6 +1,6 @@
-# 📌 Repository Pattern
+# Repository Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 The **Repository Pattern** is a structural pattern that mediates between the domain and data mapping layers, acting like an in-memory collection of domain objects. It hides the details of how data is stored and retrieved (SQL, NoSQL, APIs) behind a clean, collection-like interface.
 
 - **Purpose**: To decouple the business logic from the data access technology.
@@ -8,7 +8,7 @@ The **Repository Pattern** is a structural pattern that mediates between the dom
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Warehouse Manager**.
 - The **CEO (Business Logic)** wants to know "How many Blue T-shirts do we have?".
 - The CEO doesn't care if the shirts are in Aisle 4, Box 9, or in a separate cold-storage facility.
@@ -18,7 +18,7 @@ If the warehouse moves from a physical building to a cloud-based fulfillment cen
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Spring Data JPA**: Whenever you create an `interface extends JpaRepository`, you are using this pattern.
 - **Domain Driven Design (DDD)**: To manage Aggregate roots and persist them.
 - **Multiple Data Sources**: When you need to switch between a MySQL database and a Mock database for testing.
@@ -26,13 +26,13 @@ If the warehouse moves from a physical building to a cloud-based fulfillment cen
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple Scripts**: If you are just writing a quick script to update one row, a Repository layer is overkill.
 - **Active Record Pattern (sometimes)**: If your framework (like Ruby on Rails or older Hibernate) already ties the data access to the object, a separate repository might add redundant layers.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 Business Logic (Service)
       |
@@ -47,7 +47,7 @@ Business Logic (Service)
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. The Interface (Contract)
 ```java
 public interface UserRepository {
@@ -94,7 +94,7 @@ public class UserService {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, the pattern is so common it's built-in.
 
 ```java
@@ -108,7 +108,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is the goal of the Repository Pattern?**
    - **Answer**: To decouple the business logic (Service) from the data access technology (DB/API), making the system more maintainable, testable, and flexible.
@@ -144,23 +144,23 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Decoupling**: Discuss why the service shouldn't know about `RowMapper` or `ResultSet`.
 - **Transactions**: Should the transaction start in the Service or the Repository? (Answer: Usually the Service).
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Clean Code**: Business logic is free from persistence noise.
-- ✅ **Maintainability**: Centralized data access logic.
-- ✅ **Testability**: Easily mock repositories using libraries like Mockito.
+- **Clean Code**: Business logic is free from persistence noise.
+- **Maintainability**: Centralized data access logic.
+- **Testability**: Easily mock repositories using libraries like Mockito.
 
 ### Cons
-- ❌ **Abstration Overhead**: Sometimes it's just a thin wrapper over the DB driver.
-- ❌ **Learning Curve**: New developers might find the extra layers confusing initially.
+- **Abstration Overhead**: Sometimes it's just a thin wrapper over the DB driver.
+- **Learning Curve**: New developers might find the extra layers confusing initially.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Repository pattern provides a collection-like interface to access domain objects while hiding the underlying storage technology.

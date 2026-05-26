@@ -1,6 +1,6 @@
-# 📌 Layered Architecture (N-Tier)
+# Layered Architecture (N-Tier)
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Layered Architecture** is one of the most common architectural patterns. It organizes an application into a set of horizontal layers, each having a specific responsibility and role. A layer can only communicate with the layer directly below it (Closed Layer) or sometimes layers further down (Open Layer).
 
 - **The Standard Layers**:
@@ -12,7 +12,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Restaurant Service**.
 - **The Waiter (Presentation Layer)**: Interacts with the customer, takes the order, and returns the food. The waiter doesn't know how to cook.
 - **The Chef (Business Layer)**: Receives the order and applies the recipes (logic). The chef doesn't know how to wash the dishes or where the ingredients come from.
@@ -23,7 +23,7 @@ Each person has a clear job, and they always talk to each other in a specific or
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Standard Web Applications**: Most common for enterprise applications, e-commerce, and internal management tools.
 - **New Projects**: A great starting point for most applications due to its simplicity and familiarity.
 - **Small to Medium Organizations**: Where developers need a standard way of organizing code that everyone understands.
@@ -31,14 +31,14 @@ Each person has a clear job, and they always talk to each other in a specific or
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple Microservices**: If a service only has 5 classes, splitting them into 3 layers might be redundant.
 - **Highly Complex Domains**: Where the logic is very intricate; patterns like **Domain Driven Design (DDD)** or **Hexagonal Architecture** might be better to prevent the "Anemic Domain Model".
 - **Performance Critical Systems**: If the overhead of mapping data between 3-4 separate layers (DTO -> Entity -> Data) is too high.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ Presentation Layer (Controller) ]
            |
@@ -54,7 +54,7 @@ Each person has a clear job, and they always talk to each other in a specific or
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. Presentation Layer
 ```java
 public class OrderController {
@@ -92,7 +92,7 @@ public class OrderRepository {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 Spring Boot projects almost always follow this pattern by convention:
 
 - **`@RestController`**: Presentation Layer.
@@ -107,7 +107,7 @@ Spring Boot projects almost always follow this pattern by convention:
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is Layered Architecture?**
    - **Answer**: It's a standard architectural pattern where an application is organized into horizontal layers (Presentation, Business, Persistence, Database), each with a specific responsibility. 
@@ -147,25 +147,25 @@ Spring Boot projects almost always follow this pattern by convention:
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **DIP (Dependency Inversion)**: How do we use Interfaces to make layers swap-able?
 - **DTOs vs. Entities**: Which layer should handle which object?
 - **Circular Dependencies**: What happens if Service A calls Service B and Service B calls Service A?
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Simplicity**: Very easy to learn and implement.
-- ✅ **Consistency**: Most developers are familiar with it.
-- ✅ **Scalability (Development)**: Different teams can work on different layers.
+- **Simplicity**: Very easy to learn and implement.
+- **Consistency**: Most developers are familiar with it.
+- **Scalability (Development)**: Different teams can work on different layers.
 
 ### Cons
-- ❌ **Tight Coupling**: Layers often become highly dependent on each other.
-- ❌ **"Sinkhole" Anti-pattern**: When most requests just pass through all layers without doing any work.
-- ❌ **Monolithic Tendency**: It often leads to large, difficult-to-scale monoliths.
+- **Tight Coupling**: Layers often become highly dependent on each other.
+- **"Sinkhole" Anti-pattern**: When most requests just pass through all layers without doing any work.
+- **Monolithic Tendency**: It often leads to large, difficult-to-scale monoliths.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Layered architecture organizes an application into horizontal tiers, ensuring that each layer has a distinct responsibility and communicates only with the layer below it.

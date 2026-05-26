@@ -1,6 +1,6 @@
-# 📌 Dependency Injection (DI) Pattern
+# Dependency Injection (DI) Pattern
 
-## 1️⃣ Definition (Interview Ready)
+## 1. Definition (Interview Ready)
 **Dependency Injection (DI)** is a design pattern used to implement **Inversion of Control (IoC)**. It allows a class to receive its dependencies from an external source (usually an **Inoc Container** like Spring) rather than creating them internally using the `new` keyword.
 
 - **Objective**: To decouple the creation of objects from their usage.
@@ -8,7 +8,7 @@
 
 ---
 
-## 2️⃣ Real-World Analogy
+## 2. Real-World Analogy
 Think of a **Professional Chef** in a restaurant.
 - **Without DI**: The Chef has to leave the kitchen, go to the farm, grow the vegetables, harvest them, and then come back to cook. The Chef is "Hardcoded" to a specific farm.
 - **With DI**: The Chef stays in the kitchen. An **Assistant (DI Container)** delivers the fresh vegetables (Dependencies) to the Chef's counter. 
@@ -17,7 +17,7 @@ The Chef doesn't care which farm the vegetables came from, as long as they are "
 
 ---
 
-## 3️⃣ When to Use (Practical Scenarios)
+## 3. When to Use (Practical Scenarios)
 - **Spring Framework**: Almost every `@Component` or `@Service` in Spring uses DI.
 - **Unit Testing**: Essential for mocking dependencies (e.g., injecting a `MockDatabase` instead of a real one).
 - **Loose Coupling**: When you want to be able to switch implementations (e.g., switching from `S3Storage` to `AzureStorage`) without changing the business logic.
@@ -25,14 +25,14 @@ The Chef doesn't care which farm the vegetables came from, as long as they are "
 
 ---
 
-## 4️⃣ When NOT to Use
+## 4. When NOT to Use
 - **Simple POJOs/DTOs**: You don't need DI for a `User` or `Address` data class; just use `new`.
 - **Static Utility Classes**: If a class only has static methods (like `Math.abs()`), it doesn't need dependencies.
 - **Small Scripts**: Where the overhead of setting up a DI container outweighs the benefit of the script itself.
 
 ---
 
-## 5️⃣ Structure Diagram (Textual UML)
+## 5. Structure Diagram (Textual UML)
 ```text
 [ DI Container ] --(Injects)--> [ Client Class ]
                                       |
@@ -45,7 +45,7 @@ The Chef doesn't care which farm the vegetables came from, as long as they are "
 
 ---
 
-## 6️⃣ Complete Real Java Code Example
+## 6. Complete Real Java Code Example
 ### 1. The Interface
 ```java
 public interface MessageService {
@@ -85,7 +85,7 @@ public class Main {
 
 ---
 
-## 7️⃣ How It Is Used in Spring Boot / Real Projects
+## 7. How It Is Used in Spring Boot / Real Projects
 In Spring Boot, the framework handles the "Injection" for you.
 
 ### Types of Injection in Spring:
@@ -102,7 +102,7 @@ In Spring Boot, the framework handles the "Injection" for you.
 
 ---
 
-## 8️⃣ Interview Questions
+## 8. Interview Questions
 ### Basic
 1. **What is Dependency Injection?**
    - **Answer**: It's a design pattern where a class's dependencies are "injected" or provided by an external source (like the Spring IoC container) rather than the class creating them itself using the `new` keyword.
@@ -144,25 +144,25 @@ In Spring Boot, the framework handles the "Injection" for you.
 
 ---
 
-## 9️⃣ Common Interview Follow-Up Questions
+## 9. Common Interview Follow-Up Questions
 - **Bean Scopes**: Singleton, Prototype, Request, Session.
 - **Post-Construct & Pre-Destroy**: Lifecycle hooks for injected beans.
 - **Dependency Inversion Principle (D) in SOLID**: The underlying theory behind DI.
 
 ---
 
-## 🔟 Pros and Cons
+## 10. Pros and Cons
 ### Pros
-- ✅ **Loose Coupling**: Classes are independent of their dependencies' implementations.
-- ✅ **Testability**: Easily swap real components with mocks.
-- ✅ **Maintainability**: Centralized configuration of object creation.
+- **Loose Coupling**: Classes are independent of their dependencies' implementations.
+- **Testability**: Easily swap real components with mocks.
+- **Maintainability**: Centralized configuration of object creation.
 
 ### Cons
-- ❌ **Complexity**: Can make the code flow harder to follow for beginners.
-- ❌ **Runtime Errors**: If a bean is missing, the error occurs at startup/runtime instead of compile time.
-- ❌ **Boilerplate**: Sometimes requires many interfaces even for simple logic.
+- **Complexity**: Can make the code flow harder to follow for beginners.
+- **Runtime Errors**: If a bean is missing, the error occurs at startup/runtime instead of compile time.
+- **Boilerplate**: Sometimes requires many interfaces even for simple logic.
 
 ---
 
-## 1️⃣1️⃣ One-Line Revision Summary
+## 11. One-Line Revision Summary
 Dependency Injection is a pattern where a class's requirements are provided by an external container, ensuring loose coupling and high testability.
