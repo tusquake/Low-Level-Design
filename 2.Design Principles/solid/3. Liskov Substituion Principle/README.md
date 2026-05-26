@@ -2,13 +2,13 @@
 
 > "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." — Barbara Liskov
 
-## 📌 Concept
+## Concept
 The **Liskov Substitution Principle** (LSP) is the 'L' in SOLID. It states that a subclass should be able to stand in for its superclass without breaking the system. This means that a subclass should not override a method with a different behavior than expected by the superclass.
 
-### ❌ Violation
+### Violation
 In the `LSPViolation` example, the `Bird` class has a `fly()` method. The `Ostrich` class inherits from `Bird` but cannot fly. When we call `fly()` on an `Ostrich` object, it throws an exception, which violates the contract of the `Bird` class and can lead to runtime errors.
 
-### ✅ Correction
+### Correction
 In the `LSPCorrection` example, we use interfaces to separate bird behaviors.
 -   `Bird`: Base interface for all birds (e.g., `eat()`).
 -   `FlyingBird`: Extension of `Bird` for birds that can fly (e.g., `fly()`).
@@ -19,7 +19,7 @@ Now, we can only call `fly()` on objects that implement `FlyingBird`, ensuring t
 
 ---
 
-## 💡 Interview Questions
+## Interview Questions
 
 ### 1. What is the main goal of LSP?
 **Answer:** The goal of LSP is to ensure that a subclass can be used instead of its superclass without any issues. It promotes **polymorphism** and makes the code more robust and easier to maintain.
@@ -35,7 +35,7 @@ Now, we can only call `fly()` on objects that implement `FlyingBird`, ensuring t
 
 ---
 
-## 🚀 How to Run
+## How to Run
 ```bash
 javac LSPViolation.java
 java LSPViolation

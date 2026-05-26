@@ -2,13 +2,13 @@
 
 > "Software entities should be open for extension, but closed for modification." — Bertrand Meyer
 
-## 📌 Concept
+## Concept
 The **Open/Closed Principle** (OCP) is the 'O' in SOLID. It means you should be able to add new functionality without changing the existing code. This is usually achieved using **interfaces** and **abstract classes**.
 
-### ❌ Violation
+### Violation
 In the `OCPViolation` examples, if we want to add a new storage mechanism (like saving to MongoDB), we have to modify the existing `InvoicePersistence` class. This is risky because modifying working code can introduce bugs.
 
-### ✅ Correction
+### Correction
 In the `OCPCorrection` examples, we use an `InvoiceRepository` interface.
 -   `MySQLInvoiceRepository`: Implements saving to MySQL.
 -   `FileInvoiceRepository`: Implements saving to a File.
@@ -18,7 +18,7 @@ If we need a new storage type, we just create a new class that implements `Invoi
 
 ---
 
-## 💡 Interview Questions
+## Interview Questions
 
 ### 1. What does "Closed for Modification" mean?
 **Answer:** It means that once a module or class has been developed and tested, its source code should not be changed to add new features. This prevents regression bugs in already working functionality.
@@ -34,7 +34,7 @@ If we need a new storage type, we just create a new class that implements `Invoi
 
 ---
 
-## 🚀 How to Run
+## How to Run
 ```bash
 javac OCPExample.java
 java OCPExample

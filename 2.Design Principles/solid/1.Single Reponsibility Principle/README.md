@@ -2,10 +2,10 @@
 
 > "A class should have one, and only one, reason to change." — Robert C. Martin
 
-## 📌 Concept
+## Concept
 The **Single Responsibility Principle** (SRP) is the 'S' in SOLID. It states that a class should be responsible for only one part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class.
 
-### ❌ Violation
+### Violation
 In the `SRPViolation` examples, a single class (like `ShoppingCart`) might be responsible for:
 1.  **Managing items** (logic)
 2.  **Displaying the invoice** (presentation)
@@ -13,7 +13,7 @@ In the `SRPViolation` examples, a single class (like `ShoppingCart`) might be re
 
 If the database schema changes, the `ShoppingCart` class must change. If the invoice format changes, the `ShoppingCart` class must change. This leads to **tight coupling** and makes the code harder to maintain and test.
 
-### ✅ Correction
+### Correction
 In the `SRPCorrection` examples, responsibilities are split into separate classes:
 -   `ShoppingCart`: Manages items and business logic.
 -   `InvoicePrinter`: Handles the presentation/printing logic.
@@ -23,7 +23,7 @@ Now, a change in how we save to the database only affects `CartRepository`, not 
 
 ---
 
-## 💡 Interview Questions
+## Interview Questions
 
 ### 1. What is the primary benefit of SRP?
 **Answer:** The primary benefits are **loosely coupled** and **highly cohesive** classes. It makes the system easier to understand, maintain, and test because changes to one responsibility don't affect others.
@@ -39,7 +39,7 @@ Now, a change in how we save to the database only affects `CartRepository`, not 
 
 ---
 
-## 🚀 How to Run
+## How to Run
 ```bash
 javac SRPExample.java
 java SRPExample

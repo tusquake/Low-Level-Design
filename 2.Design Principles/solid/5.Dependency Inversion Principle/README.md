@@ -2,15 +2,15 @@
 
 > "Depend upon abstractions, not concretions." — Robert C. Martin
 
-## 📌 Concept
+## Concept
 The **Dependency Inversion Principle** (DIP) is the 'D' in SOLID. It states that:
 1.  High-level modules should not depend on low-level modules. Both should depend on abstractions.
 2.  Abstractions should not depend on details. Details should depend on abstractions.
 
-### ❌ Violation
+### Violation
 In the `DIPViolation` example, the `ShoppingMall` (high-level) is directly dependent on the `DebitCard` (low-level). This means that if we want to add a `CreditCard`, we have to modify the `ShoppingMall` class, which is a clear violation of DIP.
 
-### ✅ Correction
+### Correction
 In the `DIPCorrection` example, we use the `BankCard` interface as an abstraction.
 -   `DebitCard`: Implements the `BankCard` interface.
 -   `CreditCard`: Implements the `BankCard` interface.
@@ -20,7 +20,7 @@ Now, we can pass any type of bank card to the `ShoppingMall` through its constru
 
 ---
 
-## 💡 Interview Questions
+## Interview Questions
 
 ### 1. What is the main goal of DIP?
 **Answer:** The goal of DIP is to decouple high-level and low-level modules, making the system more flexible and easier to maintain. By depending on abstractions, changes in low-level details don't affect high-level business logic.
@@ -36,7 +36,7 @@ Now, we can pass any type of bank card to the `ShoppingMall` through its constru
 
 ---
 
-## 🚀 How to Run
+## How to Run
 ```bash
 javac DIPViolation.java
 java DIPViolation

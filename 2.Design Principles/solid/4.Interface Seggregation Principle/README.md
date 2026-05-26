@@ -2,13 +2,13 @@
 
 > "Clients should not be forced to depend upon interfaces that they do not use." — Robert C. Martin
 
-## 📌 Concept
+## Concept
 The **Interface Segregation Principle** (ISP) is the 'I' in SOLID. It states that larger interfaces should be split into smaller, more specific ones. This ensures that implementing classes only need to concern themselves with the methods that are relevant to them.
 
-### ❌ Violation
+### Violation
 In the `ISPViolation` example, the `SmartDevice` interface is a "fat" interface that includes `print()`, `scan()`, and `fax()`. The `BasicPrinter` class is forced to implement all three methods, even though it can only print. This leads to empty or exception-throwing methods, which is a clear violation of ISP.
 
-### ✅ Correction
+### Correction
 In the `ISPCorrection` example, the interfaces are split into `Printer`, `Scanner`, and `Fax`.
 -   `MultiFunctionPrinter`: Implements all relevant interfaces.
 -   `EconomicPrinter`: Implements only the `Printer` interface.
@@ -17,7 +17,7 @@ Now, the `EconomicPrinter` is not forced to depend on `scan()` or `fax()` method
 
 ---
 
-## 💡 Interview Questions
+## Interview Questions
 
 ### 1. What is the main benefit of ISP?
 **Answer:** The main benefit of ISP is that it prevents classes from being forced to implement methods they don't need. This leads to **loose coupling**, **better readability**, and **easier testing**. It also reduces the impact of changes to one part of the system on other unrelated parts.
@@ -33,7 +33,7 @@ Now, the `EconomicPrinter` is not forced to depend on `scan()` or `fax()` method
 
 ---
 
-## 🚀 How to Run
+## How to Run
 ```bash
 javac ISPViolation.java
 java ISPViolation

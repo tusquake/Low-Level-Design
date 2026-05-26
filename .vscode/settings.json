@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "9.Enterprise Design Patterns/Object Pool Design Pattern/DBConnectionExample/src",
+        "9.Enterprise Design Patterns/Cache Aside Pattern/src",
         "9.Enterprise Design Patterns/API Gateway/src",
         "7.Real World Projects/D4.Notification Design/Notification System/src",
         "7.Real World Projects/D3.Instagram Design",
@@ -8,12 +9,18 @@
         "7.Real World Projects/D18.FlipMed/src/main/java/com/flipmed/system",
         "7.Real World Projects/D16.Resolution System/src/main/java/com/resolution.system",
         "6.Practice Projects/Movie Ticket Booking",
-        "5.Behavorial Design Pattern/Specification Design Pattern/ProductFilterExample/src",
-        "5.Behavorial Design Pattern/Special Case Design Pattern/CustomerExample/src",
-        "5.Behavorial Design Pattern/Null Object Design Pattern/VehicleExample/src",
         "5.Behavorial Design Pattern/Command Design Pattern/TV Remote Control System/src",
         "3.Creational Design Pattern/Singleton Design Pattern/src",
         "3.Creational Design Pattern/Abstract Factory Design Pattern/src",
+        "2.Design Principles/yagni/User Service/src",
+        "2.Design Principles/solid/1.Single Reponsibility Principle",
+        "2.Design Principles/soc/UserManagement/src",
+        "2.Design Principles/lod/src",
+        "2.Design Principles/lc-hc/src",
+        "2.Design Principles/kiss/AgeValidator/src",
+        "2.Design Principles/idempotency/src",
+        "2.Design Principles/dry/TaxCalculator/src",
+        "2.Design Principles/com-over-inher/src",
         "10. Personal Practice/9. Warehouse Management System",
         "10. Personal Practice/8.Payment Processing System",
         "10. Personal Practice/7.Prototype Pattern",
@@ -29,6 +36,7 @@
         "1.OOPS/3.Polymorphism",
         "1.OOPS/2.Inheritance",
         "1.OOPS/1.Encapsulation",
-        "9.Enterprise Design Patterns/Cache Aside Pattern/src"
-    ]
+        "2.Design Principles/solid/2.Open Closed Principle"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
