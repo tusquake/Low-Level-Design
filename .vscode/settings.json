@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "9.Enterprise Design Patterns/Object Pool Design Pattern/DBConnectionExample/src",
+        "9.Enterprise Design Patterns/Circuit Breaker Pattern/src",
         "9.Enterprise Design Patterns/Cache Aside Pattern/src",
         "9.Enterprise Design Patterns/API Gateway/src",
         "7.Real World Projects/D4.Notification Design/Notification System/src",
@@ -13,6 +14,7 @@
         "3.Creational Design Pattern/Singleton Design Pattern/src",
         "3.Creational Design Pattern/Abstract Factory Design Pattern/src",
         "2.Design Principles/yagni/User Service/src",
+        "2.Design Principles/solid/2.Open Closed Principle",
         "2.Design Principles/solid/1.Single Reponsibility Principle",
         "2.Design Principles/soc/UserManagement/src",
         "2.Design Principles/lod/src",
@@ -36,7 +38,7 @@
         "1.OOPS/3.Polymorphism",
         "1.OOPS/2.Inheritance",
         "1.OOPS/1.Encapsulation",
-        "2.Design Principles/solid/2.Open Closed Principle"
+        "3.Creational Design Pattern/Builder Design Pattern/src"
     ],
     "java.debug.settings.onBuildFailureProceed": true
 }

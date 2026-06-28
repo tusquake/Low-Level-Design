@@ -45,101 +45,111 @@ The Factory Pattern provides:
 
 ```
 src/
-├── Notification.java          # Product interface
-├── SMSNotification.java       # Concrete product
-├── EmailNotification.java     # Concrete product
-├── PushNotification.java      # Concrete product
-├── NotificationFactory.java   # Factory class
-└── Main.java                  # Demo application
+└── FactoryPatternDemo.java  # Contains all interfaces, implementations, and enum
 ```
 
 ## Class Diagram
 
-```
-┌─────────────────┐
-│  Notification   │ (Interface)
-├─────────────────┤
-│ + send(message) │
-└─────────────────┘
-         ▲
-         │ implements
-         │
-    ┌────┴────┬────────────┬──────────────┐
-    │         │            │              │
-┌───┴────────────┐  ┌──────┴──────────┐  ┌───┴────────────┐
-│SMSNotification │  │EmailNotification│  │PushNotification│
-├────────────────┤  ├─────────────────┤  ├────────────────┤
-│ + send()       │  │ + send()        │  │ + send()       │
-└────────────────┘  └─────────────────┘  └────────────────┘
-                             ▲
-                             │ creates
-                             │
-                    ┌────────┴────────────┐
-                    │NotificationFactory  │
-                    ├─────────────────────┤
-                    │+ createNotification()│
-                    └─────────────────────┘
+```mermaid
+classDiagram
+    class NotificationType {
+        <<enumeration>>
+        EMAIL
+        SMS
+        PUSH
+    }
+
+    class Notification {
+        <<interface>>
+        +send(message)
+    }
+
+    class SMSNotification {
+        +send(message)
+    }
+
+    class EmailNotification {
+        +send(message)
+    }
+
+    class PushNotification {
+        +send(message)
+    }
+
+    class NotificationFactory {
+        +createNotification(NotificationType type) Notification
+    }
+
+    Notification <|.. SMSNotification : implements
+    Notification <|.. EmailNotification : implements
+    Notification <|.. PushNotification : implements
+
+    NotificationFactory ..> NotificationType : uses
+    NotificationFactory ..> SMSNotification : creates
+    NotificationFactory ..> EmailNotification : creates
+    NotificationFactory ..> PushNotification : creates
 ```
 
 ## Implementation Details
 
-### 1. Product Interface
+The entire implementation is encapsulated within a single file to keep the project clean and self-contained:
+
+### 1. Notification Type Enum
 
 ```java
-public interface Notification {
+enum NotificationType {
+    EMAIL,
+    SMS,
+    PUSH
+}
+```
+
+### 2. Product Interface
+
+```java
+interface Notification {
     void send(String message);
 }
 ```
 
-### 2. SMS Notification
+### 3. Concrete Products
 
 ```java
-public class SMSNotification implements Notification {
-    @Override
+class EmailNotification implements Notification {
     public void send(String message) {
-        System.out.println("SMS Notification: " + message);
+        System.out.println("Sending Email: " + message);
+    }
+}
+
+class SmsNotification implements Notification {
+    public void send(String message) {
+        System.out.println("Sending SMS: " + message);
+    }
+}
+
+class PushNotification implements Notification {
+    public void send(String message) {
+        System.out.println("Sending Push Notification: " + message);
     }
 }
 ```
 
-### 3. Email Notification
+### 4. Notification Factory
 
 ```java
-public class EmailNotification implements Notification {
-    @Override
-    public void send(String message) {
-        System.out.println("Email Notification: " + message);
-    }
-}
-```
+class NotificationFactory {
 
-### 4. Push Notification
-
-```java
-public class PushNotification implements Notification {
-    @Override
-    public void send(String message) {
-        System.out.println("Push Notification: " + message);
-    }
-}
-```
-
-### 5. Notification Factory
-
-```java
-public class NotificationFactory {
-    
-    public Notification createNotification(String type) {
-        if (type == null || type.isEmpty()) {
-            return null;
+    public static Notification createNotification(NotificationType type) {
+        if (type == null) {
+            throw new IllegalArgumentException("Notification type cannot be null");
         }
-        
-        switch (type.toUpperCase()) {
-            case "SMS":
-                return new SMSNotification();
-            case "EMAIL":
+
+        switch (type) {
+            case EMAIL:
                 return new EmailNotification();
-            case "PUSH":
+            case SMS:
+                return new SmsNotification();
+            case PUSH:
                 return new PushNotification();
             default:
                 throw new IllegalArgumentException("Unknown notification type: " + type);
@@ -148,32 +158,22 @@ public class NotificationFactory {
 }
 ```
 
-### 6. Demo Application
+### 5. Demo Application
 
 ```java
-public class Main {
+public class FactoryPatternDemo {
+
     public static void main(String[] args) {
-        NotificationFactory factory = new NotificationFactory();
-        
-        // Create and send SMS notification
-        Notification sms = factory.createNotification("SMS");
-        sms.send("Your OTP is 123456");
-        
-        // Create and send Email notification
-        Notification email = factory.createNotification("EMAIL");
-        email.send("Welcome to our platform!");
-        
-        // Create and send Push notification
-        Notification push = factory.createNotification("PUSH");
-        push.send("You have a new message");
-        
-        // Try invalid type
-        try {
-            Notification invalid = factory.createNotification("FAX");
-            invalid.send("Test message");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+
+        Notification notification =
+                NotificationFactory.createNotification(NotificationType.EMAIL);
+
+        notification.send("Welcome to our app!");
+
+        Notification sms =
+                NotificationFactory.createNotification(NotificationType.SMS);
+
+        sms.send("Your OTP is 1234");
     }
 }
 ```
@@ -186,36 +186,30 @@ public class Main {
 # Navigate to the src directory
 cd src
 
-# Compile all Java files
-javac *.java
+# Compile the Java file
+javac FactoryPatternDemo.java
 
-# Run the main class
-java Main
+# Run the demo application
+java FactoryPatternDemo
 ```
-
-### Using an IDE
-1. Open the project in your Java IDE
-2. Run the `Main.java` file
 
 ## Example Output
 
 ```
-SMS Notification: Your OTP is 123456
-Email Notification: Welcome to our platform!
-Push Notification: You have a new message
-Error: Unknown notification type: FAX
+Sending Email: Welcome to our app!
+Sending SMS: Your OTP is 1234
 ```
 
 ## Key Benefits
 
-- **Encapsulation**: Object creation logic is centralized in one place
-- **Loose Coupling**: Client code doesn't depend on concrete classes
-- **Easy Extension**: New notification types can be added easily
-- **Single Responsibility**: Factory handles creation, classes handle their own logic
+- **Encapsulation**: Object creation logic is centralized in one place.
+- **Type Safety**: Using Java `enum` instead of raw strings prevents typos and ensures only valid types can be requested.
+- **Loose Coupling**: Client code interacts with notifications solely via the `Notification` interface.
+- **Easy Extension**: Adding a new channel only requires declaring a new enum value, implementing the `Notification` interface, and adding a case in the Factory.
 
 ## When to Use
 
-- When you don't know the exact types of objects needed beforehand
-- When object creation logic is complex
-- When you want to centralize object creation
-- When you need to decouple object creation from usage
+- When you don't know the exact types of objects needed beforehand.
+- When object creation logic is complex or subject to validation.
+- When you want to centralize object creation to ensure modularity.
+- When you need to decouple object creation from usage.
