@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: employee-management
+  
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/employee_db}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+# Application JWT Configuration
+application:
+  security:
+    jwt:
+      # HS256 key base64-encoded (at least 256 bits)
+      secret-key: ${JWT_SECRET_KEY:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+      # 1 Day in milliseconds = 86,400,000
+      expiration: ${JWT_EXPIRATION:86400000}
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.management.employee: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Springdoc OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha

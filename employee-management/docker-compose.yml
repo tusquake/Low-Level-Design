@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  employee-db:
+    image: postgres:16-alpine
+    container_name: employee-db
+    environment:
+      - POSTGRES_DB=employee_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d employee_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  employee-app:
+    build: .
+    container_name: employee-app
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://employee-db:5432/employee_db
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=password
+      - JWT_SECRET_KEY=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      - JWT_EXPIRATION=86400000
+    depends_on:
+      employee-db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
